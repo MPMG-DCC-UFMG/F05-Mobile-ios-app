@@ -84,4 +84,20 @@ class ConfigRepository: IConfigRepository {
     func getCityVersion() -> Promise<EntityVersion>{
         return remoteConfigDataSource.getCityVersion()
     }
+    
+    func loadWorkStatus() -> Promise<Array<JSONDecodable>>{
+        return remoteConfigDataSource.loadWorkStatus()
+    }
+    
+    func getWorkStatusVersion() -> Promise<EntityVersion>{
+        return remoteConfigDataSource.getWorkStatusVersion()
+    }
+    
+    func loadAssociationTPTW() -> Promise<Array<JSONDecodable>>{
+        return remoteConfigDataSource.loadAssociationTPTW()
+    }
+    
+    func getAssociationTPTWVersion() -> Promise<EntityVersion>{
+        return remoteConfigDataSource.getAssociationTPTWVersion()
+    }
 }

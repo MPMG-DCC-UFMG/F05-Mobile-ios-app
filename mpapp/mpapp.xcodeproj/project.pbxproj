@@ -65,6 +65,18 @@
 		3864074C24F55966000B9345 /* LocalCityDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864074B24F55966000B9345 /* LocalCityDataSource.swift */; };
 		3864074E24F55977000B9345 /* CityRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864074D24F55977000B9345 /* CityRepository.swift */; };
 		3864075024F55D2A000B9345 /* DownloadCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864074F24F55D2A000B9345 /* DownloadCities.swift */; };
+		3864075224F56162000B9345 /* WorkStatusRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864075124F56162000B9345 /* WorkStatusRemote.swift */; };
+		3864075524F561C9000B9345 /* WorkStatusRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864075424F561C9000B9345 /* WorkStatusRepository.swift */; };
+		3864075724F561D5000B9345 /* IWorkStatusRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864075624F561D4000B9345 /* IWorkStatusRepository.swift */; };
+		3864075A24F561EC000B9345 /* ILocalWorkStatusDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864075924F561EC000B9345 /* ILocalWorkStatusDataSource.swift */; };
+		3864075C24F561F7000B9345 /* LocalWorkStatusDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864075B24F561F6000B9345 /* LocalWorkStatusDataSource.swift */; };
+		3864075E24F56492000B9345 /* DownloadWorkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864075D24F56492000B9345 /* DownloadWorkStatus.swift */; };
+		3864076024F56698000B9345 /* AssociationTPTWRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864075F24F56698000B9345 /* AssociationTPTWRemote.swift */; };
+		3864076324F56855000B9345 /* IAssociationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864076224F56855000B9345 /* IAssociationRepository.swift */; };
+		3864076624F56874000B9345 /* ILocalAssociationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864076524F56874000B9345 /* ILocalAssociationDataSource.swift */; };
+		3864076824F569E9000B9345 /* LocalAssociationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864076724F569E9000B9345 /* LocalAssociationDataSource.swift */; };
+		3864076A24F56A72000B9345 /* AssociationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864076924F56A72000B9345 /* AssociationRepository.swift */; };
+		3864076C24F586E9000B9345 /* DownloadAssociation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864076B24F586E9000B9345 /* DownloadAssociation.swift */; };
 		389008D024EEE6FE00954A95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389008CF24EEE6FE00954A95 /* AppDelegate.swift */; };
 		389008D224EEE6FE00954A95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389008D124EEE6FE00954A95 /* SceneDelegate.swift */; };
 		389008D624EEE70000954A95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 389008D524EEE70000954A95 /* Assets.xcassets */; };
@@ -162,6 +174,18 @@
 		3864074B24F55966000B9345 /* LocalCityDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCityDataSource.swift; sourceTree = "<group>"; };
 		3864074D24F55977000B9345 /* CityRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityRepository.swift; sourceTree = "<group>"; };
 		3864074F24F55D2A000B9345 /* DownloadCities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadCities.swift; sourceTree = "<group>"; };
+		3864075124F56162000B9345 /* WorkStatusRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkStatusRemote.swift; sourceTree = "<group>"; };
+		3864075424F561C9000B9345 /* WorkStatusRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkStatusRepository.swift; sourceTree = "<group>"; };
+		3864075624F561D4000B9345 /* IWorkStatusRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IWorkStatusRepository.swift; sourceTree = "<group>"; };
+		3864075924F561EC000B9345 /* ILocalWorkStatusDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILocalWorkStatusDataSource.swift; sourceTree = "<group>"; };
+		3864075B24F561F6000B9345 /* LocalWorkStatusDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalWorkStatusDataSource.swift; sourceTree = "<group>"; };
+		3864075D24F56492000B9345 /* DownloadWorkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadWorkStatus.swift; sourceTree = "<group>"; };
+		3864075F24F56698000B9345 /* AssociationTPTWRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociationTPTWRemote.swift; sourceTree = "<group>"; };
+		3864076224F56855000B9345 /* IAssociationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAssociationRepository.swift; sourceTree = "<group>"; };
+		3864076524F56874000B9345 /* ILocalAssociationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILocalAssociationDataSource.swift; sourceTree = "<group>"; };
+		3864076724F569E9000B9345 /* LocalAssociationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAssociationDataSource.swift; sourceTree = "<group>"; };
+		3864076924F56A72000B9345 /* AssociationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociationRepository.swift; sourceTree = "<group>"; };
+		3864076B24F586E9000B9345 /* DownloadAssociation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAssociation.swift; sourceTree = "<group>"; };
 		389008CC24EEE6FE00954A95 /* TRENA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRENA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		389008CF24EEE6FE00954A95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		389008D124EEE6FE00954A95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -285,6 +309,8 @@
 				386406BF24F03A42000B9345 /* TypeWorkRemote.swift */,
 				3864073524F54E81000B9345 /* TypePhotoRemote.swift */,
 				3864074324F557E4000B9345 /* CityRemote.swift */,
+				3864075124F56162000B9345 /* WorkStatusRemote.swift */,
+				3864075F24F56698000B9345 /* AssociationTPTWRemote.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -375,6 +401,8 @@
 				3864071224F3F1B5000B9345 /* DownloadTypeWork.swift */,
 				3864073724F550E2000B9345 /* DownloadTypePhoto.swift */,
 				3864074F24F55D2A000B9345 /* DownloadCities.swift */,
+				3864075D24F56492000B9345 /* DownloadWorkStatus.swift */,
+				3864076B24F586E9000B9345 /* DownloadAssociation.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -413,6 +441,44 @@
 			children = (
 				3864074724F5593C000B9345 /* ILocalCityDataSource.swift */,
 				3864074B24F55966000B9345 /* LocalCityDataSource.swift */,
+			);
+			path = datasources;
+			sourceTree = "<group>";
+		};
+		3864075324F561B7000B9345 /* workstatus */ = {
+			isa = PBXGroup;
+			children = (
+				3864075824F561D9000B9345 /* datasources */,
+				3864075424F561C9000B9345 /* WorkStatusRepository.swift */,
+				3864075624F561D4000B9345 /* IWorkStatusRepository.swift */,
+			);
+			path = workstatus;
+			sourceTree = "<group>";
+		};
+		3864075824F561D9000B9345 /* datasources */ = {
+			isa = PBXGroup;
+			children = (
+				3864075924F561EC000B9345 /* ILocalWorkStatusDataSource.swift */,
+				3864075B24F561F6000B9345 /* LocalWorkStatusDataSource.swift */,
+			);
+			path = datasources;
+			sourceTree = "<group>";
+		};
+		3864076124F5681F000B9345 /* association */ = {
+			isa = PBXGroup;
+			children = (
+				3864076424F56860000B9345 /* datasources */,
+				3864076224F56855000B9345 /* IAssociationRepository.swift */,
+				3864076924F56A72000B9345 /* AssociationRepository.swift */,
+			);
+			path = association;
+			sourceTree = "<group>";
+		};
+		3864076424F56860000B9345 /* datasources */ = {
+			isa = PBXGroup;
+			children = (
+				3864076524F56874000B9345 /* ILocalAssociationDataSource.swift */,
+				3864076724F569E9000B9345 /* LocalAssociationDataSource.swift */,
 			);
 			path = datasources;
 			sourceTree = "<group>";
@@ -544,6 +610,8 @@
 		3890090824EEED2B00954A95 /* repositories */ = {
 			isa = PBXGroup;
 			children = (
+				3864076124F5681F000B9345 /* association */,
+				3864075324F561B7000B9345 /* workstatus */,
 				3864074524F558B1000B9345 /* city */,
 				3864073924F5513B000B9345 /* typephoto */,
 				386406A724F01565000B9345 /* config */,
@@ -869,10 +937,12 @@
 				3890090F24EEF0C000954A95 /* ITypeWorkRepository.swift in Sources */,
 				3890091824EEF7D600954A95 /* TypeWorkRepository.swift in Sources */,
 				3864073224F53A53000B9345 /* WorkStatus.swift in Sources */,
+				3864076324F56855000B9345 /* IAssociationRepository.swift in Sources */,
 				3864071524F401BF000B9345 /* LoadServerDataWorker.swift in Sources */,
 				386406B824F02E09000B9345 /* Config.swift in Sources */,
 				3890090724EEEC8F00954A95 /* TypeWork.swift in Sources */,
 				3864074224F55232000B9345 /* TypePhotoRepository.swift in Sources */,
+				3864075524F561C9000B9345 /* WorkStatusRepository.swift in Sources */,
 				386406C224F03BDE000B9345 /* RemoteConfigDataSource.swift in Sources */,
 				3864075024F55D2A000B9345 /* DownloadCities.swift in Sources */,
 				3864073824F550E2000B9345 /* DownloadTypePhoto.swift in Sources */,
@@ -883,11 +953,13 @@
 				386406B024F016B2000B9345 /* Constants.swift in Sources */,
 				3864072A24F534AC000B9345 /* TypePhoto.swift in Sources */,
 				3890090424EEEA8000954A95 /* MPDatabase.swift in Sources */,
+				3864075224F56162000B9345 /* WorkStatusRemote.swift in Sources */,
 				389008D224EEE6FE00954A95 /* SceneDelegate.swift in Sources */,
 				3864071724F4031C000B9345 /* WorkerStatus.swift in Sources */,
 				386406D424F13106000B9345 /* TrenaTextField.swift in Sources */,
 				3864073C24F55166000B9345 /* ILocalTypePhotoDataSource.swift in Sources */,
 				3864073624F54E81000B9345 /* TypePhotoRemote.swift in Sources */,
+				3864076624F56874000B9345 /* ILocalAssociationDataSource.swift in Sources */,
 				3864071324F3F1B5000B9345 /* DownloadTypeWork.swift in Sources */,
 				3864072C24F535D7000B9345 /* Photo.swift in Sources */,
 				3864073424F54C7F000B9345 /* AssociationTPTW.swift in Sources */,
@@ -896,20 +968,28 @@
 				3864071124F3EAB2000B9345 /* EntityVersion.swift in Sources */,
 				386406C724F051B2000B9345 /* MainView.swift in Sources */,
 				386406D124F12FF0000B9345 /* ColorProvider.swift in Sources */,
+				3864076824F569E9000B9345 /* LocalAssociationDataSource.swift in Sources */,
 				386406C024F03A42000B9345 /* TypeWorkRemote.swift in Sources */,
 				3890091124EEF0E400954A95 /* ILocalTypeWorkDataSource.swift in Sources */,
 				3864072824F5335C000B9345 /* PublicWork.swift in Sources */,
 				3864071924F42753000B9345 /* TypeWorkView.swift in Sources */,
 				3864070F24F3E6C7000B9345 /* BaseDownloadInfo.swift in Sources */,
+				3864075E24F56492000B9345 /* DownloadWorkStatus.swift in Sources */,
 				3864073024F538D3000B9345 /* Collect.swift in Sources */,
 				3864074C24F55966000B9345 /* LocalCityDataSource.swift in Sources */,
 				386406AA24F01584000B9345 /* IConfigRepository.swift in Sources */,
+				3864076024F56698000B9345 /* AssociationTPTWRemote.swift in Sources */,
 				386406B224F018E5000B9345 /* ConfigRepository.swift in Sources */,
+				3864075724F561D5000B9345 /* IWorkStatusRepository.swift in Sources */,
+				3864076C24F586E9000B9345 /* DownloadAssociation.swift in Sources */,
+				3864075C24F561F7000B9345 /* LocalWorkStatusDataSource.swift in Sources */,
 				386406C524F04514000B9345 /* SplashView.swift in Sources */,
 				386406A624EF4EBE000B9345 /* Injection.swift in Sources */,
 				3890091324EEF17200954A95 /* LocalTypeWorkDataSource.swift in Sources */,
 				3890091B24EF111600954A95 /* TypeWorkViewModel.swift in Sources */,
 				3864074424F557E4000B9345 /* CityRemote.swift in Sources */,
+				3864075A24F561EC000B9345 /* ILocalWorkStatusDataSource.swift in Sources */,
+				3864076A24F56A72000B9345 /* AssociationRepository.swift in Sources */,
 				3864074E24F55977000B9345 /* CityRepository.swift in Sources */,
 				3864072E24F537A5000B9345 /* Date.swift in Sources */,
 				3864074024F55226000B9345 /* ITypePhotoRepository.swift in Sources */,

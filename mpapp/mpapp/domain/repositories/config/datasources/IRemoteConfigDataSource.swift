@@ -15,4 +15,12 @@ protocol IRemoteConfigDataSource {
     func loadCities() -> Promise<Array<JSONDecodable>>
     
     func getCityVersion() -> Promise<EntityVersion>
+    
+    func loadWorkStatus() -> Promise<Array<JSONDecodable>>
+    
+    func getWorkStatusVersion() -> Promise<EntityVersion>
+    
+    func loadAssociationTPTW() -> Promise<Array<JSONDecodable>>
+    
+    func getAssociationTPTWVersion() -> Promise<EntityVersion>
 }

@@ -19,7 +19,7 @@ struct MPApi{
     
     @GET(url: "workstatus/")static var loadWorkStatus: Promise<Data>
     
-    @GET(url: "workstatus/version") static var getWorkStatusVersio: Promise<Data>
+    @GET(url: "workstatus/version") static var getWorkStatusVersion: Promise<Data>
     
     @GET(url: "address/city/version")static var  getCitiesVersion: Promise<Data>
     

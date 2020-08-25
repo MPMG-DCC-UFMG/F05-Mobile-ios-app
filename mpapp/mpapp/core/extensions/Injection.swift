@@ -10,12 +10,16 @@ extension Resolver:ResolverRegistering{
         register{ConfigRepository(localConfigDataSource: resolve(), remoteConfigDataSource: resolve()) as IConfigRepository}
         register{TypePhotoRepository(localTypePhotoDataSource: resolve()) as ITypePhotoRepository}
         register{CityRepository(localCityDataSource: resolve()) as ICityRepository}
+        register{WorkStatusRepository(localWorkStatusDataSource: resolve()) as IWorkStatusRepository}
+        register{AssociationRepository(localAssociationDataSource: resolve()) as IAssociationRepository}
         
         // LocalDataSources
         register{LocalTypeWorkDataSource() as ILocalTypeWorkDataSource}
         register{LocalConfigDataSource() as ILocalConfigDataSource}
         register{LocalTypePhotoDataSource() as ILocalTypePhotoDataSource}
         register{LocalCityDataSource() as ILocalCityDataSource}
+        register{LocalWorkStatusDataSource() as ILocalWorkStatusDataSource}
+        register{LocalAssociationDataSource() as ILocalAssociationDataSource}
         
         // RemoteDataSources
         register{RemoteConfigDataSource() as IRemoteConfigDataSource}

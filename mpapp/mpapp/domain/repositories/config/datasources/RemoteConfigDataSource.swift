@@ -49,4 +49,34 @@ class RemoteConfigDataSource: IRemoteConfigDataSource{
         }
     }
     
+    func loadWorkStatus() -> Promise<Array<JSONDecodable>>{
+        return MPApi.loadWorkStatus.then{data -> [WorkStatusRemote] in
+            guard let parsed = [WorkStatusRemote].from(data: data) else{
+                return [WorkStatusRemote]()
+            }
+            return parsed
+        }
+    }
+    
+    func getWorkStatusVersion() -> Promise<EntityVersion>{
+        return MPApi.getWorkStatusVersion.then { data -> EntityVersion in
+            EntityVersion(data: data)!
+        }
+    }
+    
+    func loadAssociationTPTW() -> Promise<Array<JSONDecodable>>{
+        return MPApi.loadAssociation.then{data -> [AssociationTPTWRemote] in
+            guard let parsed = [AssociationTPTWRemote].from(data: data) else{
+                return [AssociationTPTWRemote]()
+            }
+            return parsed
+        }
+    }
+    
+    func getAssociationTPTWVersion() -> Promise<EntityVersion>{
+        return MPApi.getAssociationsVersion.then { data -> EntityVersion in
+            EntityVersion(data: data)!
+        }
+    }
+    
 }

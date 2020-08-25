@@ -1,29 +1,17 @@
 import Foundation
 import RealmSwift
 
-class LocalTypeWorkDataSource: BaseDataSource,ILocalTypeWorkDataSource {
+class LocalTypeWorkDataSource: BaseDataSource<TypeWork>,ILocalTypeWorkDataSource {
     
     func insertTypeWork(typeWork: TypeWork) throws {
-        do {
-            try self.mpDatabase().write{
-                self.mpDatabase().add(typeWork)
-            }
-        } catch {
-            throw error
-        }
+        try self.insert(entity: typeWork)
     }
     
     func insertTypeWorks(typeWorks: Array<TypeWork>) throws{
-        do {
-            try self.mpDatabase().write{
-                self.mpDatabase().add(typeWorks)
-            }
-        } catch {
-            throw error
-        }
+       try self.insertAll(entities: typeWorks)
     }
     
     func listAllTypeWorks() -> Results<TypeWork>{
-        return self.mpDatabase().objects(TypeWork.self)
+        return self.listAll()
     }
 }

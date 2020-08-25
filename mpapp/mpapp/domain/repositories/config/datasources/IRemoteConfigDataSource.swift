@@ -7,4 +7,12 @@ protocol IRemoteConfigDataSource {
     func loadTypeWorks() -> Promise<Array<JSONDecodable>>
     
     func getTypeWorkVersion() -> Promise<EntityVersion>
+    
+    func loadTypePhotos() -> Promise<Array<JSONDecodable>>
+    
+    func getTypePhotosVersion() -> Promise<EntityVersion>
+    
+    func loadCities() -> Promise<Array<JSONDecodable>>
+    
+    func getCityVersion() -> Promise<EntityVersion>
 }

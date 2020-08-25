@@ -8,7 +8,7 @@ class LoadServerDataWorker: ObservableObject{
     
     func execute(){
         Promise<Void>{
-            let downloadCalls = [DownloadTypeWork()]
+            let downloadCalls: [BaseDownloadInfo] = [DownloadTypeWork(), DownloadTypePhoto(), DownloadCities()]
             
             self.updateStatus(status: WorkerStatus.RUNNING)
             all(
@@ -20,6 +20,8 @@ class LoadServerDataWorker: ObservableObject{
                     self.updateStatus(status: WorkerStatus.FAILED)
                 }
             }
+        }.catch{_ in
+            self.updateStatus(status: WorkerStatus.FAILED)
         }
     }
     
@@ -30,7 +32,7 @@ class LoadServerDataWorker: ObservableObject{
             
             self.updateProgress(message: "Verificando versão: \(downloadInfo.name())")
             serverVersionResult.then {serverVersion in
-                if(serverVersion.version != currentVersion){
+                if(serverVersion.version! > currentVersion){
                     self.updateProgress(message: "Atualizando: \(downloadInfo.name())")
                     downloadInfo.loadInfo().then{ dataFromServer in
                         let onDatabase = downloadInfo.onSuccess(list: dataFromServer)

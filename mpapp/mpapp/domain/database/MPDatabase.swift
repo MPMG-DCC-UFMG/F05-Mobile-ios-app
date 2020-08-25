@@ -8,6 +8,7 @@ struct MPDatabase {
     static func getInstance() -> Realm?{
         if(INSTANCE == nil){
             INSTANCE = try! Realm()
+            print("Realm is located at:", INSTANCE!.configuration.fileURL!)
         }
         return INSTANCE
     }

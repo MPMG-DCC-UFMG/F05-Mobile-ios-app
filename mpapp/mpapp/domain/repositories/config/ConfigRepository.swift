@@ -38,7 +38,7 @@ class ConfigRepository: IConfigRepository {
     }
     
     func saveTypePhotosVersion(typePhotosVersion: Int) {
-        localConfigDataSource.saveTypeWorksVersion(typeWorksVersion: typePhotosVersion)
+        localConfigDataSource.saveTypePhotosVersion(typePhotosVersion: typePhotosVersion)
     }
     
     func savePublicWorkVersion(publicWorkVersion: Int) {
@@ -69,4 +69,19 @@ class ConfigRepository: IConfigRepository {
         return remoteConfigDataSource.getTypeWorkVersion()
     }
     
+    func loadTypePhotos() -> Promise<Array<JSONDecodable>> {
+        return remoteConfigDataSource.loadTypePhotos()
+    }
+    
+    func getTypePhotosVersion() -> Promise<EntityVersion> {
+        return remoteConfigDataSource.getTypePhotosVersion()
+    }
+    
+    func loadCities() -> Promise<Array<JSONDecodable>>{
+        return remoteConfigDataSource.loadCities()
+    }
+    
+    func getCityVersion() -> Promise<EntityVersion>{
+        return remoteConfigDataSource.getCityVersion()
+    }
 }

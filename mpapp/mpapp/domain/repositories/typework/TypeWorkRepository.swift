@@ -4,7 +4,7 @@ import RealmSwift
 
 class TypeWorkRepository: ITypeWorkRepository {
     
-    let localTypeWorkDataSource: ILocalTypeWorkDataSource
+    private let localTypeWorkDataSource: ILocalTypeWorkDataSource
     
     init(localTypeWorkDataSource: ILocalTypeWorkDataSource) {
         self.localTypeWorkDataSource = localTypeWorkDataSource

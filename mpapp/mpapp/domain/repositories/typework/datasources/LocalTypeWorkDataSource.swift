@@ -3,15 +3,23 @@ import RealmSwift
 
 class LocalTypeWorkDataSource: BaseDataSource,ILocalTypeWorkDataSource {
     
-    func insertTypeWork(typeWork: TypeWork){
-        try! self.mpDatabase().write{
-            self.mpDatabase().add(typeWork)
+    func insertTypeWork(typeWork: TypeWork) throws {
+        do {
+            try self.mpDatabase().write{
+                self.mpDatabase().add(typeWork)
+            }
+        } catch {
+            throw error
         }
     }
     
-    func insertTypeWorks(typeWorks: Array<TypeWork>){
-        try! self.mpDatabase().write{
-            self.mpDatabase().add(typeWorks)
+    func insertTypeWorks(typeWorks: Array<TypeWork>) throws{
+        do {
+            try self.mpDatabase().write{
+                self.mpDatabase().add(typeWorks)
+            }
+        } catch {
+            throw error
         }
     }
     

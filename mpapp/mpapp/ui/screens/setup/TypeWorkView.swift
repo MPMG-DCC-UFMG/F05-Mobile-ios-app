@@ -1,3 +1,4 @@
+import Foundation
 import SwiftUI
 import Resolver
 import RealmSwift
@@ -8,18 +9,11 @@ struct ContentView: View {
     
     var body: some View {
         VStack(){
-            Button(action: {self.addTypeWork()}) {
-                Text("Add")
-            }
             List(typeWorkViewModel.typeworks){typeWork in
                 TypeWorkRow(typeWork: typeWork)
             }
             Spacer()
         }
-    }
-    
-    private func addTypeWork(){
-        typeWorkViewModel.addTypeWork()
     }
 }
 

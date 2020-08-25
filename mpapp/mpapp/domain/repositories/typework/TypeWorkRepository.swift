@@ -10,12 +10,12 @@ class TypeWorkRepository: ITypeWorkRepository {
         self.localTypeWorkDataSource = localTypeWorkDataSource
     }
     
-    func insertTypeWork(typeWork: TypeWork) {
-        self.localTypeWorkDataSource.insertTypeWork(typeWork: typeWork)
+    func insertTypeWork(typeWork: TypeWork) throws {
+        try self.localTypeWorkDataSource.insertTypeWork(typeWork: typeWork)
     }
     
-    func insertTypeWorks(typeWorks: Array<TypeWork>) {
-        self.localTypeWorkDataSource.insertTypeWorks(typeWorks: typeWorks)
+    func insertTypeWorks(typeWorks: Array<TypeWork>) throws {
+        try self.localTypeWorkDataSource.insertTypeWorks(typeWorks: typeWorks)
     }
     
     func listAllTypeWorks() -> Results<TypeWork> {

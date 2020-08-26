@@ -34,9 +34,8 @@
 		386406FF24F18E6A000B9345 /* GothamRounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 386406F524F18E6A000B9345 /* GothamRounded-Medium.otf */; };
 		3864070024F18E6A000B9345 /* gotham_rounded_light_italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 386406F624F18E6A000B9345 /* gotham_rounded_light_italic.otf */; };
 		3864070124F18E6A000B9345 /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 386406F724F18E6A000B9345 /* Gotham-Bold.otf */; };
-		3864070224F18E6A000B9345 /* nunito_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 386406F824F18E6A000B9345 /* nunito_italic.ttf */; };
+		3864070224F18E6A000B9345 /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 386406F824F18E6A000B9345 /* Nunito-Italic.ttf */; };
 		3864070824F1B6F2000B9345 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864070724F1B6F2000B9345 /* View.swift */; };
-		3864070B24F1B981000B9345 /* TrenaTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864070A24F1B981000B9345 /* TrenaTextFieldStyle.swift */; };
 		3864070F24F3E6C7000B9345 /* BaseDownloadInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864070E24F3E6C6000B9345 /* BaseDownloadInfo.swift */; };
 		3864071124F3EAB2000B9345 /* EntityVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864071024F3EAB2000B9345 /* EntityVersion.swift */; };
 		3864071324F3F1B5000B9345 /* DownloadTypeWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864071224F3F1B5000B9345 /* DownloadTypeWork.swift */; };
@@ -84,6 +83,9 @@
 		3864077824F5929C000B9345 /* LocalPublicWorkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864077724F5929C000B9345 /* LocalPublicWorkDataSource.swift */; };
 		3864077A24F5EE5D000B9345 /* PublicWorkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864077924F5EE5D000B9345 /* PublicWorkRepository.swift */; };
 		3864077C24F5F2DE000B9345 /* DownloadPublicWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864077B24F5F2DE000B9345 /* DownloadPublicWork.swift */; };
+		3864077F24F69DE2000B9345 /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864077E24F69DE2000B9345 /* Headers.swift */; };
+		3864078124F69E89000B9345 /* ScaledFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864078024F69E89000B9345 /* ScaledFont.swift */; };
+		3864078624F69F68000B9345 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864078524F69F68000B9345 /* LoginView.swift */; };
 		389008D024EEE6FE00954A95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389008CF24EEE6FE00954A95 /* AppDelegate.swift */; };
 		389008D224EEE6FE00954A95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389008D124EEE6FE00954A95 /* SceneDelegate.swift */; };
 		389008D624EEE70000954A95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 389008D524EEE70000954A95 /* Assets.xcassets */; };
@@ -99,6 +101,11 @@
 		3890091624EEF2AA00954A95 /* BaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890091524EEF2AA00954A95 /* BaseDataSource.swift */; };
 		3890091824EEF7D600954A95 /* TypeWorkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890091724EEF7D600954A95 /* TypeWorkRepository.swift */; };
 		3890091B24EF111600954A95 /* TypeWorkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890091A24EF111600954A95 /* TypeWorkViewModel.swift */; };
+		38C2E01624F6DBBE00121039 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C2E01524F6DBBE00121039 /* Background.swift */; };
+		38C2E01A24F7053200121039 /* TrenaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C2E01924F7053200121039 /* TrenaButton.swift */; };
+		38C2E01F24F70E3200121039 /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C2E01E24F70E3200121039 /* SignInButton.swift */; };
+		38C2E02124F718A400121039 /* TrenaDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C2E02024F718A400121039 /* TrenaDivider.swift */; };
+		38C2E02324F7191600121039 /* TrenaPasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C2E02224F7191600121039 /* TrenaPasswordField.swift */; };
 		75C65DF569EB8CC647475CE1 /* Pods_mpappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5DDDCE81F7FFAB250C301B /* Pods_mpappTests.framework */; };
 		BD2FBF67078057B714497FA0 /* Pods_mpapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E8640732BB2C99E777F2CE /* Pods_mpapp.framework */; };
 		FEB8375A8B70B6FF1F11A521 /* Pods_mpapp_mpappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 715E1190EE99521D2C21BBAE /* Pods_mpapp_mpappUITests.framework */; };
@@ -150,9 +157,8 @@
 		386406F524F18E6A000B9345 /* GothamRounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamRounded-Medium.otf"; sourceTree = "<group>"; };
 		386406F624F18E6A000B9345 /* gotham_rounded_light_italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gotham_rounded_light_italic.otf; sourceTree = "<group>"; };
 		386406F724F18E6A000B9345 /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.otf"; sourceTree = "<group>"; };
-		386406F824F18E6A000B9345 /* nunito_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nunito_italic.ttf; sourceTree = "<group>"; };
+		386406F824F18E6A000B9345 /* Nunito-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic.ttf"; sourceTree = "<group>"; };
 		3864070724F1B6F2000B9345 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		3864070A24F1B981000B9345 /* TrenaTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaTextFieldStyle.swift; sourceTree = "<group>"; };
 		3864070E24F3E6C6000B9345 /* BaseDownloadInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDownloadInfo.swift; sourceTree = "<group>"; };
 		3864071024F3EAB2000B9345 /* EntityVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityVersion.swift; sourceTree = "<group>"; };
 		3864071224F3F1B5000B9345 /* DownloadTypeWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadTypeWork.swift; sourceTree = "<group>"; };
@@ -200,6 +206,9 @@
 		3864077724F5929C000B9345 /* LocalPublicWorkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPublicWorkDataSource.swift; sourceTree = "<group>"; };
 		3864077924F5EE5D000B9345 /* PublicWorkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkRepository.swift; sourceTree = "<group>"; };
 		3864077B24F5F2DE000B9345 /* DownloadPublicWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadPublicWork.swift; sourceTree = "<group>"; };
+		3864077E24F69DE2000B9345 /* Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headers.swift; sourceTree = "<group>"; };
+		3864078024F69E89000B9345 /* ScaledFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledFont.swift; sourceTree = "<group>"; };
+		3864078524F69F68000B9345 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		389008CC24EEE6FE00954A95 /* TRENA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRENA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		389008CF24EEE6FE00954A95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		389008D124EEE6FE00954A95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -221,6 +230,11 @@
 		3890091524EEF2AA00954A95 /* BaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
 		3890091724EEF7D600954A95 /* TypeWorkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeWorkRepository.swift; sourceTree = "<group>"; };
 		3890091A24EF111600954A95 /* TypeWorkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeWorkViewModel.swift; sourceTree = "<group>"; };
+		38C2E01524F6DBBE00121039 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		38C2E01924F7053200121039 /* TrenaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaButton.swift; sourceTree = "<group>"; };
+		38C2E01E24F70E3200121039 /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
+		38C2E02024F718A400121039 /* TrenaDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaDivider.swift; sourceTree = "<group>"; };
+		38C2E02224F7191600121039 /* TrenaPasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaPasswordField.swift; sourceTree = "<group>"; };
 		40E8640732BB2C99E777F2CE /* Pods_mpapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mpapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		715E1190EE99521D2C21BBAE /* Pods_mpapp_mpappUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mpapp_mpappUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7934E0434C766D9238022634 /* Pods-mpapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mpapp.debug.xcconfig"; path = "Target Support Files/Pods-mpapp/Pods-mpapp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -334,6 +348,7 @@
 		386406C324F044EE000B9345 /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				3864078224F69F48000B9345 /* login */,
 				386406CA24F05864000B9345 /* setup */,
 				386406C424F04514000B9345 /* SplashView.swift */,
 			);
@@ -361,7 +376,10 @@
 		386406D224F130E1000B9345 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				38C2E02424F7192100121039 /* butons */,
 				386406D324F13106000B9345 /* TrenaTextField.swift */,
+				38C2E02024F718A400121039 /* TrenaDivider.swift */,
+				38C2E02224F7191600121039 /* TrenaPasswordField.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -384,7 +402,7 @@
 				386406F624F18E6A000B9345 /* gotham_rounded_light_italic.otf */,
 				386406F524F18E6A000B9345 /* GothamRounded-Medium.otf */,
 				386406F224F18E6A000B9345 /* nunito_bold.ttf */,
-				386406F824F18E6A000B9345 /* nunito_italic.ttf */,
+				386406F824F18E6A000B9345 /* Nunito-Italic.ttf */,
 				386406EF24F18E6A000B9345 /* nunito_light.ttf */,
 				386406F024F18E6A000B9345 /* nunito_regular.ttf */,
 				386406F124F18E6A000B9345 /* nunito_semibold.ttf */,
@@ -395,7 +413,9 @@
 		3864070924F1B971000B9345 /* styles */ = {
 			isa = PBXGroup;
 			children = (
-				3864070A24F1B981000B9345 /* TrenaTextFieldStyle.swift */,
+				3864078024F69E89000B9345 /* ScaledFont.swift */,
+				3864077E24F69DE2000B9345 /* Headers.swift */,
+				38C2E01524F6DBBE00121039 /* Background.swift */,
 			);
 			path = styles;
 			sourceTree = "<group>";
@@ -517,6 +537,14 @@
 				3864077724F5929C000B9345 /* LocalPublicWorkDataSource.swift */,
 			);
 			path = datasource;
+			sourceTree = "<group>";
+		};
+		3864078224F69F48000B9345 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				3864078524F69F68000B9345 /* LoginView.swift */,
+			);
+			path = login;
 			sourceTree = "<group>";
 		};
 		389008C324EEE6FE00954A95 = {
@@ -693,6 +721,15 @@
 			path = viewmodels;
 			sourceTree = "<group>";
 		};
+		38C2E02424F7192100121039 /* butons */ = {
+			isa = PBXGroup;
+			children = (
+				38C2E01924F7053200121039 /* TrenaButton.swift */,
+				38C2E01E24F70E3200121039 /* SignInButton.swift */,
+			);
+			path = butons;
+			sourceTree = "<group>";
+		};
 		A9E9EE3A53E9F081451C2713 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -826,7 +863,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				386406FE24F18E6A000B9345 /* gotham_book.otf in Resources */,
-				3864070224F18E6A000B9345 /* nunito_italic.ttf in Resources */,
+				3864070224F18E6A000B9345 /* Nunito-Italic.ttf in Resources */,
 				386406FD24F18E6A000B9345 /* GothamRounded-Book.otf in Resources */,
 				3864070024F18E6A000B9345 /* gotham_rounded_light_italic.otf in Resources */,
 				386406FC24F18E6A000B9345 /* nunito_bold.ttf in Resources */,
@@ -966,8 +1003,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38C2E02124F718A400121039 /* TrenaDivider.swift in Sources */,
 				3864074A24F5594C000B9345 /* ICityRepository.swift in Sources */,
+				38C2E02324F7191600121039 /* TrenaPasswordField.swift in Sources */,
 				386406ED24F189EB000B9345 /* FontProvider.swift in Sources */,
+				38C2E01A24F7053200121039 /* TrenaButton.swift in Sources */,
 				386406AE24F01616000B9345 /* LocalConfigDataSource.swift in Sources */,
 				3864070824F1B6F2000B9345 /* View.swift in Sources */,
 				3864077624F590C5000B9345 /* ILocalPublicWorkDataSource.swift in Sources */,
@@ -978,6 +1018,7 @@
 				3864073224F53A53000B9345 /* WorkStatus.swift in Sources */,
 				3864076324F56855000B9345 /* IAssociationRepository.swift in Sources */,
 				3864071524F401BF000B9345 /* LoadServerDataWorker.swift in Sources */,
+				3864078124F69E89000B9345 /* ScaledFont.swift in Sources */,
 				386406B824F02E09000B9345 /* Config.swift in Sources */,
 				3890090724EEEC8F00954A95 /* TypeWork.swift in Sources */,
 				3864074224F55232000B9345 /* TypePhotoRepository.swift in Sources */,
@@ -990,12 +1031,14 @@
 				3890091624EEF2AA00954A95 /* BaseDataSource.swift in Sources */,
 				386406BD24F0393F000B9345 /* IRemoteConfigDataSource.swift in Sources */,
 				3864074824F5593C000B9345 /* ILocalCityDataSource.swift in Sources */,
+				3864077F24F69DE2000B9345 /* Headers.swift in Sources */,
 				386406B024F016B2000B9345 /* Constants.swift in Sources */,
 				3864072A24F534AC000B9345 /* TypePhoto.swift in Sources */,
 				3890090424EEEA8000954A95 /* MPDatabase.swift in Sources */,
 				3864075224F56162000B9345 /* WorkStatusRemote.swift in Sources */,
 				389008D224EEE6FE00954A95 /* SceneDelegate.swift in Sources */,
 				3864071724F4031C000B9345 /* WorkerStatus.swift in Sources */,
+				38C2E01624F6DBBE00121039 /* Background.swift in Sources */,
 				386406D424F13106000B9345 /* TrenaTextField.swift in Sources */,
 				3864073C24F55166000B9345 /* ILocalTypePhotoDataSource.swift in Sources */,
 				3864073624F54E81000B9345 /* TypePhotoRemote.swift in Sources */,
@@ -1023,6 +1066,7 @@
 				3864076024F56698000B9345 /* AssociationTPTWRemote.swift in Sources */,
 				386406B224F018E5000B9345 /* ConfigRepository.swift in Sources */,
 				3864077A24F5EE5D000B9345 /* PublicWorkRepository.swift in Sources */,
+				3864078624F69F68000B9345 /* LoginView.swift in Sources */,
 				3864075724F561D5000B9345 /* IWorkStatusRepository.swift in Sources */,
 				3864076C24F586E9000B9345 /* DownloadAssociation.swift in Sources */,
 				3864075C24F561F7000B9345 /* LocalWorkStatusDataSource.swift in Sources */,
@@ -1037,7 +1081,7 @@
 				3864074E24F55977000B9345 /* CityRepository.swift in Sources */,
 				3864072E24F537A5000B9345 /* Date.swift in Sources */,
 				3864074024F55226000B9345 /* ITypePhotoRepository.swift in Sources */,
-				3864070B24F1B981000B9345 /* TrenaTextFieldStyle.swift in Sources */,
+				38C2E01F24F70E3200121039 /* SignInButton.swift in Sources */,
 				386406BB24F03351000B9345 /* NetworkWrappers.swift in Sources */,
 				3864072624F5318F000B9345 /* City.swift in Sources */,
 				386406B524F02BE8000B9345 /* MPApi.swift in Sources */,

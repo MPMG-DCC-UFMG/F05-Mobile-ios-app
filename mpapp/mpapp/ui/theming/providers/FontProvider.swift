@@ -8,6 +8,8 @@ class FontProvider{
     
     static var gothamRoundedBook = "GothamRounded-Book"
     
+    static var nunitoItalic = "Nunito-Italic"
+    
     static func getAvailableFontNames(){
         for family: String in UIFont.familyNames
         {

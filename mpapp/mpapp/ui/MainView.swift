@@ -6,7 +6,7 @@ struct MainView: View {
     var body: some View {
         VStack {
             if self.isActive {
-                LoadingDataView()
+                LoginView()
             } else {
                 SplashView()
             }

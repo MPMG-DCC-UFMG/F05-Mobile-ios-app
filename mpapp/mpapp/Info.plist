@@ -67,6 +67,7 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Nunito-Italic.ttf</string>
 		<string>GothamRounded-Book.otf</string>
 		<string>Gotham-Bold.otf</string>
 		<string>GothamRounded-Medium.otf</string>

@@ -1,5 +1,6 @@
 import UIKit
 import Resolver
+import Sentry
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,5 +23,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        setupSentry()
+    }
+    
+    private func setupSentry(){
+        SentrySDK.start { options in
+            options.dsn = Config.SENTRY_DNS
+            options.debug = (Config.ENVIRONMENT == "development") as NSNumber
+        }
+    }
 }
 

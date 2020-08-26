@@ -6,3 +6,6 @@ Project of mobile iOS client for TRENA project using SwiftUI and CocoaPods
 * [Realm](https://realm.io/): MongoDB Realm helps you build modern mobile apps, faster
 * [RxRealm](https://github.com/RxSwiftCommunity/RxRealm): This library is a thin wrapper around RealmSwift
 * [Resolver](https://github.com/hmlongco/Resolver): An ultralight Dependency Injection / Service Locator framework for Swift 5.1 on iOS.
+* [Alamofire](https://github.com/Alamofire/Alamofire): Alamofire is an HTTP networking library written in Swift.
+* [Gloss](https://github.com/hkellaway/Gloss): A shiny JSON parsing library in Swift
+* [Promises](https://github.com/google/promises): A modern framework that provides a synchronization construct for Objective-C and Swift to facilitate writing asynchronous code.

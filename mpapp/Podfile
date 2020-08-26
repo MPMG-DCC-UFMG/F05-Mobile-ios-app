@@ -10,6 +10,7 @@ target 'mpapp' do
   pod 'Gloss'
   pod 'PromisesSwift'
   pod 'Alamofire', '~> 5.2'
+  pod 'Sentry', :git => 'https://github.com/getsentry/sentry-cocoa.git', :tag => '5.2.0'
 
   target 'mpappTests' do
     inherit! :search_paths

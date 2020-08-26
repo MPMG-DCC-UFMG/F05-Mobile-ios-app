@@ -20,4 +20,8 @@ class WorkStatusRepository: IWorkStatusRepository{
     func listWorkStatus() -> Results<WorkStatus>{
         return self.localWorkStatusDataSource.listWorkStatus()
     }
+
+    func deleteWorkStatuses() throws {
+        try self.localWorkStatusDataSource.deleteWorkStatuses()
+    }
 }

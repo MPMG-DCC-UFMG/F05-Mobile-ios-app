@@ -32,6 +32,7 @@ class DownloadAssociation: BaseDownloadInfo,Resolving{
         var success = false
         if let parsedList = list as? Array<AssociationTPTWRemote> {
             do {
+                try associationRepository.deleteAssociations()
                 try associationRepository.insertAssociations(associations: parsedList.map{$0.toAssociationTPTWDB()})
                 success = true
             } catch {

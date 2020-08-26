@@ -23,4 +23,8 @@ protocol IRemoteConfigDataSource {
     func loadAssociationTPTW() -> Promise<Array<JSONDecodable>>
     
     func getAssociationTPTWVersion() -> Promise<EntityVersion>
+    
+    func loadPublicWorkChanges(currVersion: Int) -> Promise<Array<JSONDecodable>>
+    
+    func getPublicWorkVersion() -> Promise<EntityVersion>
 }

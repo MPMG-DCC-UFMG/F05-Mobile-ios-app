@@ -20,6 +20,8 @@ class CityRepository: ICityRepository{
     func listCities() -> Results<City> {
         return self.localCityDataSource.listCities()
     }
-    
-    
+
+    func deleteCities() throws {
+        try self.localCityDataSource.deleteCities()
+    }
 }

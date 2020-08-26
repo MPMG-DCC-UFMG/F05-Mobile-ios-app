@@ -21,4 +21,8 @@ class TypeWorkRepository: ITypeWorkRepository {
     func listAllTypeWorks() -> Results<TypeWork> {
         return self.localTypeWorkDataSource.listAllTypeWorks()
     }
+
+    func deleteTypeWorks() throws {
+        try self.localTypeWorkDataSource.deleteTypeWorks()
+    }
 }

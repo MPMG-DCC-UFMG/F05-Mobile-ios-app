@@ -32,7 +32,8 @@ class DownloadWorkStatus: BaseDownloadInfo,Resolving{
         var success = false
         if let parsedList = list as? Array<WorkStatusRemote> {
             do {
-                try self.workStatusRepository.insertWorkStatuses(workStatuses:  parsedList.map{$0.toWorkStatusDB()})
+                try workStatusRepository.deleteWorkStatuses()
+                try workStatusRepository.insertWorkStatuses(workStatuses:  parsedList.map{$0.toWorkStatusDB()})
                 success = true
             } catch {
                 success = false

@@ -20,6 +20,8 @@ class TypePhotoRepository: ITypePhotoRepository {
     func listAllTypePhotos() -> Results<TypePhoto> {
         return self.localTypePhotoDataSource.listAllTypePhotos()
     }
-    
-    
+
+    func deleteTypePhotos() throws {
+        try self.localTypePhotoDataSource.deleteTypePhotos()
+    }
 }

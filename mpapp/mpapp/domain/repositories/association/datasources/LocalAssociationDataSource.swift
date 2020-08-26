@@ -9,5 +9,8 @@ class LocalAssociationDataSource:BaseDataSource<AssociationTPTW>,ILocalAssociati
     func insertAssociations(associations: Array<AssociationTPTW>)throws {
         try self.insertAll(entities: associations)
     }
-        
+
+    func deleteAssociations() throws {
+        try self.deleteAll()
+    }
 }

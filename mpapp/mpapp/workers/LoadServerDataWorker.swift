@@ -9,7 +9,7 @@ class LoadServerDataWorker: ObservableObject{
     func execute(){
         Promise<Void>{
             let downloadCalls: [BaseDownloadInfo] = [DownloadTypeWork(), DownloadTypePhoto(), DownloadCities(),
-                                                     DownloadWorkStatus(), DownloadAssociation()]
+                                                     DownloadWorkStatus(), DownloadAssociation(), DownloadPublicWork()]
             
             self.updateStatus(status: WorkerStatus.RUNNING)
             all(

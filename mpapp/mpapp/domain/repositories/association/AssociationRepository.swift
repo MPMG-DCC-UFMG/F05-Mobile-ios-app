@@ -15,5 +15,8 @@ class AssociationRepository: IAssociationRepository{
     func insertAssociations(associations: Array<AssociationTPTW>) throws {
         try self.localAssociationDataSource.insertAssociations(associations: associations)
     }
-    
+
+    func deleteAssociations() throws {
+        try self.localAssociationDataSource.deleteAssociations()
+    }
 }

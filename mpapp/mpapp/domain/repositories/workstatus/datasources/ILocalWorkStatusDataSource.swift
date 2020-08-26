@@ -8,4 +8,6 @@ protocol ILocalWorkStatusDataSource {
     func insertWorkStatuses(workStatuses: Array<WorkStatus>) throws
     
     func listWorkStatus() -> Results<WorkStatus>
+    
+    func deleteWorkStatuses() throws
 }

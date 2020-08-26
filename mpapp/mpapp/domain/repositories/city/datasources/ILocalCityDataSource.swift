@@ -7,4 +7,6 @@ protocol ILocalCityDataSource {
     func insertCities(cities: Array<City>) throws
     
     func listCities() -> Results<City>
+
+    func deleteCities() throws
 }

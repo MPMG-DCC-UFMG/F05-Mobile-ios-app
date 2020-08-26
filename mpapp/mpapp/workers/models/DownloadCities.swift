@@ -32,6 +32,7 @@ class DownloadCities: BaseDownloadInfo,Resolving{
         var success = false
         if let parsedList = list as? Array<CityRemote> {
             do {
+                try cityRepository.deleteCities()
                 try cityRepository.insertCities(cities: parsedList.map{$0.toCityDB()})
                 success = true
             } catch {

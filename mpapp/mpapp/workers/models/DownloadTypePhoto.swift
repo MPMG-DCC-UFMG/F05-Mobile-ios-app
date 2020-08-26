@@ -32,6 +32,7 @@ class DownloadTypePhoto: BaseDownloadInfo,Resolving{
         var success = false
         if let parsedList = list as? Array<TypePhotoRemote> {
             do {
+                try typePhotoRepository.deleteTypePhotos()
                 try typePhotoRepository.insertTypePhotos(typePhotos:  parsedList.map{$0.toTypePhotoDB()})
                 success = true
             } catch {

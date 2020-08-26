@@ -14,4 +14,8 @@ class LocalCityDataSource: BaseDataSource<City>, ILocalCityDataSource{
     func listCities() -> Results<City> {
         return self.listAll()
     }
+
+    func deleteCities() throws {
+        try self.deleteAll()
+    }
 }

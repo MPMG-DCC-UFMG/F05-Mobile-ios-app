@@ -8,5 +8,7 @@ protocol ILocalTypePhotoDataSource {
     func insertTypePhotos(typePhotos: Array<TypePhoto>) throws
 
     func listAllTypePhotos() -> Results<TypePhoto>
+
+    func deleteTypePhotos() throws
 }
 

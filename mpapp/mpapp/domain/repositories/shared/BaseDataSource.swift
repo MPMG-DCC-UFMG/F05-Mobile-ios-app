@@ -10,9 +10,29 @@ class BaseDataSource<T: Object> {
     internal func insert(entity: T) throws {
         do {
             try self.mpDatabase().write{
-                self.mpDatabase().add(entity)
+                self.mpDatabase().add(entity,update: .modified)
             }
         } catch {
+            throw error
+        }
+    }
+    
+    internal func delete(entity: T) throws{
+        do{
+            try self.mpDatabase().write{
+                self.mpDatabase().delete(entity)
+            }
+        }catch{
+            throw error
+        }
+    }
+    
+    internal func deleteAll() throws{
+        do{
+            try self.mpDatabase().write{
+                self.mpDatabase().delete(self.listAll())
+            }
+        }catch{
             throw error
         }
     }
@@ -20,7 +40,7 @@ class BaseDataSource<T: Object> {
     internal func insertAll(entities: Array<T>) throws {
         do {
            try self.mpDatabase().write{
-               self.mpDatabase().add(entities)
+               self.mpDatabase().add(entities,update: .modified)
            }
        } catch {
            throw error

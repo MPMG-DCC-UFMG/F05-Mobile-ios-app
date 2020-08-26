@@ -32,6 +32,7 @@ class DownloadTypeWork : BaseDownloadInfo,Resolving{
         var success = false
         if let parsedList = list as? Array<TypeWorkRemote> {
             do {
+                try typeWorkRepository.deleteTypeWorks()
                 try typeWorkRepository.insertTypeWorks(typeWorks: parsedList.map{$0.toTypeWorkDB()})
                 success = true
             } catch {

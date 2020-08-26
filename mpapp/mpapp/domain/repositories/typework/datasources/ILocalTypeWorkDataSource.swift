@@ -9,4 +9,6 @@ protocol ILocalTypeWorkDataSource {
     func insertTypeWorks(typeWorks: Array<TypeWork>) throws
 
     func listAllTypeWorks() -> Results<TypeWork>
+
+    func deleteTypeWorks() throws
 }

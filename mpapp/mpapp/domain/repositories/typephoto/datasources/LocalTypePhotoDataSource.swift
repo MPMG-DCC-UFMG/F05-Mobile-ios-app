@@ -14,4 +14,8 @@ class LocalTypePhotoDataSource: BaseDataSource<TypePhoto>,ILocalTypePhotoDataSou
     func listAllTypePhotos() -> Results<TypePhoto> {
         return self.listAll()
     }
+
+    func deleteTypePhotos() throws {
+        try self.deleteAll()
+    }
 }

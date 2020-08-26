@@ -12,6 +12,7 @@ extension Resolver:ResolverRegistering{
         register{CityRepository(localCityDataSource: resolve()) as ICityRepository}
         register{WorkStatusRepository(localWorkStatusDataSource: resolve()) as IWorkStatusRepository}
         register{AssociationRepository(localAssociationDataSource: resolve()) as IAssociationRepository}
+        register{PublicWorkRepository(localPublicWorkDataSource: resolve()) as IPublicWorkRepository}
         
         // LocalDataSources
         register{LocalTypeWorkDataSource() as ILocalTypeWorkDataSource}
@@ -20,6 +21,7 @@ extension Resolver:ResolverRegistering{
         register{LocalCityDataSource() as ILocalCityDataSource}
         register{LocalWorkStatusDataSource() as ILocalWorkStatusDataSource}
         register{LocalAssociationDataSource() as ILocalAssociationDataSource}
+        register{LocalPublicWorkDataSource() as ILocalPublicWorkDataSource}
         
         // RemoteDataSources
         register{RemoteConfigDataSource() as IRemoteConfigDataSource}

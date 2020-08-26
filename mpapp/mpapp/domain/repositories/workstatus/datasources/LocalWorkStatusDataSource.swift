@@ -15,5 +15,7 @@ class LocalWorkStatusDataSource: BaseDataSource<WorkStatus>, ILocalWorkStatusDat
         return self.listAll()
     }
     
-    
+    func deleteWorkStatuses() throws{
+        try self.deleteAll()
+    }
 }

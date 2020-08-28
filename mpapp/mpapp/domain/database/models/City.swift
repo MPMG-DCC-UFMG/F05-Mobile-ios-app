@@ -12,14 +12,5 @@ class City: Object,Identifiable{
     override static func primaryKey() -> String? {
         return "codigoIbge"
     }
-    
-    static func fromValues(codigoIbge: String,name: String, latitude:Double, longitude:Double,uf:String) -> City{
-        let city = City()
-        city.codigoIbge = codigoIbge
-        city.name = name
-        city.latitude = latitude
-        city.longitude = longitude
-        city.uf = uf
-        return city
-    }
+
 }

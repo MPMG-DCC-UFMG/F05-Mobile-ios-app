@@ -10,5 +10,6 @@ class ColorProvider{
     static let grey4 = Color("grey4")
     static let grey5 = Color("grey5")
     static let greenTrena = Color("greenTrena")
+    static let red = Color("red")
     static let white = Color("white")
 }

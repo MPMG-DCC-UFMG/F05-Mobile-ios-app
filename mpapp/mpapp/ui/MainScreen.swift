@@ -1,12 +1,12 @@
 import SwiftUI
 
-struct MainView: View {
+struct MainScreen: View {
     @State var isActive:Bool = false
     
     var body: some View {
         VStack {
             if self.isActive {
-                LoginView()
+                LoginScreen()
             } else {
                 SplashView()
             }
@@ -20,8 +20,8 @@ struct MainView: View {
     }
 }
 
-struct MainView_Previews: PreviewProvider {
+struct MainScreen_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainScreen()
     }
 }

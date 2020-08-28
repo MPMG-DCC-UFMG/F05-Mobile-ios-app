@@ -1,6 +1,6 @@
 import Foundation
-import Promises
 import Alamofire
+import PromiseKit
 
 @propertyWrapper
 struct GET {
@@ -13,13 +13,13 @@ struct GET {
     
     var wrappedValue : (_ queryParameters: Parameters?) -> Promise<Data> {
         return {queryParameters in
-            Promise(on: .global()){ fulfill, reject in
+            Promise { seal in
                 AF.request(Config.BASE_URL.appendingPathComponent(self.callUrl),parameters: queryParameters, headers: self.headers).responseData { response in
                     switch response.result {
                     case .success(let data):
-                        fulfill(data)
+                        seal.fulfill(data)
                     case .failure(let error):
-                        reject(error)
+                        seal.reject(error)
                     }
                 }
             }

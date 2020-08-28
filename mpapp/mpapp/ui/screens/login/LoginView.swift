@@ -1,6 +1,10 @@
 import SwiftUI
+import Resolver
 
 struct LoginView: View {
+    
+    @ObservedObject private var loginViewModel: LoginViewModel = Resolver.resolve()
+    
     var body: some View {
         ZStack{
             ColorProvider.darkBackground.edgesIgnoringSafeArea(.all)
@@ -10,29 +14,34 @@ struct LoginView: View {
                 TrenaPasswordField(label: "Senha", placeHolder: "Sua senha").padding(.top,12)
                 
                 TrenaButton(label: "Entrar") {
-                    print("Clicado")
+                    self.login()
                 }.padding(.top,25)
                 
                 HStack{
                     Text("Não tem conta?").h3()
-                    Button(action: {}){
+                    Button(action: login){
                         Text("Cadastre aqui").h3(color: ColorProvider.greenTrena)
                     }
                 }.padding(.top,20)
                 HStack{
                     TrenaDivider()
                     Text("se preferir")
-                    .scaledFont(name: FontProvider.nunitoItalic, size: 14)
+                        .scaledFont(name: FontProvider.nunitoItalic, size: 14)
                     TrenaDivider()
                 }.foregroundColor(Color.white).padding(.top,10)
-                SignInButton(action: {},label: "Entre com Google", image: "google_logo",backgroundColor: ColorProvider.white, textColor: ColorProvider.grey2)
-                SignInButton(action: {},label: "Entre com Facebook", image: "facebook_logo",backgroundColor: ColorProvider.blueFacebook, textColor: ColorProvider.white)
-                .padding(.top,10)
-                SignInButton(action: {},label: "Entre com Twitter", image: "twitter_logo",backgroundColor: ColorProvider.blueTwitter, textColor: ColorProvider.white)
-                .padding(.top,10)
+                SignInButton(action: login,label: "Entre com Google", image: "google_logo",backgroundColor: ColorProvider.white, textColor: ColorProvider.grey2)
+                SignInButton(action: login,label: "Entre com Facebook", image: "facebook_logo",backgroundColor: ColorProvider.blueFacebook, textColor: ColorProvider.white)
+                    .padding(.top,10)
+                SignInButton(action: login,label: "Entre com Twitter", image: "twitter_logo",backgroundColor: ColorProvider.blueTwitter, textColor: ColorProvider.white)
+                    .padding(.top,10)
                 Spacer()
             }.padding(.horizontal, 30)
-        }
+        }.navigationBarTitle("")
+            .navigationBarHidden(true)
+    }
+    
+    private func login(){
+        self.loginViewModel.login()
     }
 }
 

@@ -1,68 +1,80 @@
 import Foundation
-import Promises
+import RxSwift
+import PromiseKit
+import Gloss
 
-class LoadServerDataWorker: ObservableObject{
+class LoadServerDataWorker{
     
-    @Published var workerStatus: WorkerStatus = WorkerStatus.RUNNING
-    @Published var workerMessage: String = ""
+    let status = PublishSubject<(WorkerStatus,String)>()
+    
+    private var workerStatus: WorkerStatus = WorkerStatus.RUNNING
+    private var workerMessage: String = "Conectando ao servidor..."
     
     func execute(){
-        Promise<Void>{
-            let downloadCalls: [BaseDownloadInfo] = [DownloadTypeWork(), DownloadTypePhoto(), DownloadCities(),
-                                                     DownloadWorkStatus(), DownloadAssociation(), DownloadPublicWork()]
-            
-            self.updateStatus(status: WorkerStatus.RUNNING)
-            all(
-                downloadCalls.map{self.downloadData(downloadInfo: $0)}
-            ).then{ results in
-                if(results.allSatisfy({$0})){
-                    self.updateStatus(status: WorkerStatus.SUCCESS)
+        let downloadCalls: [BaseDownloadInfo] = [DownloadTypeWork(), DownloadTypePhoto(), DownloadCities(),
+                                                 DownloadWorkStatus(), DownloadAssociation(), DownloadPublicWork()]
+        self.updateStatus(status: WorkerStatus.RUNNING,message: "Conectando ao servidor...")
+        when(resolved: downloadCalls.map{self.downloadData(downloadInfo: $0)})
+            .done{result in
+                if(result.allSatisfy({$0.isFulfilled})){
+                    self.updateStatus(status: WorkerStatus.SUCCESS,message: "Download completo")
                 }else{
-                    self.updateStatus(status: WorkerStatus.FAILED)
+                    self.updateStatus(status: WorkerStatus.FAILED,message: "Falha ao baixar dados")
                 }
+        }
+    }
+    
+    
+    private func serverVersionChanged(serverVersion: Int,currentVersion: Int) -> Promise<Bool>{
+        return Promise<Bool> {seal in
+            seal.fulfill(serverVersion > currentVersion)
+        }
+    }
+    
+    private func downloadFromServer(downloadInfo: BaseDownloadInfo,hasServerChanged: Bool) -> Promise<Array<JSONDecodable>>{
+        if hasServerChanged{
+            self.updateProgress(message: "Baixando dados de: \(downloadInfo.name())")
+            return downloadInfo.loadInfo()
+        }else{
+            return Promise<Array<JSONDecodable>>{ seal in
+                seal.fulfill([])
             }
-        }.catch{_ in
-            self.updateStatus(status: WorkerStatus.FAILED)
         }
     }
     
     private func downloadData(downloadInfo: BaseDownloadInfo) -> Promise<Bool>{
-        return Promise{ fulfill, _ in
+        self.updateProgress(message: "Verificando versão: \(downloadInfo.name())")
+        return Promise<Bool>{ seal in
             let currentVersion = downloadInfo.currentVersion()
-            let serverVersionResult = downloadInfo.serverVersion()
-            
             self.updateProgress(message: "Verificando versão: \(downloadInfo.name())")
-            serverVersionResult.then {serverVersion in
-                if(serverVersion.version! > currentVersion){
-                    self.updateProgress(message: "Atualizando: \(downloadInfo.name())")
-                    downloadInfo.loadInfo().then{ dataFromServer in
-                        let onDatabase = downloadInfo.onSuccess(list: dataFromServer)
-                        if(!onDatabase){
-                            self.updateProgress(message: "Falha ao baixar: \(downloadInfo.name())")
-                        }else{
-                            downloadInfo.updateCurrentVersion(serverVersion: serverVersion.version!)
-                        }
-                        fulfill(onDatabase)
-                    }.catch{_ in
-                        fulfill(false)
-                    }
-                }else{
-                    fulfill(true)
-                }
+            firstly{
+                downloadInfo.serverVersion()
+            }.then{serverVersion in
+                self.serverVersionChanged(serverVersion: serverVersion.version!, currentVersion: currentVersion)
+            }.then{hasServerChanged in
+                self.downloadFromServer(downloadInfo: downloadInfo, hasServerChanged: hasServerChanged)
+            }.done{
+                dataFromServer in
+                seal.fulfill(downloadInfo.onSuccess(list: dataFromServer))
+            }.catch{ error in
+                self.updateProgress(message: "Falha ao baixar: \(downloadInfo.name())")
+                seal.fulfill(false)
             }
         }
     }
     
     private func updateProgress(message: String){
-        DispatchQueue.main.async {
-            self.workerMessage = message
-        }
+        self.workerMessage = message
+        notify()
     }
     
-    private func updateStatus(status: WorkerStatus){
-        DispatchQueue.main.async {
-            self.workerStatus = status
-        }
+    private func updateStatus(status: WorkerStatus, message:String = ""){
+        self.workerStatus = status
+        self.workerMessage = message
+        notify()
     }
     
+    private func notify(){
+        self.status.onNext((self.workerStatus, self.workerMessage))
+    }
 }

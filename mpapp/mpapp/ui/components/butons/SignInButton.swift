@@ -13,7 +13,7 @@ struct SignInButton: View {
             HStack {
                 Image(image)
                     .renderingMode(.original)
-                .resizable()
+                    .resizable()
                     .scaledToFit()
                     .frame(width: 24, height: 24)
                 Text(label)

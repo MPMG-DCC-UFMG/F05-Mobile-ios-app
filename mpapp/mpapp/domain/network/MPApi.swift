@@ -1,6 +1,6 @@
 import Foundation
-import Promises
 import Alamofire
+import PromiseKit
 
 struct MPApi{
     

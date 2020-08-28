@@ -8,7 +8,7 @@ extension View {
     }
     
     func h1(color: Color = ColorProvider.white) -> some View {
-         return self.modifier(FirstHeader(textColor: color))
+        return self.modifier(FirstHeader(textColor: color))
     }
     
     func h2(color: Color = ColorProvider.white) -> some View{
@@ -31,8 +31,22 @@ extension View {
         return self.modifier(ButtonTextStyle(textColor: color))
     }
     
-    func inputField(editing: Bool=false) -> some View{
+    func inputField(editing: Bool = false) -> some View{
         return self.modifier(InputField(editing: editing))
     }
     
+    func buttonStyle(_ enabled: Bool = true, style: ButtonStyleEnum = .button1) -> some View{
+        switch style {
+        case .button2:
+            return self.modifier(ButtonStyle(enabled: enabled,
+                                             buttonEnabled: ColorProvider.grey2,
+                                             buttonTextEnabled: ColorProvider.greenTrena))
+        case .button3:
+            return self.modifier(ButtonStyle(enabled: enabled,
+                                             buttonEnabled: ColorProvider.grey2,
+                                             buttonTextEnabled: ColorProvider.red))
+        default:
+            return self.modifier(ButtonStyle(enabled: enabled))
+        }
+    }
 }

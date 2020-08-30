@@ -4,7 +4,7 @@ class LoginViewModel: ObservableObject {
     
     @Published var logged = false
     
-    func login(){
+    func toggleLogin(){
         self.logged.toggle()
     }
 }

@@ -1,4 +1,5 @@
 import Foundation
+import RealmSwift
 
 protocol ILocalPublicWorkDataSource{
     
@@ -9,4 +10,6 @@ protocol ILocalPublicWorkDataSource{
     func insertPublicWorks(publicWorks: Array<PublicWork>) throws
     
     func deletePublicWorkById(publicWorkId: String) throws
+    
+    func listAllPublicWorks() -> Results<PublicWork>
 }

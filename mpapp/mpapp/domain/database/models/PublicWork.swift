@@ -16,4 +16,11 @@ class PublicWork: Object,Identifiable{
         return "id"
     }
 
+    func formatedAddress() -> String{
+        if(address == nil){
+            return ""
+        }else{
+            return "\(address?.street ?? ""), \(address?.number ?? "") - \(address?.neighborhood ?? "") , \(address?.city ?? "") - \(address?.cep ?? "")"
+        }
+    }
 }

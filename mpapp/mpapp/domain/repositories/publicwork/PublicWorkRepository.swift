@@ -1,4 +1,5 @@
 import Foundation
+import RealmSwift
 
 class PublicWorkRepository: IPublicWorkRepository{
     
@@ -22,5 +23,9 @@ class PublicWorkRepository: IPublicWorkRepository{
     
     func deletePublicWorkById(publicWorkId: String) throws {
         try self.localPublicWorkDataSource.deletePublicWorkById(publicWorkId: publicWorkId)
+    }
+    
+    func listAllPublicWorks() -> Results<PublicWork>{
+        return self.localPublicWorkDataSource.listAllPublicWorks()
     }
 }

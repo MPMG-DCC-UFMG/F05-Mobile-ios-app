@@ -1,4 +1,5 @@
 import Foundation
+import RealmSwift
 
 class LocalPublicWorkDataSource: BaseDataSource<PublicWork>, ILocalPublicWorkDataSource {
     
@@ -27,5 +28,9 @@ class LocalPublicWorkDataSource: BaseDataSource<PublicWork>, ILocalPublicWorkDat
         try! self.mpDatabase().write{
             self.mpDatabase().delete(address)
         }
+    }
+    
+    func listAllPublicWorks() -> Results<PublicWork>{
+        return self.listAll()
     }
 }

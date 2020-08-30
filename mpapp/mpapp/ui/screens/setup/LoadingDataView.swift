@@ -18,13 +18,17 @@ struct LoadingDataView: View {
                         self.startDownload()
                     }
                     TrenaButton(label: "Continuar",style: .button3) {
-                        
+                        self.moveForward()
                     }.padding(.vertical,15)
                 }
             }.padding(.horizontal,20)
         }.onAppear {
             self.startDownload()
         }
+    }
+    
+    private func moveForward(){
+        configurationViewModel.moveForward()
     }
     
     private func startDownload(){

@@ -14,7 +14,7 @@ struct SecondHeader: ViewModifier {
     var textColor: Color
     func body(content: Content) -> some View {
         content
-            .scaledFont(name: FontProvider.gothamRoundedBook, size: 16)
+            .scaledFont(name: FontProvider.gothamRoundedMedium, size: 16)
         .foregroundColor(textColor)
     }
 }

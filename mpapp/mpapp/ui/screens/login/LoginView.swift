@@ -41,7 +41,7 @@ struct LoginView: View {
     }
     
     private func login(){
-        self.loginViewModel.login()
+        self.loginViewModel.toggleLogin()
     }
 }
 

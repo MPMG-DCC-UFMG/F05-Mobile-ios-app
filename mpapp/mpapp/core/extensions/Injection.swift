@@ -7,6 +7,7 @@ extension Resolver:ResolverRegistering{
         register{TypeWorkViewModel(typeWorkRepository: resolve())}.scope(cached)
         register{LoginViewModel()}.scope(cached)
         register{ConfigurationViewModel()}.scope(cached)
+        register{PublicWorkViewModel(publicWorkRepository: resolve())}.scope(cached)
         
         // Repositories
         register{TypeWorkRepository(localTypeWorkDataSource: resolve()) as ITypeWorkRepository}.scope(application)

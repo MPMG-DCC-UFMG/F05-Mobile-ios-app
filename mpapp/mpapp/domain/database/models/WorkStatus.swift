@@ -9,12 +9,5 @@ class WorkStatus: Object,Identifiable{
     override static func primaryKey() -> String? {
         return "flag"
     }
-    
-    static func fromValues(flag: Int,name: String, comment:String?) -> WorkStatus{
-        let workStatus = WorkStatus()
-        workStatus.flag = flag
-        workStatus.name = name
-        workStatus.comment = comment
-        return workStatus
-    }
+
 }

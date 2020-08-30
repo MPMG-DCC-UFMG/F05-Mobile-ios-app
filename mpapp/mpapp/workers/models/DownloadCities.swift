@@ -1,7 +1,7 @@
 import Foundation
 import Resolver
-import Promises
 import Gloss
+import PromiseKit
 
 class DownloadCities: BaseDownloadInfo,Resolving{
     

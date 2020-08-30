@@ -15,18 +15,12 @@ class PublicWork: Object,Identifiable{
     override static func primaryKey() -> String? {
         return "id"
     }
-    
-    static func fromValues(id: String,name: String, idCollect:String?, idAddress:String,
-                           typeWorkFlag:Int, toSend:Bool, userStatusFlag:Int, address: Address) -> PublicWork{
-        let publicWork = PublicWork()
-        publicWork.id = id
-        publicWork.idAddress = idAddress
-        publicWork.name = name
-        publicWork.idCollect = idCollect
-        publicWork.typeWorkFlag = typeWorkFlag
-        publicWork.toSend = toSend
-        publicWork.userStatusFlag = userStatusFlag
-        publicWork.address = address
-        return publicWork
+
+    func formatedAddress() -> String{
+        if(address == nil){
+            return ""
+        }else{
+            return "\(address?.street ?? ""), \(address?.number ?? "") - \(address?.neighborhood ?? "") , \(address?.city ?? "") - \(address?.cep ?? "")"
+        }
     }
 }

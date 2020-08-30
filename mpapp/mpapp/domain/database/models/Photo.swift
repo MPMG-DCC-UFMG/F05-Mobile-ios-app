@@ -15,20 +15,5 @@ class Photo: Object,Identifiable{
     override static func primaryKey() -> String? {
         return "id"
     }
-    
-    static func fromValues(id: String, idCollect: String, filepath: String,
-                           type:String, isSent: Bool, latitude: Double,
-                           longitude: Double, timestamp: Int64,comment: String?) -> Photo{
-        let photo = Photo()
-        photo.id = id
-        photo.idCollect = idCollect
-        photo.filepath = filepath
-        photo.type = type
-        photo.isSent = isSent
-        photo.latitude = latitude
-        photo.longitude = longitude
-        photo.timestamp = timestamp
-        photo.comment = comment
-        return photo
-    }
+
 }

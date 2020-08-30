@@ -8,21 +8,9 @@ class Collect: Object,Identifiable{
     @objc dynamic var date = Date().currentTimeMillis()
     @objc dynamic var isSent = false
     @objc dynamic var comments: String? = nil
-    
+    @objc dynamic var publicWorkStatus = 0
     
     override static func primaryKey() -> String? {
         return "id"
-    }
-    
-    static func fromValues(id: String, idUser: String, idPublicWork: String,
-                           date:Int64, isSent: Bool, comments: String?) -> Collect{
-        let collect = Collect()
-        collect.id = id
-        collect.idUser = idUser
-        collect.idPublicWork = idPublicWork
-        collect.date = date
-        collect.isSent = isSent
-        collect.comments = comments
-        return collect
     }
 }

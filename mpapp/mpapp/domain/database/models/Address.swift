@@ -18,20 +18,4 @@ class Address: Object,Identifiable {
         return "id"
     }
     
-    static func fromValues(id: String,idPublicWork: String,street: String,
-                           neighborhood: String,number: String,latitude: Double,
-                           longitude: Double, city: String, state: String, cep: String) -> Address{
-        let address = Address()
-        address.id = id
-        address.idPublicWork = idPublicWork
-        address.street = street
-        address.neighborhood = neighborhood
-        address.number = number
-        address.latitude = latitude
-        address.longitude = longitude
-        address.city = city
-        address.state = state
-        address.cep = cep
-        return address
-    }
 }

@@ -10,12 +10,5 @@ class TypePhoto: Object,Identifiable{
     override static func primaryKey() -> String? {
         return "flag"
     }
-    
-    static func fromValues(flag: Int,name: String, comment:String?) -> TypePhoto{
-        let typePhoto = TypePhoto()
-        typePhoto.flag = flag
-        typePhoto.name = name
-        typePhoto.comment = comment
-        return typePhoto
-    }
+
 }

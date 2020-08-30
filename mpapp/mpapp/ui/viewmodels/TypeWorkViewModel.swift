@@ -17,6 +17,6 @@ class TypeWorkViewModel: ObservableObject{
     func fetchTypeWorks() {
         Observable.array(from: typeWorkRepository.listAllTypeWorks()).subscribe(onNext:{ array in
             self.typeworks = array
-        })
+            }).dispose()
     }
 }

@@ -1,6 +1,6 @@
 import Foundation
-import Promises
 import Gloss
+import PromiseKit
 
 class ConfigRepository: IConfigRepository {
     

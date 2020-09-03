@@ -2,17 +2,32 @@ import SwiftUI
 
 struct HomeScreen: View {
     
-    @State private var onList = false
+    @State private var navigate = HomeNavigation.home
     
     var body: some View {
         ZStack{
-            if onList{
-                PublicWorkListView()
-            }else{
-                HomeView(onList: $onList)
-            }
-            
+            self.containedView().transition(AnyTransition.opacity)
+            .animation(.default)
         }
+    }
+    
+    private func containedView() -> AnyView{
+        switch navigate{
+        case .publicWorkList:
+            return AnyView(PublicWorkListScreen(onHomeClicked:{
+                self.navigateTo(HomeNavigation.home)
+            }))
+        case .addPublicWork:
+            return AnyView(PublicWorkAddView(onCancelClicked:{
+                self.navigateTo(HomeNavigation.home)
+            }))
+        default:
+            return AnyView(HomeView(navigate: $navigate))
+        }
+    }
+    
+    private func navigateTo(_ to: HomeNavigation){
+        self.navigate = to
     }
 }
 

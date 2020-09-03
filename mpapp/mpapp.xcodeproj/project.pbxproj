@@ -15,6 +15,8 @@
 		3847EBBA24FAA4D700B2C4A5 /* PublicWorkListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3847EBB924FAA4D700B2C4A5 /* PublicWorkListItem.swift */; };
 		3847EBBC24FAA97400B2C4A5 /* PublicWorkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3847EBBB24FAA97400B2C4A5 /* PublicWorkViewModel.swift */; };
 		3847EBC124FAACDD00B2C4A5 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3847EBC024FAACDD00B2C4A5 /* HomeScreen.swift */; };
+		38481E4A25006358004D9E07 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38481E4925006358004D9E07 /* TabBarItem.swift */; };
+		38481E4C2500677B004D9E07 /* TrenaTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38481E4B2500677B004D9E07 /* TrenaTabBar.swift */; };
 		386406A624EF4EBE000B9345 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386406A524EF4EBE000B9345 /* Injection.swift */; };
 		386406AA24F01584000B9345 /* IConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386406A924F01584000B9345 /* IConfigRepository.swift */; };
 		386406AC24F015A2000B9345 /* ILocalConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386406AB24F015A2000B9345 /* ILocalConfigDataSource.swift */; };
@@ -109,6 +111,8 @@
 		3890091624EEF2AA00954A95 /* BaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890091524EEF2AA00954A95 /* BaseDataSource.swift */; };
 		3890091824EEF7D600954A95 /* TypeWorkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890091724EEF7D600954A95 /* TypeWorkRepository.swift */; };
 		3890091B24EF111600954A95 /* TypeWorkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890091A24EF111600954A95 /* TypeWorkViewModel.swift */; };
+		3899CD7724FCE95200FC078F /* PublicWorkAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CD7624FCE95200FC078F /* PublicWorkAddView.swift */; };
+		3899CD7B24FCEDA100FC078F /* HomeNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CD7A24FCEDA100FC078F /* HomeNavigation.swift */; };
 		38BC8D4324F7C270006BCE48 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BC8D4224F7C270006BCE48 /* LoginScreen.swift */; };
 		38BC8D4524F7C59E006BCE48 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BC8D4424F7C59E006BCE48 /* LoginViewModel.swift */; };
 		38BC8D4724F7D060006BCE48 /* ConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BC8D4624F7D060006BCE48 /* ConfigurationViewModel.swift */; };
@@ -117,6 +121,10 @@
 		38C2E01F24F70E3200121039 /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C2E01E24F70E3200121039 /* SignInButton.swift */; };
 		38C2E02124F718A400121039 /* TrenaDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C2E02024F718A400121039 /* TrenaDivider.swift */; };
 		38C2E02324F7191600121039 /* TrenaPasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C2E02224F7191600121039 /* TrenaPasswordField.swift */; };
+		38CF10C624FE5EA900040FE1 /* TrenaClickableField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CF10C524FE5EA900040FE1 /* TrenaClickableField.swift */; };
+		38CF10C824FE67CA00040FE1 /* TrenaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CF10C724FE67CA00040FE1 /* TrenaPicker.swift */; };
+		38CF10CF24FED5C500040FE1 /* PublicWorkListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CF10CE24FED5C500040FE1 /* PublicWorkListScreen.swift */; };
+		38CF10D124FED7A100040FE1 /* PublicWorkFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CF10D024FED7A100040FE1 /* PublicWorkFilterView.swift */; };
 		75C65DF569EB8CC647475CE1 /* Pods_mpappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5DDDCE81F7FFAB250C301B /* Pods_mpappTests.framework */; };
 		BD2FBF67078057B714497FA0 /* Pods_mpapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E8640732BB2C99E777F2CE /* Pods_mpapp.framework */; };
 		FEB8375A8B70B6FF1F11A521 /* Pods_mpapp_mpappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 715E1190EE99521D2C21BBAE /* Pods_mpapp_mpappUITests.framework */; };
@@ -149,6 +157,8 @@
 		3847EBB924FAA4D700B2C4A5 /* PublicWorkListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkListItem.swift; sourceTree = "<group>"; };
 		3847EBBB24FAA97400B2C4A5 /* PublicWorkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkViewModel.swift; sourceTree = "<group>"; };
 		3847EBC024FAACDD00B2C4A5 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		38481E4925006358004D9E07 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		38481E4B2500677B004D9E07 /* TrenaTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaTabBar.swift; sourceTree = "<group>"; };
 		386406A524EF4EBE000B9345 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		386406A924F01584000B9345 /* IConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IConfigRepository.swift; sourceTree = "<group>"; };
 		386406AB24F015A2000B9345 /* ILocalConfigDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILocalConfigDataSource.swift; sourceTree = "<group>"; };
@@ -249,6 +259,8 @@
 		3890091524EEF2AA00954A95 /* BaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
 		3890091724EEF7D600954A95 /* TypeWorkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeWorkRepository.swift; sourceTree = "<group>"; };
 		3890091A24EF111600954A95 /* TypeWorkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeWorkViewModel.swift; sourceTree = "<group>"; };
+		3899CD7624FCE95200FC078F /* PublicWorkAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkAddView.swift; sourceTree = "<group>"; };
+		3899CD7A24FCEDA100FC078F /* HomeNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigation.swift; sourceTree = "<group>"; };
 		38BC8D4224F7C270006BCE48 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		38BC8D4424F7C59E006BCE48 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		38BC8D4624F7D060006BCE48 /* ConfigurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewModel.swift; sourceTree = "<group>"; };
@@ -257,6 +269,10 @@
 		38C2E01E24F70E3200121039 /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
 		38C2E02024F718A400121039 /* TrenaDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaDivider.swift; sourceTree = "<group>"; };
 		38C2E02224F7191600121039 /* TrenaPasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaPasswordField.swift; sourceTree = "<group>"; };
+		38CF10C524FE5EA900040FE1 /* TrenaClickableField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaClickableField.swift; sourceTree = "<group>"; };
+		38CF10C724FE67CA00040FE1 /* TrenaPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaPicker.swift; sourceTree = "<group>"; };
+		38CF10CE24FED5C500040FE1 /* PublicWorkListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkListScreen.swift; sourceTree = "<group>"; };
+		38CF10D024FED7A100040FE1 /* PublicWorkFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkFilterView.swift; sourceTree = "<group>"; };
 		40E8640732BB2C99E777F2CE /* Pods_mpapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mpapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		715E1190EE99521D2C21BBAE /* Pods_mpapp_mpappUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mpapp_mpappUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7934E0434C766D9238022634 /* Pods-mpapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mpapp.debug.xcconfig"; path = "Target Support Files/Pods-mpapp/Pods-mpapp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -298,7 +314,8 @@
 		3847EBA624F97F9700B2C4A5 /* home */ = {
 			isa = PBXGroup;
 			children = (
-				3847EBA724F97FAB00B2C4A5 /* HomeView.swift */,
+				3899CD7924FCED8100FC078F /* views */,
+				3899CD7824FCED5400FC078F /* models */,
 				3847EBC024FAACDD00B2C4A5 /* HomeScreen.swift */,
 			);
 			path = home;
@@ -308,6 +325,8 @@
 			isa = PBXGroup;
 			children = (
 				38C2E02024F718A400121039 /* TrenaDivider.swift */,
+				38CF10C724FE67CA00040FE1 /* TrenaPicker.swift */,
+				38481E4B2500677B004D9E07 /* TrenaTabBar.swift */,
 			);
 			path = misc;
 			sourceTree = "<group>";
@@ -315,7 +334,8 @@
 		3847EBAE24FA7C8900B2C4A5 /* publicwork */ = {
 			isa = PBXGroup;
 			children = (
-				3847EBAF24FA7CA000B2C4A5 /* PublicWorkListView.swift */,
+				38CF10CD24FED5B300040FE1 /* screens */,
+				38CF10C924FEBCED00040FE1 /* views */,
 			);
 			path = publicwork;
 			sourceTree = "<group>";
@@ -324,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				3847EBB924FAA4D700B2C4A5 /* PublicWorkListItem.swift */,
+				38481E4925006358004D9E07 /* TabBarItem.swift */,
 			);
 			path = items;
 			sourceTree = "<group>";
@@ -783,6 +804,22 @@
 			path = viewmodels;
 			sourceTree = "<group>";
 		};
+		3899CD7824FCED5400FC078F /* models */ = {
+			isa = PBXGroup;
+			children = (
+				3899CD7A24FCEDA100FC078F /* HomeNavigation.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		3899CD7924FCED8100FC078F /* views */ = {
+			isa = PBXGroup;
+			children = (
+				3847EBA724F97FAB00B2C4A5 /* HomeView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		38C2E02424F7192100121039 /* butons */ = {
 			isa = PBXGroup;
 			children = (
@@ -799,8 +836,27 @@
 				386406D324F13106000B9345 /* TrenaTextField.swift */,
 				38C2E02224F7191600121039 /* TrenaPasswordField.swift */,
 				3847EBB124FA7E0800B2C4A5 /* SearchField.swift */,
+				38CF10C524FE5EA900040FE1 /* TrenaClickableField.swift */,
 			);
 			path = input;
+			sourceTree = "<group>";
+		};
+		38CF10C924FEBCED00040FE1 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				3847EBAF24FA7CA000B2C4A5 /* PublicWorkListView.swift */,
+				3899CD7624FCE95200FC078F /* PublicWorkAddView.swift */,
+				38CF10D024FED7A100040FE1 /* PublicWorkFilterView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		38CF10CD24FED5B300040FE1 /* screens */ = {
+			isa = PBXGroup;
+			children = (
+				38CF10CE24FED5C500040FE1 /* PublicWorkListScreen.swift */,
+			);
+			path = screens;
 			sourceTree = "<group>";
 		};
 		A9E9EE3A53E9F081451C2713 /* Pods */ = {
@@ -1077,6 +1133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38C2E02124F718A400121039 /* TrenaDivider.swift in Sources */,
+				3899CD7B24FCEDA100FC078F /* HomeNavigation.swift in Sources */,
 				3864074A24F5594C000B9345 /* ICityRepository.swift in Sources */,
 				3847EBAA24F97FE400B2C4A5 /* LoadingDataScreen.swift in Sources */,
 				38C2E02324F7191600121039 /* TrenaPasswordField.swift in Sources */,
@@ -1088,6 +1145,7 @@
 				3864077C24F5F2DE000B9345 /* DownloadPublicWork.swift in Sources */,
 				386406AC24F015A2000B9345 /* ILocalConfigDataSource.swift in Sources */,
 				3890090F24EEF0C000954A95 /* ITypeWorkRepository.swift in Sources */,
+				38CF10CF24FED5C500040FE1 /* PublicWorkListScreen.swift in Sources */,
 				3890091824EEF7D600954A95 /* TypeWorkRepository.swift in Sources */,
 				3847EBBC24FAA97400B2C4A5 /* PublicWorkViewModel.swift in Sources */,
 				3847EBA824F97FAB00B2C4A5 /* HomeView.swift in Sources */,
@@ -1110,6 +1168,7 @@
 				3864074824F5593C000B9345 /* ILocalCityDataSource.swift in Sources */,
 				3864077F24F69DE2000B9345 /* Headers.swift in Sources */,
 				386406B024F016B2000B9345 /* Constants.swift in Sources */,
+				38CF10D124FED7A100040FE1 /* PublicWorkFilterView.swift in Sources */,
 				3864072A24F534AC000B9345 /* TypePhoto.swift in Sources */,
 				3890090424EEEA8000954A95 /* MPDatabase.swift in Sources */,
 				3864075224F56162000B9345 /* WorkStatusRemote.swift in Sources */,
@@ -1121,6 +1180,7 @@
 				3864073624F54E81000B9345 /* TypePhotoRemote.swift in Sources */,
 				3864076624F56874000B9345 /* ILocalAssociationDataSource.swift in Sources */,
 				3864071324F3F1B5000B9345 /* DownloadTypeWork.swift in Sources */,
+				38481E4C2500677B004D9E07 /* TrenaTabBar.swift in Sources */,
 				3864072C24F535D7000B9345 /* Photo.swift in Sources */,
 				3864073424F54C7F000B9345 /* AssociationTPTW.swift in Sources */,
 				3864071D24F42C3B000B9345 /* LoadingDataView.swift in Sources */,
@@ -1137,8 +1197,10 @@
 				3864070F24F3E6C7000B9345 /* BaseDownloadInfo.swift in Sources */,
 				3864075E24F56492000B9345 /* DownloadWorkStatus.swift in Sources */,
 				3864073024F538D3000B9345 /* Collect.swift in Sources */,
+				38481E4A25006358004D9E07 /* TabBarItem.swift in Sources */,
 				3847EBBA24FAA4D700B2C4A5 /* PublicWorkListItem.swift in Sources */,
 				3864074C24F55966000B9345 /* LocalCityDataSource.swift in Sources */,
+				38CF10C624FE5EA900040FE1 /* TrenaClickableField.swift in Sources */,
 				3864077324F58E0D000B9345 /* IPublicWorkRepository.swift in Sources */,
 				3847EBB024FA7CA000B2C4A5 /* PublicWorkListView.swift in Sources */,
 				3864077024F58B0F000B9345 /* AddressRemote.swift in Sources */,
@@ -1149,10 +1211,12 @@
 				3864078624F69F68000B9345 /* LoginView.swift in Sources */,
 				3864075724F561D5000B9345 /* IWorkStatusRepository.swift in Sources */,
 				3864076C24F586E9000B9345 /* DownloadAssociation.swift in Sources */,
+				3899CD7724FCE95200FC078F /* PublicWorkAddView.swift in Sources */,
 				3864075C24F561F7000B9345 /* LocalWorkStatusDataSource.swift in Sources */,
 				386406C524F04514000B9345 /* SplashView.swift in Sources */,
 				386406A624EF4EBE000B9345 /* Injection.swift in Sources */,
 				3864077824F5929C000B9345 /* LocalPublicWorkDataSource.swift in Sources */,
+				38CF10C824FE67CA00040FE1 /* TrenaPicker.swift in Sources */,
 				3890091324EEF17200954A95 /* LocalTypeWorkDataSource.swift in Sources */,
 				3890091B24EF111600954A95 /* TypeWorkViewModel.swift in Sources */,
 				38BC8D4724F7D060006BCE48 /* ConfigurationViewModel.swift in Sources */,

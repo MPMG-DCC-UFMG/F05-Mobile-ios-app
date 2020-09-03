@@ -4,15 +4,9 @@ struct TrenaPasswordField: View {
     var label: String
     var placeHolder: String
     
-    @State var input = ""
+    @Binding var input :String
     @State private var hide = true
-    
-    init(_ defaultValue: String = "", label: String, placeHolder: String) {
-        _input = State(initialValue: defaultValue)
-        self.label = label
-        self.placeHolder = placeHolder
-    }
-    
+
     var body: some View {
         VStack(alignment: .leading){
             Text(label.uppercased())
@@ -42,7 +36,8 @@ struct TrenaPasswordField: View {
 }
 
 struct TrenaPasswordField_Previews: PreviewProvider {
+    @State static var input = "Oi"
     static var previews: some View {
-        TrenaPasswordField("Oi", label: "Email", placeHolder: "teste")
+        TrenaPasswordField(label: "Email", placeHolder: "teste", input: $input)
     }
 }

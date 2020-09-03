@@ -7,7 +7,7 @@ struct LoadingDataScreen: View {
         
     var body: some View {
         VStack{
-            if configurationViewModel.workerStatus == WorkerStatus.SUCCESS{
+            if configurationViewModel.workerStatus == WorkerStatus.success{
                 HomeScreen()
                     .transition(AnyTransition.opacity)
                     .animation(.default)

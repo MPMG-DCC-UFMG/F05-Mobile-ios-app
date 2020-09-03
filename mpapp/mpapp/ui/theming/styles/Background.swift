@@ -25,7 +25,7 @@ struct ButtonStyle: ViewModifier{
     func body(content: Content) -> some View{
         content
             .frame(minWidth: 0, maxWidth: .infinity)
-            .frame(height: 25)
+            .frame(height: 22)
             .padding()
             .foregroundColor(textColor())
             .background(backgroundColor())
@@ -45,4 +45,6 @@ enum ButtonStyleEnum{
     case button1
     case button2
     case button3
+    case button4
+    case button5
 }

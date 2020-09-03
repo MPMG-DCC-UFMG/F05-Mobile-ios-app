@@ -13,7 +13,7 @@ struct LoadingDataView: View {
                 Text(configurationViewModel.message).h1()
                     .multilineTextAlignment(.center)
                 Spacer()
-                if configurationViewModel.workerStatus == WorkerStatus.FAILED{
+                if configurationViewModel.workerStatus == WorkerStatus.failed{
                     TrenaButton(label: "Tentar novamente",style: .button2){
                         self.startDownload()
                     }

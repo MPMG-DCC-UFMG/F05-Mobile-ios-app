@@ -24,6 +24,6 @@ struct TrenaButton: View {
 
 struct TrenaButton_Previews: PreviewProvider {
     static var previews: some View {
-        TrenaButton(label: "Editar",image: "trash",style:.button2, action: {})
+        TrenaButton(label: "Editar",image: "mappin.and.ellipse",style:.button5, action: {})
     }
 }

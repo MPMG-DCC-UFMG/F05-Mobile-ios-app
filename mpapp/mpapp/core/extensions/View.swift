@@ -45,6 +45,10 @@ extension View {
             return self.modifier(ButtonStyle(enabled: enabled,
                                              buttonEnabled: ColorProvider.grey2,
                                              buttonTextEnabled: ColorProvider.red))
+        case .button4:
+            return self.modifier(ButtonStyle(enabled: enabled, buttonEnabled: ColorProvider.grey1, buttonTextEnabled: ColorProvider.white))
+        case .button5:
+            return self.modifier(ButtonStyle(enabled: enabled, buttonEnabled: ColorProvider.red, buttonTextEnabled: ColorProvider.grey1))
         default:
             return self.modifier(ButtonStyle(enabled: enabled))
         }

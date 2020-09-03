@@ -7,19 +7,19 @@ class LoadServerDataWorker{
     
     let status = PublishSubject<(WorkerStatus,String)>()
     
-    private var workerStatus: WorkerStatus = WorkerStatus.RUNNING
+    private var workerStatus: WorkerStatus = WorkerStatus.running
     private var workerMessage: String = "Conectando ao servidor..."
     
     func execute(){
         let downloadCalls: [BaseDownloadInfo] = [DownloadTypeWork(), DownloadTypePhoto(), DownloadCities(),
                                                  DownloadWorkStatus(), DownloadAssociation(), DownloadPublicWork()]
-        self.updateStatus(status: WorkerStatus.RUNNING,message: "Conectando ao servidor...")
+        self.updateStatus(status: WorkerStatus.running,message: "Conectando ao servidor...")
         when(resolved: downloadCalls.map{self.downloadData(downloadInfo: $0)})
             .done{result in
                 if(result.allSatisfy({$0.isFulfilled})){
-                    self.updateStatus(status: WorkerStatus.SUCCESS,message: "Download completo")
+                    self.updateStatus(status: WorkerStatus.success,message: "Download completo")
                 }else{
-                    self.updateStatus(status: WorkerStatus.FAILED,message: "Falha ao baixar dados")
+                    self.updateStatus(status: WorkerStatus.failed,message: "Falha ao baixar dados")
                 }
         }
     }

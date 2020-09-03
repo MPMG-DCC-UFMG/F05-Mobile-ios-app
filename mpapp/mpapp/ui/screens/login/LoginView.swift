@@ -4,14 +4,16 @@ import Resolver
 struct LoginView: View {
     
     @ObservedObject private var loginViewModel: LoginViewModel = Resolver.resolve()
+    @State private var email: String = ""
+    @State private var password: String = ""
     
     var body: some View {
         ZStack{
             ColorProvider.darkBackground.edgesIgnoringSafeArea(.all)
             VStack{
                 Image("trena_white").padding(.top, 50.0)
-                TrenaTextField(label: "Email", placeHolder: "Entre com seu email").padding(.top,20)
-                TrenaPasswordField(label: "Senha", placeHolder: "Sua senha").padding(.top,12)
+                TrenaTextField(label: "Email", placeHolder: "Entre com seu email",input: $email).padding(.top,20)
+                TrenaPasswordField(label: "Senha", placeHolder: "Sua senha",input: $password).padding(.top,12)
                 
                 TrenaButton(label: "Entrar") {
                     self.login()

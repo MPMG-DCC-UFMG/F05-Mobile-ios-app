@@ -4,7 +4,7 @@ struct SearchField: View {
     
     var placeHolder: String
     
-    @State var input = ""
+    @Binding var input :String
     
     var body: some View {
         HStack {
@@ -27,7 +27,8 @@ struct SearchField: View {
 }
 
 struct SearchField_Previews: PreviewProvider {
+    @State static var input = "Oi"
     static var previews: some View {
-        SearchField(placeHolder: "Pesquise por alguma obra especifíca")
+        SearchField(placeHolder: "Pesquise por alguma obra especifíca",input: $input)
     }
 }

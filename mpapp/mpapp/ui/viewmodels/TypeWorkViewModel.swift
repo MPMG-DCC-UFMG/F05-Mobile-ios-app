@@ -19,4 +19,8 @@ class TypeWorkViewModel: ObservableObject{
             self.typeworks = array
             }).dispose()
     }
+    
+    func getTypeWorkByFlag(_ typeWorkFlag: Int) -> TypeWork?{
+        return self.typeworks.filter{$0.flag==typeWorkFlag}.first
+    }
 }

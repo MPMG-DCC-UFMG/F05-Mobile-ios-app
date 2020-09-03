@@ -5,7 +5,7 @@ struct HomeView: View {
     
     @ObservedObject private var loginViewModel: LoginViewModel = Resolver.resolve()
     @ObservedObject private var configurationViewModel: ConfigurationViewModel = Resolver.resolve()
-    @Binding var onList:Bool
+    @Binding var navigate:HomeNavigation
     
     var body: some View {
         ZStack{
@@ -17,9 +17,13 @@ struct HomeView: View {
                 }.padding(.leading,10)
                 Text("Bem vindo ao TRENA, o aplicativo de fiscalização do Ministério Público de Minas Gerais").h2().padding(.top,40)
                     .padding(.leading,14)
-                HomeButton(action: toggleList, label: "Lista de obras", image: "list")
+                HomeButton(action: {
+                    self.navigateTo(HomeNavigation.publicWorkList)
+                }, label: "Lista de obras", image: "list")
                     .padding(.top,50)
-                HomeButton(action: {}, label: "Adicionar nova obra", image: "plus")
+                HomeButton(action: {
+                    self.navigateTo(HomeNavigation.addPublicWork)
+                }, label: "Adicionar nova obra", image: "plus")
                     .padding(.top,10)
                 HomeButton(action: {}, label: "Enviar dados", image: "sync")
                     .padding(.top,10)
@@ -35,14 +39,14 @@ struct HomeView: View {
         configurationViewModel.resetWorkerStatus()
     }
     
-    private func toggleList(){
-        onList.toggle()
+    private func navigateTo(_ navigation: HomeNavigation){
+        navigate = navigation
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
-    @State static var onList = false
+    @State static var navigate = HomeNavigation.home
     static var previews: some View {
-        HomeView(onList: HomeView_Previews.$onList)
+        HomeView(navigate: HomeView_Previews.$navigate)
     }
 }

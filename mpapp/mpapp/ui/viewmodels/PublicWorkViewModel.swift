@@ -2,21 +2,27 @@ import Foundation
 import RealmSwift
 import RxSwift
 import RxRealm
+import Realm
 
 class PublicWorkViewModel: ObservableObject{
-    
-    @Published var publicWorks = [PublicWork]()
     
     private let publicWorkRepository: IPublicWorkRepository
     
     init(publicWorkRepository: IPublicWorkRepository){
         self.publicWorkRepository = publicWorkRepository
-        fetchPublicWorks()
     }
     
-    func fetchPublicWorks() {
-        Observable.array(from: publicWorkRepository.listAllPublicWorks()).subscribe(onNext:{ array in
-            self.publicWorks = array
-            }).dispose()
+    func publicWorksList(searchTerm:String = "") -> Results<PublicWork>{
+        let predicate = NSPredicate(format: "name BEGINSWITH %@", searchTerm)
+        return publicWorkRepository.listAllPublicWorks()
+    }
+    
+    func addToDb(publicWork: PublicWork){
+        publicWork.toSend = true
+        do{
+            try publicWorkRepository.insertPublicWork(publicWork: publicWork)
+        }catch{
+            print(error)
+        }
     }
 }

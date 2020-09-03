@@ -3,7 +3,7 @@ import Foundation
 class ConfigurationViewModel : ObservableObject{
     
     @Published var message = "Conectando ao servidor ..."
-    @Published var workerStatus = WorkerStatus.NOT_STARTED
+    @Published var workerStatus = WorkerStatus.notStarted
     
     func startConfigFilesDownload(){
         self.message = "Conectando ao servidor ..."
@@ -20,10 +20,10 @@ class ConfigurationViewModel : ObservableObject{
     }
     
     func resetWorkerStatus(){
-        self.workerStatus = WorkerStatus.NOT_STARTED
+        self.workerStatus = WorkerStatus.notStarted
     }
     
     func moveForward(){
-        self.workerStatus = WorkerStatus.SUCCESS
+        self.workerStatus = WorkerStatus.success
     }
 }

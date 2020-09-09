@@ -5,7 +5,7 @@ import PromiseKit
 @propertyWrapper
 struct GET {
     private var callUrl: String
-    private let headers: HTTPHeaders = ["X-TRENA-KEY" : Config.TRENA_KEY]
+    private let headers: HTTPHeaders = ["X-TRENA-KEY" : Config.trenaKey]
     
     init(url: String) {
         self.callUrl = url
@@ -14,7 +14,7 @@ struct GET {
     var wrappedValue : (_ queryParameters: Parameters?) -> Promise<Data> {
         return {queryParameters in
             Promise { seal in
-                AF.request(Config.BASE_URL.appendingPathComponent(self.callUrl),parameters: queryParameters, headers: self.headers).responseData { response in
+                AF.request(Config.baseURL.appendingPathComponent(self.callUrl),parameters: queryParameters, headers: self.headers).responseData { response in
                     switch response.result {
                     case .success(let data):
                         seal.fulfill(data)

@@ -2,6 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>BASE_URL</key>
+	<string>$(BASE_URL)</string>
+	<key>ENVIRONMENT</key>
+	<string>$(ENVIRONMENT)</string>
+	<key>SENTRY_DNS</key>
+	<string>$(SENTRY_DNS)</string>
+	<key>TRENA_KEY</key>
+	<string>$(TRENA_KEY)</string>
+	<key>GOOGLE_API_KEY</key>
+	<string>$(GOOGLE_API_KEY)</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -72,5 +82,9 @@
 		<string>Gotham-Bold.otf</string>
 		<string>GothamRounded-Medium.otf</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>O app precisa de localização para funcionar</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>O app precisa de localização para funcionar</string>
 </dict>
 </plist>

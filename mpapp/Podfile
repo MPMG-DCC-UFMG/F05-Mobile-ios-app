@@ -11,6 +11,8 @@ target 'mpapp' do
   pod "PromiseKit"
   pod 'Alamofire', '~> 5.2'
   pod 'Sentry', :git => 'https://github.com/getsentry/sentry-cocoa.git', :tag => '5.2.0'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
 
   target 'mpappTests' do
     inherit! :search_paths

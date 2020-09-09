@@ -8,6 +8,7 @@ extension Resolver:ResolverRegistering{
         register{LoginViewModel()}.scope(cached)
         register{ConfigurationViewModel()}.scope(cached)
         register{PublicWorkViewModel(publicWorkRepository: resolve())}.scope(cached)
+        register{LocationViewModel()}.scope(cached)
         
         // Repositories
         register{TypeWorkRepository(localTypeWorkDataSource: resolve()) as ITypeWorkRepository}.scope(application)
@@ -29,5 +30,8 @@ extension Resolver:ResolverRegistering{
         
         // RemoteDataSources
         register{RemoteConfigDataSource() as IRemoteConfigDataSource}.scope(application)
+        
+        // Services
+        register{LocationManager()}.scope(application)
     }
 }

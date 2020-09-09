@@ -5,4 +5,5 @@ enum HomeNavigation{
     case home
     case addPublicWork
     case sync
+    case collect
 }

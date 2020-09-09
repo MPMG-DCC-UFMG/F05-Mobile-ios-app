@@ -6,6 +6,8 @@ struct PublicWorkListView: View {
     @ObservedObject var publicWorkViewModel: PublicWorkViewModel = Resolver.resolve()
     @State private var searchTerm: String = ""
     
+    var onPublicWorkClicked: (_ publicWork: PublicWork) -> Void
+    
     var body: some View {
         ZStack{
             ColorProvider.darkBackground.edgesIgnoringSafeArea(.all)
@@ -16,7 +18,10 @@ struct PublicWorkListView: View {
                     .padding(.top,20)
                 List{
                     ForEach(publicWorkViewModel.publicWorksList(searchTerm: searchTerm)){ publicWork in
-                        PublicWorkListItem(publicWork: publicWork)
+                        Button(action: {
+                            self.onPublicWorkClicked(publicWork)}){
+                            PublicWorkListItem(publicWork: publicWork)
+                        }
                     }
                     .listRowBackground(ColorProvider.darkBackground)
                 }
@@ -39,6 +44,6 @@ struct PublicWorkListView: View {
 
 struct PublicWorkListView_Previews: PreviewProvider {
     static var previews: some View {
-        PublicWorkListView()
+        PublicWorkListView(onPublicWorkClicked: {_ in })
     }
 }

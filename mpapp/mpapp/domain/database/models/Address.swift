@@ -18,4 +18,8 @@ class Address: Object,Identifiable {
         return "id"
     }
     
+    func isLocationValid() -> Bool{
+        return latitude != 0.0 && longitude != 0.0
+    }
+    
 }

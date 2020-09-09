@@ -23,4 +23,8 @@ class PublicWork: Object,Identifiable{
             return "\(address?.street ?? ""), \(address?.number ?? "") - \(address?.neighborhood ?? "") , \(address?.city ?? "") - \(address?.cep ?? "")"
         }
     }
+    
+    func isPublicWorkValid() -> Bool{
+        return !name.isEmpty
+    }
 }

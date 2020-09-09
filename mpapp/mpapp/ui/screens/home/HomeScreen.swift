@@ -18,7 +18,7 @@ struct HomeScreen: View {
                 self.navigateTo(HomeNavigation.home)
             }))
         case .addPublicWork:
-            return AnyView(PublicWorkAddView(onCancelClicked:{
+            return AnyView(PublicWorkAddScreen(onCancelClicked:{
                 self.navigateTo(HomeNavigation.home)
             }))
         default:

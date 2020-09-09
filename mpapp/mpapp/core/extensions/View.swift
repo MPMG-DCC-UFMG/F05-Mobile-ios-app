@@ -54,3 +54,11 @@ extension View {
         }
     }
 }
+
+extension Image{
+    func imageStyle() -> some View{
+        return self.renderingMode(.original)
+            .resizable()
+            .scaledToFit()
+    }
+}

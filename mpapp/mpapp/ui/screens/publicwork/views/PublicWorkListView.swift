@@ -4,7 +4,6 @@ import Resolver
 struct PublicWorkListView: View {
     
     @ObservedObject var publicWorkViewModel: PublicWorkViewModel = Resolver.resolve()
-    @State private var searchTerm: String = ""
     
     var onPublicWorkClicked: (_ publicWork: PublicWork) -> Void
     
@@ -12,12 +11,12 @@ struct PublicWorkListView: View {
         ZStack{
             ColorProvider.darkBackground.edgesIgnoringSafeArea(.all)
             VStack(alignment: .leading){
-                SearchField(placeHolder: "Pesquise por alguma obra especifíca",input: $searchTerm)
+                SearchField(placeHolder: "Pesquise por alguma obra especifíca",input: $publicWorkViewModel.searchTerm)
                 Text("Lista de obras")
                     .h1()
                     .padding(.top,20)
                 List{
-                    ForEach(publicWorkViewModel.publicWorksList(searchTerm: searchTerm)){ publicWork in
+                    ForEach(publicWorkViewModel.publicWorksList()){ publicWork in
                         Button(action: {
                             self.onPublicWorkClicked(publicWork)}){
                             PublicWorkListItem(publicWork: publicWork)
@@ -31,7 +30,6 @@ struct PublicWorkListView: View {
                 }
                 .onDisappear {
                     UITableView.appearance().separatorStyle = .singleLine
-                    
                 }
                 .padding(.horizontal, -20)
                 .listStyle(PlainListStyle())

@@ -105,6 +105,7 @@ struct PublicWorkAddView: View {
         publicWork.address = address
         publicWork.idAddress = String(address.id)
         publicWork.name = self.name
+        publicWork.toSend = true
         publicWorkViewModel.addToDb(publicWork: publicWork)
         self.onCancelClicked?()
     }

@@ -20,6 +20,8 @@
 		3847EBC124FAACDD00B2C4A5 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3847EBC024FAACDD00B2C4A5 /* HomeScreen.swift */; };
 		38481E4A25006358004D9E07 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38481E4925006358004D9E07 /* TabBarItem.swift */; };
 		38481E4C2500677B004D9E07 /* TrenaTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38481E4B2500677B004D9E07 /* TrenaTabBar.swift */; };
+		385E1D31250A66440032F2E9 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E1D30250A66440032F2E9 /* RadioButton.swift */; };
+		385E1D33250A6D400032F2E9 /* TrenaRadioGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E1D32250A6D400032F2E9 /* TrenaRadioGroup.swift */; };
 		386406A624EF4EBE000B9345 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386406A524EF4EBE000B9345 /* Injection.swift */; };
 		386406AA24F01584000B9345 /* IConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386406A924F01584000B9345 /* IConfigRepository.swift */; };
 		386406AC24F015A2000B9345 /* ILocalConfigDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386406AB24F015A2000B9345 /* ILocalConfigDataSource.swift */; };
@@ -98,6 +100,7 @@
 		3864077F24F69DE2000B9345 /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864077E24F69DE2000B9345 /* Headers.swift */; };
 		3864078124F69E89000B9345 /* ScaledFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864078024F69E89000B9345 /* ScaledFont.swift */; };
 		3864078624F69F68000B9345 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864078524F69F68000B9345 /* LoginView.swift */; };
+		38687E3B251195140068637C /* TrenaMultiPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38687E3A251195140068637C /* TrenaMultiPicker.swift */; };
 		388FB272250194130057C510 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388FB271250194130057C510 /* MapView.swift */; };
 		388FB274250196700057C510 /* PublicWorkLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388FB273250196700057C510 /* PublicWorkLocationView.swift */; };
 		388FB2762501974D0057C510 /* PublicWorkAddScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388FB2752501974D0057C510 /* PublicWorkAddScreen.swift */; };
@@ -120,6 +123,7 @@
 		38990CFA2502E51300872476 /* TrenaTextWithAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38990CF92502E51300872476 /* TrenaTextWithAction.swift */; };
 		3899CD7724FCE95200FC078F /* PublicWorkAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CD7624FCE95200FC078F /* PublicWorkAddView.swift */; };
 		3899CD7B24FCEDA100FC078F /* HomeNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CD7A24FCEDA100FC078F /* HomeNavigation.swift */; };
+		38B781AE250C26E60006168A /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B781AD250C26E60006168A /* Checkbox.swift */; };
 		38BC8D4324F7C270006BCE48 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BC8D4224F7C270006BCE48 /* LoginScreen.swift */; };
 		38BC8D4524F7C59E006BCE48 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BC8D4424F7C59E006BCE48 /* LoginViewModel.swift */; };
 		38BC8D4724F7D060006BCE48 /* ConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BC8D4624F7D060006BCE48 /* ConfigurationViewModel.swift */; };
@@ -171,6 +175,8 @@
 		3847EBC024FAACDD00B2C4A5 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		38481E4925006358004D9E07 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		38481E4B2500677B004D9E07 /* TrenaTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaTabBar.swift; sourceTree = "<group>"; };
+		385E1D30250A66440032F2E9 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		385E1D32250A6D400032F2E9 /* TrenaRadioGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaRadioGroup.swift; sourceTree = "<group>"; };
 		386406A524EF4EBE000B9345 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		386406A924F01584000B9345 /* IConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IConfigRepository.swift; sourceTree = "<group>"; };
 		386406AB24F015A2000B9345 /* ILocalConfigDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILocalConfigDataSource.swift; sourceTree = "<group>"; };
@@ -249,6 +255,7 @@
 		3864077E24F69DE2000B9345 /* Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headers.swift; sourceTree = "<group>"; };
 		3864078024F69E89000B9345 /* ScaledFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledFont.swift; sourceTree = "<group>"; };
 		3864078524F69F68000B9345 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		38687E3A251195140068637C /* TrenaMultiPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaMultiPicker.swift; sourceTree = "<group>"; };
 		388FB271250194130057C510 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		388FB273250196700057C510 /* PublicWorkLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkLocationView.swift; sourceTree = "<group>"; };
 		388FB2752501974D0057C510 /* PublicWorkAddScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkAddScreen.swift; sourceTree = "<group>"; };
@@ -279,6 +286,7 @@
 		38990CFD2503012B00872476 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		3899CD7624FCE95200FC078F /* PublicWorkAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkAddView.swift; sourceTree = "<group>"; };
 		3899CD7A24FCEDA100FC078F /* HomeNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigation.swift; sourceTree = "<group>"; };
+		38B781AD250C26E60006168A /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		38BC8D4224F7C270006BCE48 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		38BC8D4424F7C59E006BCE48 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		38BC8D4624F7D060006BCE48 /* ConfigurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewModel.swift; sourceTree = "<group>"; };
@@ -382,6 +390,7 @@
 				38481E4B2500677B004D9E07 /* TrenaTabBar.swift */,
 				38990CF92502E51300872476 /* TrenaTextWithAction.swift */,
 				388FB271250194130057C510 /* MapView.swift */,
+				38687E3A251195140068637C /* TrenaMultiPicker.swift */,
 			);
 			path = misc;
 			sourceTree = "<group>";
@@ -401,6 +410,8 @@
 			children = (
 				3847EBB924FAA4D700B2C4A5 /* PublicWorkListItem.swift */,
 				38481E4925006358004D9E07 /* TabBarItem.swift */,
+				385E1D30250A66440032F2E9 /* RadioButton.swift */,
+				38B781AD250C26E60006168A /* Checkbox.swift */,
 			);
 			path = items;
 			sourceTree = "<group>";
@@ -914,6 +925,7 @@
 				38C2E02224F7191600121039 /* TrenaPasswordField.swift */,
 				3847EBB124FA7E0800B2C4A5 /* SearchField.swift */,
 				38CF10C524FE5EA900040FE1 /* TrenaClickableField.swift */,
+				385E1D32250A6D400032F2E9 /* TrenaRadioGroup.swift */,
 			);
 			path = input;
 			sourceTree = "<group>";
@@ -1255,6 +1267,7 @@
 				386406ED24F189EB000B9345 /* FontProvider.swift in Sources */,
 				38C2E01A24F7053200121039 /* TrenaButton.swift in Sources */,
 				386406AE24F01616000B9345 /* LocalConfigDataSource.swift in Sources */,
+				38B781AE250C26E60006168A /* Checkbox.swift in Sources */,
 				388FB274250196700057C510 /* PublicWorkLocationView.swift in Sources */,
 				3864070824F1B6F2000B9345 /* View.swift in Sources */,
 				380BC73A2508373A00B73451 /* CollectScreen.swift in Sources */,
@@ -1288,6 +1301,7 @@
 				386406B024F016B2000B9345 /* Constants.swift in Sources */,
 				38CF10D124FED7A100040FE1 /* PublicWorkFilterView.swift in Sources */,
 				3864072A24F534AC000B9345 /* TypePhoto.swift in Sources */,
+				38687E3B251195140068637C /* TrenaMultiPicker.swift in Sources */,
 				3890090424EEEA8000954A95 /* MPDatabase.swift in Sources */,
 				3864075224F56162000B9345 /* WorkStatusRemote.swift in Sources */,
 				389008D224EEE6FE00954A95 /* SceneDelegate.swift in Sources */,
@@ -1318,6 +1332,7 @@
 				3864075E24F56492000B9345 /* DownloadWorkStatus.swift in Sources */,
 				3864073024F538D3000B9345 /* Collect.swift in Sources */,
 				38481E4A25006358004D9E07 /* TabBarItem.swift in Sources */,
+				385E1D31250A66440032F2E9 /* RadioButton.swift in Sources */,
 				3847EBBA24FAA4D700B2C4A5 /* PublicWorkListItem.swift in Sources */,
 				3864074C24F55966000B9345 /* LocalCityDataSource.swift in Sources */,
 				38CF10C624FE5EA900040FE1 /* TrenaClickableField.swift in Sources */,
@@ -1338,6 +1353,7 @@
 				386406C524F04514000B9345 /* SplashView.swift in Sources */,
 				386406A624EF4EBE000B9345 /* Injection.swift in Sources */,
 				3864077824F5929C000B9345 /* LocalPublicWorkDataSource.swift in Sources */,
+				385E1D33250A6D400032F2E9 /* TrenaRadioGroup.swift in Sources */,
 				38CF10C824FE67CA00040FE1 /* TrenaPicker.swift in Sources */,
 				3890091324EEF17200954A95 /* LocalTypeWorkDataSource.swift in Sources */,
 				3890091B24EF111600954A95 /* TypeWorkViewModel.swift in Sources */,

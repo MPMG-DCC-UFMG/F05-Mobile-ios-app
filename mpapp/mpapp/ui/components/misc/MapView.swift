@@ -3,7 +3,6 @@ import GoogleMaps
 
 struct MapView: UIViewRepresentable {
     
-    
     @Binding var center: CLLocationCoordinate2D
     @ObservedObject var locationManager = LocationManager()
     

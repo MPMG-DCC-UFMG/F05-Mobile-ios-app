@@ -12,11 +12,19 @@ struct PublicWorkListItem: View {
             HStack{
                 Text("\(publicWork.name)").h2()
                 Spacer()
-                Text(getDistance(location: locationManager.location)).h3()
+                Text(getDistance(location: locationManager.location)).h3().padding(.trailing,5)
             }
             HStack{
                 Text("\(publicWork.formatedAddress())").h4()
                 Spacer()
+                VStack{
+                    if publicWork.toSend{
+                        Image("sync_blue").renderingMode(.original)
+                    }
+                    if publicWork.idCollect != nil{
+                        Image("check").renderingMode(.original)
+                    }
+                }
             }.padding(.top,10)
             
         }.padding()

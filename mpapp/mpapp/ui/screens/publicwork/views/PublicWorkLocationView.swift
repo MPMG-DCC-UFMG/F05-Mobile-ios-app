@@ -33,7 +33,6 @@ struct PublicWorkLocationView: View {
                     self.onCancelClicked?()
                 }).padding(.horizontal,25)
                     .padding(.vertical,15)
-                
             }
         }
     }

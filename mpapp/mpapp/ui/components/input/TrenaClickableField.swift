@@ -12,6 +12,7 @@ struct TrenaClickableField: View {
                 .foregroundColor(ColorProvider.white)
                 .h5()
                 .padding(.leading,8)
+                .padding(.bottom,5)
             HStack {
                 Button(action: action){
                     HStack{

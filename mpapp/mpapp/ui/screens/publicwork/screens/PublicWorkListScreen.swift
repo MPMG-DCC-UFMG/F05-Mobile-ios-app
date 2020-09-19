@@ -12,7 +12,7 @@ struct PublicWorkListScreen: View {
             if(selectedPublicWork != nil){
                 CollectScreen(onBackPressed:{
                     self.onPublicWorkClicked(publicWork: nil)
-                },publicWork: selectedPublicWork!)
+                },publicWork: PublicWorkUI(selectedPublicWork!))
             }else{
                 VStack(spacing: 0){
                     if self.currentView == .Tab2 {

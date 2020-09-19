@@ -49,8 +49,7 @@ class PublicWorkViewModel: ObservableObject{
         return NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
     }
     
-    func addToDb(publicWork: PublicWork){
-        publicWork.toSend = true
+    func addToDb(_ publicWork: PublicWorkUI){
         do{
             try publicWorkRepository.insertPublicWork(publicWork: publicWork)
         }catch{

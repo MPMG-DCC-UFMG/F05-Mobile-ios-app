@@ -19,7 +19,7 @@ struct PublicWorkListView: View {
                     ForEach(publicWorkViewModel.publicWorksList()){ publicWork in
                         Button(action: {
                             self.onPublicWorkClicked(publicWork)}){
-                            PublicWorkListItem(publicWork: publicWork)
+                            PublicWorkListItem(publicWork: PublicWorkUI(publicWork))
                         }
                     }
                     .listRowBackground(ColorProvider.darkBackground)

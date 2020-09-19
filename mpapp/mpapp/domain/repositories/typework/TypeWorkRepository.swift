@@ -25,4 +25,8 @@ class TypeWorkRepository: ITypeWorkRepository {
     func deleteTypeWorks() throws {
         try self.localTypeWorkDataSource.deleteTypeWorks()
     }
+    
+    func getTypeWorkByFlag(typeWorkFlag: Int) -> TypeWork?{
+        return self.localTypeWorkDataSource.getTypeWorkByFlag(typeWorkFlag: typeWorkFlag)
+    }
 }

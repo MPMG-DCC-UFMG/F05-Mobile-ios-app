@@ -1,17 +1,98 @@
 import SwiftUI
+import Resolver
 
 struct CollectScreen: View {
     
+    @ObservedObject private var collectViewModel: CollectViewModel = Resolver.resolve()
+    @ObservedObject private var workStatusViewModel: WorkStatusViewModel = Resolver.resolve()
+    
     var onBackPressed: (() -> Void)?
-    var publicWork: PublicWork
+    @ObservedObject var publicWork: PublicWorkUI
+    
+    @State private var commentOn: Bool = false
+    @State private var deleteClicked: Bool = false
+    @State private var navigate = CollectNavigation.collectMain
+    @State private var openWorkStatusPicker: Bool = false
     
     var body: some View {
-        CollectView(onBackPressed: self.onBackPressed, publicWork: self.publicWork)
+        ZStack{
+            self.containedView().transition(AnyTransition.opacity)
+                .animation(.default)
+            if(commentOn){
+                CommentBottom(closed: $commentOn, comment: collectViewModel.currentCollect.comments ?? "",onConfirmClicked:self.collectConfirmClicked).transition(AnyTransition.opacity).animation(.default)
+            }
+            if(deleteClicked){
+                TrenaDialog( title: "Deletar Coleta",message: "A coleta não podera ser restaurada",onPositiveClicked: handleDeleteCollect,onCloseClicked: {deleteClicked.toggle()})
+            }
+            if(openWorkStatusPicker){
+                createTrenaPicker()
+            }
+        }.onAppear {
+            collectViewModel.updateCurrentCollect(publicWork)
+        }
+    }
+    
+    private func createTrenaPicker() -> TrenaPicker {
+        let workStatus = workStatusViewModel.getWorkStatusesForPublicWork(publicWork)
+        return TrenaPicker(options: workStatus.map{$0.name}, closed: self.$openWorkStatusPicker, selectedOption: 0,negativeText: "Descartar", onConfirmClicked: {index in
+            updateCollect(workStatus[index])
+        }, onNegativeClicked: self.onBackPressed)
+    }
+    
+    private func updateCollect(_ workStatus: WorkStatus){
+        collectViewModel.updateCollect(workStatus: workStatus, publicWorkUI: publicWork)
+        self.onBackPressed?()
+    }
+    
+    private func containedView() -> AnyView {
+        switch navigate {
+        case .editPublicWork:
+            return AnyView(
+                PublicWorkAddScreen(publicWorkUI: publicWork,onCancelClicked: {self.navigateTo(.collectMain)}, onAddClicked:self.onAddClicked)
+            )
+        default:
+            return AnyView(
+                CollectView(publicWork: self.publicWork, onBackPressed:self.handleOnBackPressed,
+                    onEditClicked: {self.navigateTo(.editPublicWork)},
+                    onDeleteClicked: self.onDeleteClicked,
+                    onCommentClicked: self.onCommentClicked)
+            )
+            
+        }
+    }
+    
+    private func handleDeleteCollect(){
+        collectViewModel.deleteCollect(publicWorkUI: self.publicWork)
+        self.onBackPressed?()
+    }
+    
+    private func handleOnBackPressed(){
+        openWorkStatusPicker.toggle()
+    }
+    
+    private func onDeleteClicked(){
+        self.deleteClicked.toggle()
+    }
+    
+    private func onCommentClicked(){
+        self.commentOn.toggle()
+    }
+    
+    private func navigateTo(_ to: CollectNavigation) {
+        self.navigate = to
+    }
+    
+    private func collectConfirmClicked(_ comment: String){
+        collectViewModel.updateComment(comment)
+    }
+    
+    private func onAddClicked(){
+        
     }
 }
 
 struct CollectScreen_Previews: PreviewProvider {
     static var previews: some View {
-        CollectScreen( publicWork: PublicWork())
+        CollectScreen( publicWork: PublicWorkUI(PublicWork()))
     }
 }

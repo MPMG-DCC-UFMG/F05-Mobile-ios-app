@@ -8,14 +8,18 @@ class LocalTypeWorkDataSource: BaseDataSource<TypeWork>,ILocalTypeWorkDataSource
     }
     
     func insertTypeWorks(typeWorks: Array<TypeWork>) throws{
-       try self.insertAll(entities: typeWorks)
+        try self.insertAll(entities: typeWorks)
     }
     
     func listAllTypeWorks() -> Results<TypeWork>{
         return self.listAll()
     }
-
+    
     func deleteTypeWorks() throws {
         try self.deleteAll()
+    }
+    
+    func getTypeWorkByFlag(typeWorkFlag: Int) -> TypeWork?{
+        return mpDatabase().object(ofType: TypeWork.self, forPrimaryKey: typeWorkFlag)
     }
 }

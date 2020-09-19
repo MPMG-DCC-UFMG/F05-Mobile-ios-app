@@ -3,6 +3,10 @@ import SwiftUI
 
 extension View {
     
+    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+        clipShape( RoundedCorner(radius: radius, corners: corners) )
+    }
+    
     func scaledFont(name: String, size: CGFloat) -> some View {
         return self.modifier(ScaledFont(name: name, size:size))
     }
@@ -51,6 +55,15 @@ extension View {
             return self.modifier(ButtonStyle(enabled: enabled, buttonEnabled: ColorProvider.red, buttonTextEnabled: ColorProvider.grey1))
         default:
             return self.modifier(ButtonStyle(enabled: enabled))
+        }
+    }
+    
+    func smallButtonStyle(_ enabled: Bool = true, style: SmallButtonStyleEnum = .smallButton1) -> some View{
+        switch style {
+        case .smallButton1:
+            return self.modifier(SmallButtonStyle(enabled: enabled, buttonEnabled: ColorProvider.grey2, buttonTextEnabled: ColorProvider.greenTrena))
+        case .smallButton2:
+            return self.modifier(SmallButtonStyle(enabled: enabled, buttonEnabled: ColorProvider.grey3, buttonTextEnabled: ColorProvider.white))
         }
     }
 }

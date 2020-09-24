@@ -24,4 +24,8 @@ class WorkStatusRepository: IWorkStatusRepository{
     func deleteWorkStatuses() throws {
         try self.localWorkStatusDataSource.deleteWorkStatuses()
     }
+    
+    func listWorKStatusByFlags(workStatusFlags: [Int]) -> Results<WorkStatus>{
+        return self.localWorkStatusDataSource.listWorkStatus().filter(NSPredicate(format: "self.flag IN %@", workStatusFlags))
+    }
 }

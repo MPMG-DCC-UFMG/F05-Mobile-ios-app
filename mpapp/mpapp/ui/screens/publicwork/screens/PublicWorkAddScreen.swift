@@ -1,10 +1,14 @@
 import SwiftUI
+import Resolver
 
 struct PublicWorkAddScreen: View {
     
+    @ObservedObject private var publicWorkViewModel: PublicWorkViewModel = Resolver.resolve()
+    
+    @ObservedObject var publicWorkUI = PublicWorkUI(PublicWork())
     var onCancelClicked: (() -> Void)?
+    var onAddClicked: (()-> Void)?
     @State private var navigate = AddNavigation.form
-    @State private var address = Address()
     
     var body: some View {
         ZStack {
@@ -16,21 +20,29 @@ struct PublicWorkAddScreen: View {
     private func containedView() -> AnyView {
         switch navigate {
         case .form:
-            return AnyView(PublicWorkAddView(address: address,
-                onCancelClicked: self.onCancelClicked,
-                onMapClicked: { self.navigateTo(AddNavigation.map) })
+            return AnyView(
+                PublicWorkAddView(publicWork: publicWorkUI,
+                                  onCancelClicked: self.onCancelClicked,
+                                  onMapClicked: { self.navigateTo(AddNavigation.map) },
+                                  onAddClicked: self.addPublicWork)
             )
         default:
             return AnyView(
                 PublicWorkLocationView(onCancelClicked: {
-                        self.navigateTo(AddNavigation.form)
-                    },
-                    onConfirmClicked: { address in
-                        self.address = address
+                    self.navigateTo(AddNavigation.form)
+                },
+                onConfirmClicked: { address in
+                        publicWorkUI.updateAddress(address)
                     }
                 )
             )
         }
+    }
+    
+    private func addPublicWork() {
+        publicWorkViewModel.addToDb(publicWorkUI)
+        self.onAddClicked?()
+        self.onCancelClicked?()
     }
     
     private func navigateTo(_ to: AddNavigation) {

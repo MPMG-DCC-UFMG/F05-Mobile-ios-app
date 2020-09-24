@@ -3,7 +3,7 @@ import Resolver
 import CoreLocation
 
 struct PublicWorkListItem: View {
-    var publicWork: PublicWork
+    var publicWork: PublicWorkUI
     
     @ObservedObject private var locationManager: LocationManager = Resolver.resolve()
     
@@ -29,15 +29,15 @@ struct PublicWorkListItem: View {
             
         }.padding()
             .frame(minWidth: 0, maxWidth: .infinity)
-            .background(ColorProvider.grey3)
+            .background(ColorProvider.grey2)
             .cornerRadius(8)
     }
     
     private func getDistance(location: CLLocation?) -> String{
-        if(publicWork.address == nil || location == nil) {
+        if(location == nil) {
             return "--"
         }
-        let currLocation = CLLocation(latitude: publicWork.address!.latitude, longitude: publicWork.address!.longitude)
+        let currLocation = CLLocation(latitude: publicWork.latitude, longitude: publicWork.longitude)
         return formatDistance(distance: location!.distance(from: currLocation))
     }
     
@@ -51,7 +51,7 @@ struct PublicWorkListItem: View {
 }
 
 struct PublicWorkListItem_Previews: PreviewProvider {
-    static var publicWork = PublicWork()
+    static var publicWork = PublicWorkUI(PublicWork())
     
     init(){
         PublicWorkListItem_Previews.publicWork.name = "Teste"

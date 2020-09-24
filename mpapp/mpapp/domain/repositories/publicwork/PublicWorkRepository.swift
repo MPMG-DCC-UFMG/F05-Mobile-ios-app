@@ -13,6 +13,10 @@ class PublicWorkRepository: IPublicWorkRepository{
         try self.localPublicWorkDataSource.insertPublicWork(publicWork: publicWork)
     }
     
+    func insertPublicWork(publicWork: PublicWorkUI) throws {
+        try self.localPublicWorkDataSource.insertPublicWork(publicWork: publicWork)
+    }
+    
     func insertPublicWorks(publicWorks: Array<PublicWork>) throws {
         try self.localPublicWorkDataSource.insertPublicWorks(publicWorks: publicWorks)
     }

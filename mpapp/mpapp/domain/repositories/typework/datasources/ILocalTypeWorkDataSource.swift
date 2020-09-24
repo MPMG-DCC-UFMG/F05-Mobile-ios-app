@@ -11,4 +11,6 @@ protocol ILocalTypeWorkDataSource {
     func listAllTypeWorks() -> Results<TypeWork>
 
     func deleteTypeWorks() throws
+    
+    func getTypeWorkByFlag(typeWorkFlag: Int) -> TypeWork?
 }

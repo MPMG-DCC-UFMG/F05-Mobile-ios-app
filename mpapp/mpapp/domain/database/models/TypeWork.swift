@@ -10,5 +10,9 @@ class TypeWork: Object,Identifiable {
     override static func primaryKey() -> String? {
         return "flag"
     }
+    
+    func getWorkStatusIds() -> [Int] {
+        return status.components(separatedBy: ",").map{Int($0)!}
+    }
 
 }

@@ -6,7 +6,6 @@ struct PublicWorkLocationView: View {
     
     @ObservedObject private var locationViewModel: LocationViewModel = Resolver.resolve()
     
-    private let locationManager: LocationManager = Resolver.resolve()
     var onCancelClicked: (() -> Void)? = nil
     var onConfirmClicked: ((_ address: Address) ->Void)? = nil
     

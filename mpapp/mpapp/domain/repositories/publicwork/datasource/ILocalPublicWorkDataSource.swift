@@ -5,6 +5,8 @@ protocol ILocalPublicWorkDataSource{
     
     func insertPublicWork(publicWork: PublicWork) throws
     
+    func insertPublicWork(publicWork: PublicWorkUI) throws
+    
     func deletePublicWork(publicWork: PublicWork) throws
     
     func insertPublicWorks(publicWorks: Array<PublicWork>) throws

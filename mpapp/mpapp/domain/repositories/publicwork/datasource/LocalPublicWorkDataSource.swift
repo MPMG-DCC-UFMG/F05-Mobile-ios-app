@@ -11,6 +11,12 @@ class LocalPublicWorkDataSource: BaseDataSource<PublicWork>, ILocalPublicWorkDat
         try self.insert(entity: publicWork)
     }
     
+    func insertPublicWork(publicWork: PublicWorkUI) throws{
+        try mpDatabase().write{
+            mpDatabase().add(publicWork.toDbModel(),update: .modified)
+        }
+    }
+    
     func insertPublicWorks(publicWorks: Array<PublicWork>) throws {
         try self.insertAll(entities: publicWorks)
     }

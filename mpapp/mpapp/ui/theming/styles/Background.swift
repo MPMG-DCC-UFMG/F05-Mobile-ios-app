@@ -41,10 +41,42 @@ struct ButtonStyle: ViewModifier{
     }
 }
 
+struct SmallButtonStyle:ViewModifier {
+    var enabled: Bool = true
+    var buttonDisabled: Color = ColorProvider.grey4
+    var buttonEnabled: Color = ColorProvider.greenTrena
+    var buttonTextDisabled: Color = ColorProvider.grey5
+    var buttonTextEnabled: Color = ColorProvider.darkBackground
+    
+    func body(content: Content) -> some View{
+        content
+            .frame(height: 13)
+            .padding()
+            .buttonTextStyle(color: textColor())
+            .background(backgroundColor())
+            .cornerRadius(4)
+    }
+    
+    private func backgroundColor() -> Color{
+        return self.enabled ? buttonEnabled : buttonDisabled
+    }
+    
+    private func textColor() -> Color{
+        return self.enabled ? buttonTextEnabled : buttonTextDisabled
+    }
+}
+
 enum ButtonStyleEnum{
     case button1
     case button2
     case button3
     case button4
     case button5
+    case smallButton1
 }
+
+enum SmallButtonStyleEnum{
+    case smallButton1
+    case smallButton2
+}
+

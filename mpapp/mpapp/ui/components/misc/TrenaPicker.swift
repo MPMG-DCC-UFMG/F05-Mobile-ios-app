@@ -5,22 +5,25 @@ struct TrenaPicker: View {
     var options: [String]
     @Binding var closed: Bool
     @State var selectedOption: Int
+    var negativeText: String = "Cancelar"
+    var positiveText: String = "Confirmar"
     var onOptionChanged: ((_ value: Int) -> Void)? = nil
     var onConfirmClicked: ((_ value: Int) -> Void)? = nil
+    var onNegativeClicked: ( () -> Void)?
     
     var body: some View {
         VStack{
             Spacer()
             HStack{
-                Button(action: closePicker){
-                    Text("Cancelar").h2(color: ColorProvider.red)
+                Button(action: negativeAction){
+                    Text(negativeText).h2(color: ColorProvider.red)
                 }.padding()
                 Spacer()
                 Button(action: confirmationAction){
-                    Text("Confirmar").h2(color: ColorProvider.greenTrena)
+                    Text(positiveText).h2(color: ColorProvider.greenTrena)
                 }.padding()
-            }.cornerRadius(25)
-                .background(ColorProvider.darkBackground)
+            }.background(ColorProvider.grey2)
+            .cornerRadius(20, corners: [.topLeft, .topRight])
                 .padding(.bottom,-10)
             Picker("", selection: $selectedOption){
                 ForEach(0 ..< options.count) { index in
@@ -38,6 +41,11 @@ struct TrenaPicker: View {
     
     func optionChanged(){
         self.onOptionChanged?(self.selectedOption)
+    }
+    
+    func negativeAction(){
+        self.onNegativeClicked?()
+        closePicker()
     }
     
     func closePicker(){

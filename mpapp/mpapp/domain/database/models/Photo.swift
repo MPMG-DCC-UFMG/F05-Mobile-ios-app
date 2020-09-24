@@ -4,7 +4,7 @@ import RealmSwift
 class Photo: Object,Identifiable{
     @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var idCollect = ""
-    @objc dynamic var filepath: String? = nil
+    @objc dynamic var fileName: String? = nil
     @objc dynamic var type: String? = nil
     @objc dynamic var isSent = false
     @objc dynamic var latitude = 0.0

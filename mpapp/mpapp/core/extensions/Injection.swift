@@ -11,6 +11,8 @@ extension Resolver:ResolverRegistering{
         register{LocationViewModel()}.scope(cached)
         register{CollectViewModel(collectRepository: resolve(), publicWorkRepository: resolve())}.scope(cached)
         register{WorkStatusViewModel(typeWorkRepository: resolve(),workStatusRepository: resolve())}.scope(cached)
+        register{TypePhotoViewModel(typePhotoRepository: resolve())}.scope(cached)
+        register{PhotoViewModel()}.scope(cached)
         
         // Repositories
         register{TypeWorkRepository(localTypeWorkDataSource: resolve()) as ITypeWorkRepository}.scope(application)

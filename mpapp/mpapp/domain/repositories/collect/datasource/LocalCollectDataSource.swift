@@ -13,8 +13,21 @@ class LocalCollectDataSource: BaseDataSource<Collect>, ILocalCollectDataSource{
         }
     }
     
+    func deletePhotoById(_ photoId: String) throws{
+        let photoDb = self.mpDatabase().object(ofType: Photo.self, forPrimaryKey: photoId)
+        if(photoDb != nil){
+            try self.mpDatabase().write{
+                self.mpDatabase().delete(photoDb!)
+            }
+        }
+    }
+    
     func getCollectByPublicWorkId(publicWorkId: String) -> Collect?{
         return self.listAll().filter(NSPredicate(format: "idPublicWork == %@",publicWorkId)).first
+    }
+    
+    func getPhotoByCollectId(collectId: String) -> [Photo]{
+        return self.mpDatabase().objects(Photo.self).filter(NSPredicate(format: "idCollect == %@",collectId)).toArray()
     }
     
     func insertCollect(collect: Collect,publicWork: PublicWork) throws {
@@ -25,9 +38,12 @@ class LocalCollectDataSource: BaseDataSource<Collect>, ILocalCollectDataSource{
         }
     }
     
-    func insertCollect(collect: CollectUI,publicWork: PublicWork) throws {
+    func insertCollect(collect: CollectUI,publicWork: PublicWork, photoUI: [PhotoUI]) throws {
         try self.mpDatabase().write{
             self.mpDatabase().add(collect.toDB(),update: .modified)
+            photoUI.forEach{ photo in
+                self.mpDatabase().add(photo.toDB(),update: .modified)
+            }
             publicWork.idCollect = collect.getId()
             self.mpDatabase().add(publicWork,update: .modified)
         }

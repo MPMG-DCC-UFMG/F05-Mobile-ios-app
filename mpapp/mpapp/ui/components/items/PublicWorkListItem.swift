@@ -29,7 +29,7 @@ struct PublicWorkListItem: View {
             
         }.padding()
             .frame(minWidth: 0, maxWidth: .infinity)
-            .background(ColorProvider.grey3)
+            .background(ColorProvider.grey2)
             .cornerRadius(8)
     }
     

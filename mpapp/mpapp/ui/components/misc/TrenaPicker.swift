@@ -15,7 +15,7 @@ struct TrenaPicker: View {
         VStack{
             Spacer()
             HStack{
-                Button(action: closePicker){
+                Button(action: negativeAction){
                     Text(negativeText).h2(color: ColorProvider.red)
                 }.padding()
                 Spacer()
@@ -43,8 +43,12 @@ struct TrenaPicker: View {
         self.onOptionChanged?(self.selectedOption)
     }
     
-    func closePicker(){
+    func negativeAction(){
         self.onNegativeClicked?()
+        closePicker()
+    }
+    
+    func closePicker(){
         self.closed.toggle()
     }
     

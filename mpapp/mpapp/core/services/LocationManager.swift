@@ -5,7 +5,9 @@ class LocationManager: NSObject,ObservableObject{
     
     @Published var status: CLAuthorizationStatus? = nil
     @Published var location: CLLocation? {
-        willSet { objectWillChange.send() }
+        willSet {
+            objectWillChange.send()
+        }
     }
     
     var latitude: CLLocationDegrees {

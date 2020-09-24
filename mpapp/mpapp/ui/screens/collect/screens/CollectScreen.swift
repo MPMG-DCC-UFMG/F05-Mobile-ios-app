@@ -5,6 +5,7 @@ struct CollectScreen: View {
     
     @ObservedObject private var collectViewModel: CollectViewModel = Resolver.resolve()
     @ObservedObject private var workStatusViewModel: WorkStatusViewModel = Resolver.resolve()
+    @ObservedObject private var photoViewModel: PhotoViewModel = Resolver.resolve()
     
     var onBackPressed: (() -> Void)?
     @ObservedObject var publicWork: PublicWorkUI
@@ -22,7 +23,7 @@ struct CollectScreen: View {
                 CommentBottom(closed: $commentOn, comment: collectViewModel.currentCollect.comments ?? "",onConfirmClicked:self.collectConfirmClicked).transition(AnyTransition.opacity).animation(.default)
             }
             if(deleteClicked){
-                TrenaDialog( title: "Deletar Coleta",message: "A coleta não podera ser restaurada",onPositiveClicked: handleDeleteCollect,onCloseClicked: {deleteClicked.toggle()})
+                TrenaDialog( title: "Deletar Coleta",message: "A coleta não poderá ser restaurada",onPositiveClicked: handleDeleteCollect,onCloseClicked: {deleteClicked.toggle()})
             }
             if(openWorkStatusPicker){
                 createTrenaPicker()
@@ -48,22 +49,42 @@ struct CollectScreen: View {
         switch navigate {
         case .editPublicWork:
             return AnyView(
-                PublicWorkAddScreen(publicWorkUI: publicWork,onCancelClicked: {self.navigateTo(.collectMain)}, onAddClicked:self.onAddClicked)
+                PublicWorkAddScreen(publicWorkUI: publicWork,onCancelClicked: {self.navigateTo(.collectMain)})
+            )
+        case .photo:
+            return AnyView(
+                PhotoView(onBackPressed: {self.navigateTo(.collectMain)},onDeletePhotoClicked: onDeletePhotoClicked)
             )
         default:
             return AnyView(
                 CollectView(publicWork: self.publicWork, onBackPressed:self.handleOnBackPressed,
                     onEditClicked: {self.navigateTo(.editPublicWork)},
                     onDeleteClicked: self.onDeleteClicked,
-                    onCommentClicked: self.onCommentClicked)
+                    onAddClicked: self.handleOnAddClicked,
+                    onCommentClicked: self.onCommentClicked,
+                    onPhotoClicked:self.onPhotoClicked)
             )
             
         }
     }
     
+    private func onDeletePhotoClicked(_ photo: PhotoUI){
+        collectViewModel.removePhotoFromList(photo)
+    }
+    
+    private func onPhotoClicked(_ photoUI: PhotoUI){
+        photoViewModel.startPhotoFlow(photoUI,idCollect: collectViewModel.currentCollect.getId())
+        self.navigateTo(.photo)
+    }
+    
     private func handleDeleteCollect(){
         collectViewModel.deleteCollect(publicWorkUI: self.publicWork)
         self.onBackPressed?()
+    }
+    
+    private func handleOnAddClicked(){
+        photoViewModel.startPhotoFlow(idCollect: collectViewModel.currentCollect.getId())
+        self.navigateTo(.photo)
     }
     
     private func handleOnBackPressed(){
@@ -84,10 +105,6 @@ struct CollectScreen: View {
     
     private func collectConfirmClicked(_ comment: String){
         collectViewModel.updateComment(comment)
-    }
-    
-    private func onAddClicked(){
-        
     }
 }
 

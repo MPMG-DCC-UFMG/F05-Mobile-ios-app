@@ -21,7 +21,7 @@ struct LoginView: View {
                 
                 HStack{
                     Text("Não tem conta?").h3()
-                    Button(action: login){
+                    Button(action: registerClicked){
                         Text("Cadastre aqui").h3(color: ColorProvider.greenTrena)
                     }
                 }.padding(.top,20)
@@ -44,6 +44,10 @@ struct LoginView: View {
     
     private func login(){
         self.loginViewModel.toggleLogin()
+    }
+    
+    private func registerClicked(){
+        self.loginViewModel.navigateRegistering()
     }
 }
 

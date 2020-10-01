@@ -5,7 +5,7 @@ extension Resolver:ResolverRegistering{
     public static func registerAllServices() {
         // ViewModels
         register{TypeWorkViewModel(typeWorkRepository: resolve())}.scope(cached)
-        register{LoginViewModel()}.scope(cached)
+        register{LoginViewModel(userRepository: resolve())}.scope(cached)
         register{ConfigurationViewModel()}.scope(cached)
         register{PublicWorkViewModel(publicWorkRepository: resolve())}.scope(cached)
         register{LocationViewModel()}.scope(cached)
@@ -13,6 +13,7 @@ extension Resolver:ResolverRegistering{
         register{WorkStatusViewModel(typeWorkRepository: resolve(),workStatusRepository: resolve())}.scope(cached)
         register{TypePhotoViewModel(typePhotoRepository: resolve())}.scope(cached)
         register{PhotoViewModel()}.scope(cached)
+        register{SyncViewModel(publicWorkRepository: resolve())}.scope(cached)
         
         // Repositories
         register{TypeWorkRepository(localTypeWorkDataSource: resolve()) as ITypeWorkRepository}.scope(application)
@@ -23,6 +24,7 @@ extension Resolver:ResolverRegistering{
         register{AssociationRepository(localAssociationDataSource: resolve()) as IAssociationRepository}.scope(application)
         register{PublicWorkRepository(localPublicWorkDataSource: resolve()) as IPublicWorkRepository}.scope(application)
         register{CollectRepository(localCollectDataSource:resolve()) as ICollectRepository}.scope(application)
+        register{UserRepository(remoteUserDataSource:resolve()) as IUserRepository}.scope(application)
         
         // LocalDataSources
         register{LocalTypeWorkDataSource() as ILocalTypeWorkDataSource}.scope(application)
@@ -36,6 +38,7 @@ extension Resolver:ResolverRegistering{
         
         // RemoteDataSources
         register{RemoteConfigDataSource() as IRemoteConfigDataSource}.scope(application)
+        register{RemoteUserDataSource() as IRemoteUserDataSource}.scope(application)
         
         // Services
         register{LocationManager()}.scope(application)

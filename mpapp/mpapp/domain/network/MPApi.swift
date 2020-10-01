@@ -29,4 +29,6 @@ struct MPApi{
     @GET(url: "publicworks/version") static var getPublicWorkVersion: (_ queryParameters: Parameters?) -> Promise<Data>
 
     @GET(url: "publicworks/changes") static var loadPublicWorksChange: (_ queryParameters: Parameters?) -> Promise<Data>
+    
+    @POST(url: "security/users/create") static var createUser : (_ body: Data) -> Promise<Data>
 }

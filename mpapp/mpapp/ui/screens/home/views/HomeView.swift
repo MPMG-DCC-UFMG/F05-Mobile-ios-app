@@ -18,14 +18,16 @@ struct HomeView: View {
                 Text("Bem vindo ao TRENA, o aplicativo de fiscalização do Ministério Público de Minas Gerais").h2().padding(.top,40)
                     .padding(.leading,14)
                 HomeButton(action: {
-                    self.navigateTo(HomeNavigation.publicWorkList)
+                    self.navigateTo(.publicWorkList)
                 }, label: "Lista de obras", image: "list")
                     .padding(.top,50)
                 HomeButton(action: {
-                    self.navigateTo(HomeNavigation.addPublicWork)
+                    self.navigateTo(.addPublicWork)
                 }, label: "Adicionar nova obra", image: "plus")
                     .padding(.top,10)
-                HomeButton(action: {}, label: "Enviar dados", image: "sync")
+                HomeButton(action: {
+                    self.navigateTo(.sync)
+                }, label: "Enviar dados", image: "sync")
                     .padding(.top,10)
                 HomeButton(action: logout, label: "Sair", image: "logout")
                     .padding(.top,10)

@@ -37,7 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setupGoogle(){
         GMSServices.provideAPIKey(Config.googleAPIKey)
-//        GMSPlacesClient.provideAPIKey(Environment.googleAPIKey)
     }
 }
 

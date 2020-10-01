@@ -1,7 +1,6 @@
 import Foundation
 import RxSwift
 import PromiseKit
-import Gloss
 
 class LoadServerDataWorker{
     
@@ -31,12 +30,12 @@ class LoadServerDataWorker{
         }
     }
     
-    private func downloadFromServer(downloadInfo: BaseDownloadInfo,hasServerChanged: Bool) -> Promise<Array<JSONDecodable>>{
+    private func downloadFromServer(downloadInfo: BaseDownloadInfo,hasServerChanged: Bool) -> Promise<Array<Decodable>>{
         if hasServerChanged{
             self.updateProgress(message: "Baixando dados de: \(downloadInfo.name())")
             return downloadInfo.loadInfo()
         }else{
-            return Promise<Array<JSONDecodable>>{ seal in
+            return Promise<Array<Decodable  >>{ seal in
                 seal.fulfill([])
             }
         }
@@ -50,7 +49,7 @@ class LoadServerDataWorker{
             firstly{
                 downloadInfo.serverVersion()
             }.then{serverVersion in
-                self.serverVersionChanged(serverVersion: serverVersion.version!, currentVersion: currentVersion)
+                self.serverVersionChanged(serverVersion: serverVersion.version, currentVersion: currentVersion)
             }.then{hasServerChanged in
                 self.downloadFromServer(downloadInfo: downloadInfo, hasServerChanged: hasServerChanged)
             }.done{

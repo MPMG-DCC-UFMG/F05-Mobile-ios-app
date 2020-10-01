@@ -1,6 +1,5 @@
 import Foundation
 import Resolver
-import Gloss
 import PromiseKit
 
 class DownloadCities: BaseDownloadInfo,Resolving{
@@ -24,7 +23,7 @@ class DownloadCities: BaseDownloadInfo,Resolving{
         configRepository.saveCityVersion(cityVersion: serverVersion)
     }
     
-    func loadInfo() -> Promise<Array<JSONDecodable>>{
+    func loadInfo() -> Promise<Array<Decodable>>{
         return configRepository.loadCities()
     }
     

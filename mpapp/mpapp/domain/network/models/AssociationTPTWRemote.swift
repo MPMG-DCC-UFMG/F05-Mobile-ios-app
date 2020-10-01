@@ -1,19 +1,24 @@
 import Foundation
-import Gloss
 
-class AssociationTPTWRemote: JSONDecodable{
-    let typeWorkFlag: Int?
-    let typePhotoFlag: Int?
+class AssociationTPTWRemote: Decodable{
+    var typeWorkFlag: Int
+    var typePhotoFlag: Int
     
-    required init?(json: JSON) {
-        self.typeWorkFlag = "type_work_flag" <~~ json
-        self.typePhotoFlag = "type_photo_flag" <~~ json
+    enum CodingKeys: String, CodingKey {
+        case typePhotoFlag = "type_photo_flag"
+        case typeWorkFlag = "type_work_flag"
+    }
+    
+    init(_ jsonData: Data) {
+        let response = try! JSONDecoder().decode(AssociationTPTWRemote.self, from: jsonData)
+        self.typePhotoFlag = response.typePhotoFlag
+        self.typeWorkFlag = response.typeWorkFlag
     }
     
     func toAssociationTPTWDB() -> AssociationTPTW{
         let associationTPTW =  AssociationTPTW()
-        associationTPTW.typeWorkFlag = self.typeWorkFlag!
-        associationTPTW.typePhotoFlag = self.typePhotoFlag!
+        associationTPTW.typeWorkFlag = self.typeWorkFlag
+        associationTPTW.typePhotoFlag = self.typePhotoFlag
         return associationTPTW
     }
 }

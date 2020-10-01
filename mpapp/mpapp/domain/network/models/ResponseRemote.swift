@@ -10,7 +10,6 @@ class ResponseRemote : Decodable{
     }
     
     init(_ jsonData: Data) {
-        print(jsonData)
         let response = try! JSONDecoder().decode(ResponseRemote.self, from: jsonData)
         self.success = response.success
         self.error = response.error

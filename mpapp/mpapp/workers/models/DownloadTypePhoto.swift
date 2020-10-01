@@ -1,6 +1,5 @@
 import Foundation
 import Resolver
-import Gloss
 import PromiseKit
 
 class DownloadTypePhoto: BaseDownloadInfo,Resolving{
@@ -24,7 +23,7 @@ class DownloadTypePhoto: BaseDownloadInfo,Resolving{
         configRepository.saveTypePhotosVersion(typePhotosVersion: serverVersion)
     }
     
-    func loadInfo() -> Promise<Array<JSONDecodable>>{
+    func loadInfo() -> Promise<Array<Decodable>>{
         return configRepository.loadTypePhotos()
     }
     

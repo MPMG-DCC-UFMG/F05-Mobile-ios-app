@@ -1,11 +1,11 @@
 import Foundation
-import Gloss
 
-class EntityVersion: JSONDecodable{
-    var version: Int?
+class EntityVersion: Decodable{
+    var version: Int
     
-    required init?(json: JSON) {
-        self.version = "version" <~~ json
+    init(_ jsonData: Data) {
+        let response = try! JSONDecoder().decode(EntityVersion.self, from: jsonData)
+        self.version = response.version
     }
     
     init() {

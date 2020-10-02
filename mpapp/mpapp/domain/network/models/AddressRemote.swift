@@ -1,7 +1,6 @@
 import Foundation
-import Gloss
 
-class AddressRemote: Decodable{
+class AddressRemote: Codable{
     var id: String
     var street: String
     var state: String
@@ -52,5 +51,10 @@ class AddressRemote: Decodable{
         address.longitude = self.longitude
         address.idPublicWork = self.publicWorkId
         return address
+    }
+    
+    func toParameter() -> Data {
+        let jsonData = try! JSONEncoder().encode(self)
+        return jsonData
     }
 }

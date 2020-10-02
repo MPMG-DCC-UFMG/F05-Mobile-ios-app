@@ -31,6 +31,15 @@
 		3847EBC124FAACDD00B2C4A5 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3847EBC024FAACDD00B2C4A5 /* HomeScreen.swift */; };
 		38481E4A25006358004D9E07 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38481E4925006358004D9E07 /* TabBarItem.swift */; };
 		38481E4C2500677B004D9E07 /* TrenaTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38481E4B2500677B004D9E07 /* TrenaTabBar.swift */; };
+		385275C2252679E100A6528E /* CollectRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275C1252679E100A6528E /* CollectRemote.swift */; };
+		385275C725267BC700A6528E /* PhotoRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275C625267BC700A6528E /* PhotoRemote.swift */; };
+		385275CC25274A2400A6528E /* ImageUploadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275CB25274A2400A6528E /* ImageUploadResponse.swift */; };
+		385275D125274AAF00A6528E /* IRemotePhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275D025274AAF00A6528E /* IRemotePhotoDataSource.swift */; };
+		385275D625274B0F00A6528E /* RemotePhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275D525274B0F00A6528E /* RemotePhotoDataSource.swift */; };
+		385275DB25274E7100A6528E /* IRemotePublicWorkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275DA25274E7100A6528E /* IRemotePublicWorkDataSource.swift */; };
+		385275E025274EF600A6528E /* RemotePublicWorkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275DF25274EF600A6528E /* RemotePublicWorkDataSource.swift */; };
+		385275E52527565200A6528E /* IRemoteCollectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275E42527565200A6528E /* IRemoteCollectDataSource.swift */; };
+		385275EA2527569400A6528E /* RemoteCollectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275E92527569400A6528E /* RemoteCollectDataSource.swift */; };
 		385E1D31250A66440032F2E9 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E1D30250A66440032F2E9 /* RadioButton.swift */; };
 		385E1D33250A6D400032F2E9 /* TrenaRadioGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E1D32250A6D400032F2E9 /* TrenaRadioGroup.swift */; };
 		386406A624EF4EBE000B9345 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386406A524EF4EBE000B9345 /* Injection.swift */; };
@@ -221,6 +230,15 @@
 		3847EBC024FAACDD00B2C4A5 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		38481E4925006358004D9E07 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		38481E4B2500677B004D9E07 /* TrenaTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaTabBar.swift; sourceTree = "<group>"; };
+		385275C1252679E100A6528E /* CollectRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectRemote.swift; sourceTree = "<group>"; };
+		385275C625267BC700A6528E /* PhotoRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRemote.swift; sourceTree = "<group>"; };
+		385275CB25274A2400A6528E /* ImageUploadResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadResponse.swift; sourceTree = "<group>"; };
+		385275D025274AAF00A6528E /* IRemotePhotoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRemotePhotoDataSource.swift; sourceTree = "<group>"; };
+		385275D525274B0F00A6528E /* RemotePhotoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePhotoDataSource.swift; sourceTree = "<group>"; };
+		385275DA25274E7100A6528E /* IRemotePublicWorkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRemotePublicWorkDataSource.swift; sourceTree = "<group>"; };
+		385275DF25274EF600A6528E /* RemotePublicWorkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePublicWorkDataSource.swift; sourceTree = "<group>"; };
+		385275E42527565200A6528E /* IRemoteCollectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRemoteCollectDataSource.swift; sourceTree = "<group>"; };
+		385275E92527569400A6528E /* RemoteCollectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCollectDataSource.swift; sourceTree = "<group>"; };
 		385E1D30250A66440032F2E9 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		385E1D32250A6D400032F2E9 /* TrenaRadioGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaRadioGroup.swift; sourceTree = "<group>"; };
 		386406A524EF4EBE000B9345 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
@@ -599,6 +617,9 @@
 				38D5A12F2525F9BB005FE609 /* MPUserRemote.swift */,
 				38D5A13E2525FCEE005FE609 /* ResponseRemote.swift */,
 				38D5A1432525FD30005FE609 /* ErrorRemote.swift */,
+				385275C1252679E100A6528E /* CollectRemote.swift */,
+				385275C625267BC700A6528E /* PhotoRemote.swift */,
+				385275CB25274A2400A6528E /* ImageUploadResponse.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -799,6 +820,8 @@
 			children = (
 				3864077524F590C5000B9345 /* ILocalPublicWorkDataSource.swift */,
 				3864077724F5929C000B9345 /* LocalPublicWorkDataSource.swift */,
+				385275DA25274E7100A6528E /* IRemotePublicWorkDataSource.swift */,
+				385275DF25274EF600A6528E /* RemotePublicWorkDataSource.swift */,
 			);
 			path = datasource;
 			sourceTree = "<group>";
@@ -1066,6 +1089,10 @@
 			children = (
 				38B1DE6025164AC200BCAC9E /* ILocalCollectDataSource.swift */,
 				38B1DE6825164B0600BCAC9E /* LocalCollectDataSource.swift */,
+				385275D025274AAF00A6528E /* IRemotePhotoDataSource.swift */,
+				385275D525274B0F00A6528E /* RemotePhotoDataSource.swift */,
+				385275E42527565200A6528E /* IRemoteCollectDataSource.swift */,
+				385275E92527569400A6528E /* RemoteCollectDataSource.swift */,
 			);
 			path = datasource;
 			sourceTree = "<group>";
@@ -1462,11 +1489,13 @@
 			files = (
 				38C2E02124F718A400121039 /* TrenaDivider.swift in Sources */,
 				3899CD7B24FCEDA100FC078F /* HomeNavigation.swift in Sources */,
+				385275DB25274E7100A6528E /* IRemotePublicWorkDataSource.swift in Sources */,
 				3864074A24F5594C000B9345 /* ICityRepository.swift in Sources */,
 				382DF5512523571D00DE023E /* SyncViewModel.swift in Sources */,
 				3847EBAA24F97FE400B2C4A5 /* LoadingDataScreen.swift in Sources */,
 				38B1DE4725163C9100BCAC9E /* RoundedCorners.swift in Sources */,
 				38C2E02324F7191600121039 /* TrenaPasswordField.swift in Sources */,
+				385275E025274EF600A6528E /* RemotePublicWorkDataSource.swift in Sources */,
 				386406ED24F189EB000B9345 /* FontProvider.swift in Sources */,
 				38C2E01A24F7053200121039 /* TrenaButton.swift in Sources */,
 				386406AE24F01616000B9345 /* LocalConfigDataSource.swift in Sources */,
@@ -1493,6 +1522,7 @@
 				3864073224F53A53000B9345 /* WorkStatus.swift in Sources */,
 				3864076324F56855000B9345 /* IAssociationRepository.swift in Sources */,
 				380FA6472518D68C00DF57AD /* PhotoView.swift in Sources */,
+				385275D125274AAF00A6528E /* IRemotePhotoDataSource.swift in Sources */,
 				3864071524F401BF000B9345 /* LoadServerDataWorker.swift in Sources */,
 				3864078124F69E89000B9345 /* ScaledFont.swift in Sources */,
 				3890090724EEEC8F00954A95 /* TypeWork.swift in Sources */,
@@ -1510,9 +1540,11 @@
 				3864073824F550E2000B9345 /* DownloadTypePhoto.swift in Sources */,
 				389008D024EEE6FE00954A95 /* AppDelegate.swift in Sources */,
 				3890091624EEF2AA00954A95 /* BaseDataSource.swift in Sources */,
+				385275E52527565200A6528E /* IRemoteCollectDataSource.swift in Sources */,
 				38B1DE782516760300BCAC9E /* PublicWorkUI.swift in Sources */,
 				386406BD24F0393F000B9345 /* IRemoteConfigDataSource.swift in Sources */,
 				380FA6512518DC4700DF57AD /* TrenaTopBar.swift in Sources */,
+				385275CC25274A2400A6528E /* ImageUploadResponse.swift in Sources */,
 				3864074824F5593C000B9345 /* ILocalCityDataSource.swift in Sources */,
 				3864077F24F69DE2000B9345 /* Headers.swift in Sources */,
 				38D5A1302525F9BB005FE609 /* MPUserRemote.swift in Sources */,
@@ -1537,11 +1569,13 @@
 				380FA6632518DE0000DF57AD /* PhotoUI.swift in Sources */,
 				3864076624F56874000B9345 /* ILocalAssociationDataSource.swift in Sources */,
 				3864071324F3F1B5000B9345 /* DownloadTypeWork.swift in Sources */,
+				385275D625274B0F00A6528E /* RemotePhotoDataSource.swift in Sources */,
 				38481E4C2500677B004D9E07 /* TrenaTabBar.swift in Sources */,
 				3864072C24F535D7000B9345 /* Photo.swift in Sources */,
 				3864073424F54C7F000B9345 /* AssociationTPTW.swift in Sources */,
 				3864071D24F42C3B000B9345 /* LoadingDataView.swift in Sources */,
 				38D5A1372525FC87005FE609 /* IRemoteUserDataSource.swift in Sources */,
+				385275C725267BC700A6528E /* PhotoRemote.swift in Sources */,
 				3864072424F52E6A000B9345 /* Address.swift in Sources */,
 				38B1DE6E25164B5D00BCAC9E /* ICollectRepository.swift in Sources */,
 				3864071124F3EAB2000B9345 /* EntityVersion.swift in Sources */,
@@ -1569,6 +1603,7 @@
 				38CF10C624FE5EA900040FE1 /* TrenaClickableField.swift in Sources */,
 				38E92DF4251550FC0017EE48 /* CollectViewModel.swift in Sources */,
 				380FA65E2518DDDC00DF57AD /* PhotoViewModel.swift in Sources */,
+				385275EA2527569400A6528E /* RemoteCollectDataSource.swift in Sources */,
 				3864077324F58E0D000B9345 /* IPublicWorkRepository.swift in Sources */,
 				3847EBB024FA7CA000B2C4A5 /* PublicWorkListView.swift in Sources */,
 				380BC736250836CD00B73451 /* CollectView.swift in Sources */,
@@ -1584,6 +1619,7 @@
 				3864075724F561D5000B9345 /* IWorkStatusRepository.swift in Sources */,
 				3864076C24F586E9000B9345 /* DownloadAssociation.swift in Sources */,
 				3899CD7724FCE95200FC078F /* PublicWorkAddView.swift in Sources */,
+				385275C2252679E100A6528E /* CollectRemote.swift in Sources */,
 				3864075C24F561F7000B9345 /* LocalWorkStatusDataSource.swift in Sources */,
 				386406C524F04514000B9345 /* SplashView.swift in Sources */,
 				386406A624EF4EBE000B9345 /* Injection.swift in Sources */,

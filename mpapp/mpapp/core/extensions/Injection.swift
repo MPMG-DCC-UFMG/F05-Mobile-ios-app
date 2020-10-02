@@ -39,6 +39,9 @@ extension Resolver:ResolverRegistering{
         // RemoteDataSources
         register{RemoteConfigDataSource() as IRemoteConfigDataSource}.scope(application)
         register{RemoteUserDataSource() as IRemoteUserDataSource}.scope(application)
+        register{RemotePublicWorkDataSource() as IRemotePublicWorkDataSource}.scope(application)
+        register{RemotePhotoDataSource() as IRemotePhotoDataSource}.scope(application)
+        register{RemoteCollectDataSource() as IRemoteCollectDataSource}.scope(application)
         
         // Services
         register{LocationManager()}.scope(application)

@@ -1,6 +1,6 @@
 import Foundation
 
-class PublicWorkRemote: Decodable{
+class PublicWorkRemote: Codable{
     var id: String
     var name: String
     var typeWorkFlag: Int
@@ -37,5 +37,10 @@ class PublicWorkRemote: Decodable{
         publicWork.toSend = false
         publicWork.address = self.address.toAddressDB()
         return publicWork
+    }
+    
+    func toParameter() -> Data {
+        let jsonData = try! JSONEncoder().encode(self)
+        return jsonData
     }
 }

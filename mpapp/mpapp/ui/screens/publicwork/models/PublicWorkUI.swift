@@ -77,6 +77,23 @@ class PublicWorkUI: ObservableObject{
         return publicWork
     }
     
+    func update(_ publicWork: PublicWork){
+        self.publicWork.name = publicWork.name
+        self.publicWork.address = publicWork.address
+        self.publicWork.idAddress = publicWork.address!.id
+        self.publicWork.typeWorkFlag = publicWork.typeWorkFlag
+        self.publicWork.idCollect = publicWork.idCollect
+        self.publicWork.toSend = true
+        self.address.idPublicWork = publicWork.id
+        self.address.cep = publicWork.address!.cep
+        self.address.city = publicWork.address!.city
+        self.address.latitude = publicWork.address!.latitude
+        self.address.longitude = publicWork.address!.longitude
+        self.address.neighborhood = publicWork.address!.neighborhood
+        self.address.number = publicWork.address!.number
+        self.address.street = publicWork.address!.street
+    }
+    
     func getPublicWork() -> PublicWork{
         return self.publicWork
     }

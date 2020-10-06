@@ -40,6 +40,7 @@
 		385275E025274EF600A6528E /* RemotePublicWorkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275DF25274EF600A6528E /* RemotePublicWorkDataSource.swift */; };
 		385275E52527565200A6528E /* IRemoteCollectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275E42527565200A6528E /* IRemoteCollectDataSource.swift */; };
 		385275EA2527569400A6528E /* RemoteCollectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275E92527569400A6528E /* RemoteCollectDataSource.swift */; };
+		385275F225276CF200A6528E /* PublicWorkUploadWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275F125276CF200A6528E /* PublicWorkUploadWorker.swift */; };
 		385E1D31250A66440032F2E9 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E1D30250A66440032F2E9 /* RadioButton.swift */; };
 		385E1D33250A6D400032F2E9 /* TrenaRadioGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E1D32250A6D400032F2E9 /* TrenaRadioGroup.swift */; };
 		386406A624EF4EBE000B9345 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386406A524EF4EBE000B9345 /* Injection.swift */; };
@@ -239,6 +240,7 @@
 		385275DF25274EF600A6528E /* RemotePublicWorkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePublicWorkDataSource.swift; sourceTree = "<group>"; };
 		385275E42527565200A6528E /* IRemoteCollectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRemoteCollectDataSource.swift; sourceTree = "<group>"; };
 		385275E92527569400A6528E /* RemoteCollectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCollectDataSource.swift; sourceTree = "<group>"; };
+		385275F125276CF200A6528E /* PublicWorkUploadWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkUploadWorker.swift; sourceTree = "<group>"; };
 		385E1D30250A66440032F2E9 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		385E1D32250A6D400032F2E9 /* TrenaRadioGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaRadioGroup.swift; sourceTree = "<group>"; };
 		386406A524EF4EBE000B9345 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
@@ -710,6 +712,7 @@
 			children = (
 				3864070D24F3E6B9000B9345 /* models */,
 				3864071424F401BF000B9345 /* LoadServerDataWorker.swift */,
+				385275F125276CF200A6528E /* PublicWorkUploadWorker.swift */,
 			);
 			path = workers;
 			sourceTree = "<group>";
@@ -1639,6 +1642,7 @@
 				3864074024F55226000B9345 /* ITypePhotoRepository.swift in Sources */,
 				38C2E01F24F70E3200121039 /* SignInButton.swift in Sources */,
 				386406BB24F03351000B9345 /* NetworkWrappers.swift in Sources */,
+				385275F225276CF200A6528E /* PublicWorkUploadWorker.swift in Sources */,
 				3864072624F5318F000B9345 /* City.swift in Sources */,
 				3847EBC124FAACDD00B2C4A5 /* HomeScreen.swift in Sources */,
 				3847EBB224FA7E0800B2C4A5 /* SearchField.swift in Sources */,

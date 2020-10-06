@@ -5,7 +5,7 @@ class PublicWorkRemote: Codable{
     var name: String
     var typeWorkFlag: Int
     var address: AddressRemote
-    var operation: Int
+    var operation: Int?
     var userStatus: Int
     
     enum CodingKeys: String, CodingKey {
@@ -25,6 +25,14 @@ class PublicWorkRemote: Codable{
         self.address = response.address
         self.operation = response.operation
         self.userStatus = response.userStatus
+    }
+    
+    init(_ publicWork: PublicWork){
+        self.id = publicWork.id
+        self.name = publicWork.name
+        self.typeWorkFlag = publicWork.typeWorkFlag
+        self.address = AddressRemote(publicWork.address!)
+        self.userStatus = publicWork.userStatusFlag
     }
     
     func toPublicWorkDB() -> PublicWork{

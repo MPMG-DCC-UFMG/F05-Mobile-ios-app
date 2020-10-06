@@ -22,8 +22,8 @@ extension Resolver:ResolverRegistering{
         register{CityRepository(localCityDataSource: resolve()) as ICityRepository}.scope(application)
         register{WorkStatusRepository(localWorkStatusDataSource: resolve()) as IWorkStatusRepository}.scope(application)
         register{AssociationRepository(localAssociationDataSource: resolve()) as IAssociationRepository}.scope(application)
-        register{PublicWorkRepository(localPublicWorkDataSource: resolve()) as IPublicWorkRepository}.scope(application)
-        register{CollectRepository(localCollectDataSource:resolve()) as ICollectRepository}.scope(application)
+        register{PublicWorkRepository(localPublicWorkDataSource: resolve(), remotePublicWorkDataSource: resolve()) as IPublicWorkRepository}.scope(application)
+        register{CollectRepository(localCollectDataSource:resolve(),remoteCollectDataSource: resolve(),remotePhotoDataSource: resolve()) as ICollectRepository}.scope(application)
         register{UserRepository(remoteUserDataSource:resolve()) as IUserRepository}.scope(application)
         
         // LocalDataSources

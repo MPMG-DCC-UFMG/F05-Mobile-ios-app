@@ -1,12 +1,16 @@
 import Foundation
 import RealmSwift
+import PromiseKit
 
 class PublicWorkRepository: IPublicWorkRepository{
-    
+
     private let localPublicWorkDataSource: ILocalPublicWorkDataSource
+    private let remotePublicWorkDataSource: IRemotePublicWorkDataSource
     
-    init(localPublicWorkDataSource: ILocalPublicWorkDataSource) {
+    init(localPublicWorkDataSource: ILocalPublicWorkDataSource,
+         remotePublicWorkDataSource: IRemotePublicWorkDataSource) {
         self.localPublicWorkDataSource = localPublicWorkDataSource
+        self.remotePublicWorkDataSource = remotePublicWorkDataSource
     }
     
     func insertPublicWork(publicWork: PublicWork) throws {
@@ -31,5 +35,21 @@ class PublicWorkRepository: IPublicWorkRepository{
     
     func listAllPublicWorks() -> Results<PublicWork>{
         return self.localPublicWorkDataSource.listAllPublicWorks()
+    }
+    
+    func getPublicWorkById(publicWorkId: String) -> PublicWork?{
+        return self.localPublicWorkDataSource.getPublicWorkById(publicWorkId: publicWorkId)
+    }
+    
+    func sendPublicWork(publicWorkRemote: PublicWorkRemote) -> Promise<PublicWorkRemote> {
+        return self.remotePublicWorkDataSource.sendPublicWork(publicWorkRemote: publicWorkRemote)
+    }
+    
+    func markPublicWorkCollectSent(publicWorkId: String) throws{
+        try self.localPublicWorkDataSource.markPublicWorkCollectSent(publicWorkId: publicWorkId)
+    }
+    
+    func markPublicWorkSent(publicWorkId: String) throws{
+        try self.localPublicWorkDataSource.markPublicWorkSent(publicWorkId: publicWorkId)
     }
 }

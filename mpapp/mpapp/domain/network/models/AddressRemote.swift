@@ -39,6 +39,19 @@ class AddressRemote: Codable{
         self.publicWorkId = response.publicWorkId
     }
     
+    init(_ address: Address){
+        self.id = address.id
+        self.street = address.street
+        self.state = address.state
+        self.city = address.city
+        self.number = address.number
+        self.neighborhood = address.neighborhood
+        self.cep = address.cep
+        self.latitude = address.latitude
+        self.longitude = address.longitude
+        self.publicWorkId = address.idPublicWork
+    }
+    
     func toAddressDB() -> Address{
         let address =  Address()
         address.id = self.id

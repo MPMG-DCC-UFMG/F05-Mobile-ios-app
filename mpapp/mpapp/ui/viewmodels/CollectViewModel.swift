@@ -16,7 +16,12 @@ class CollectViewModel: ObservableObject {
     
     func updateCurrentCollect(_ publicWork: PublicWorkUI){
         photoList = [:]
-        guard let collect = collectRepository.getCollectByPublicWorkId(publicWorkId: publicWork.getId()) else {
+        guard let idCollect = publicWork.idCollect else {
+            currentCollect = CollectUI()
+            return
+        }
+        
+        guard let collect = collectRepository.getCollectByCollectId(collectId: idCollect) else {
             currentCollect = CollectUI()
             return
         }

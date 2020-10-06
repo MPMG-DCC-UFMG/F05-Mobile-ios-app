@@ -26,6 +26,10 @@ class LocalCollectDataSource: BaseDataSource<Collect>, ILocalCollectDataSource{
         return self.listAll().filter(NSPredicate(format: "idPublicWork == %@",publicWorkId)).first
     }
     
+    func getCollectByCollectId(collectId: String) -> Collect? {
+        return self.mpDatabase().object(ofType: Collect.self, forPrimaryKey: collectId)
+    }
+    
     func getPhotoByCollectId(collectId: String) -> [Photo]{
         return self.mpDatabase().objects(Photo.self).filter(NSPredicate(format: "idCollect == %@",collectId)).toArray()
     }

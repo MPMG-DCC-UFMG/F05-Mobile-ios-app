@@ -8,13 +8,16 @@ struct SyncView: View {
     var onBackPressed: (() -> Void)?
     
     var body: some View {
+        
+        let sortedPublicWorks = syncViewModel.syncWorkers.sorted(by: { $0.key < $1.key })
+        
         ZStack{
             ColorProvider.darkBackground.edgesIgnoringSafeArea(.all)
             VStack{
                 TrenaTopBar(title: "Enviar dados", onBackPressed: self.onBackPressed).padding(.bottom,15)
                 List{
-                    ForEach(syncViewModel.publicWorksList()){ publicWork in
-                        SyncListItem(syncUI: SyncUI(publicWork))
+                    ForEach(sortedPublicWorks,id: \.key){ (key, value) in
+                        SyncListItem(syncUI:value)
                     }
                     .listRowBackground(ColorProvider.darkBackground)
                 }
@@ -28,10 +31,16 @@ struct SyncView: View {
                 }
                 .padding(.horizontal, -20)
                 .listStyle(PlainListStyle())
-                TrenaButton(label: "Enviar dados", style: .button2, action: {})
+                TrenaButton(label: "Enviar dados", style: .button2, action: sendClicked)
                     .padding()
+            }.onAppear{
+                syncViewModel.loadPublicWorksList()
             }
         }
+    }
+    
+    private func sendClicked(){
+        syncViewModel.startSyncPublicWorks()
     }
 }
 

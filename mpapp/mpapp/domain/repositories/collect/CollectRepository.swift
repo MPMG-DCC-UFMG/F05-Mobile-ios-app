@@ -1,12 +1,18 @@
 import Foundation
+import PromiseKit
 
 class CollectRepository: ICollectRepository{
     
-    
+    private let remotePhotoDataSource: IRemotePhotoDataSource
+    private let remoteCollectDataSource: IRemoteCollectDataSource
     private let localCollectDataSource: ILocalCollectDataSource
     
-    init(localCollectDataSource: ILocalCollectDataSource) {
+    init(localCollectDataSource: ILocalCollectDataSource,
+         remoteCollectDataSource: IRemoteCollectDataSource,
+         remotePhotoDataSource: IRemotePhotoDataSource) {
         self.localCollectDataSource = localCollectDataSource
+        self.remotePhotoDataSource = remotePhotoDataSource
+        self.remoteCollectDataSource = remoteCollectDataSource
     }
     
     func insertCollect(collect: Collect,publicWork: PublicWork) throws {
@@ -15,6 +21,10 @@ class CollectRepository: ICollectRepository{
     
     func getCollectByPublicWorkId(publicWorkId: String) -> Collect? {
         return self.localCollectDataSource.getCollectByPublicWorkId(publicWorkId: publicWorkId)
+    }
+    
+    func getCollectByCollectId(collectId: String) -> Collect? {
+        return self.localCollectDataSource.getCollectByCollectId(collectId: collectId)
     }
     
     func insertCollect(collect: CollectUI,publicWork: PublicWork,photoUI: [PhotoUI]) throws {
@@ -32,5 +42,18 @@ class CollectRepository: ICollectRepository{
     func deletePhotoById(_ photoId: String) throws{
         try self.localCollectDataSource.deletePhotoById(photoId)
     }
+    
+    func sendImage(imageName: String) -> Promise<ImageUploadResponse> {
+        return self.remotePhotoDataSource.sendImage(imageName: imageName)
+    }
+    
+    func sendPhoto(photo: PhotoRemote) -> Promise<PhotoRemote> {
+        return self.remotePhotoDataSource.sendPhoto(photo: photo)
+    }
+    
+    func sendCollect(collectRemote: CollectRemote) -> Promise<CollectRemote> {
+        return self.remoteCollectDataSource.sendCollect(collectRemote: collectRemote)
+    }
+    
 
 }

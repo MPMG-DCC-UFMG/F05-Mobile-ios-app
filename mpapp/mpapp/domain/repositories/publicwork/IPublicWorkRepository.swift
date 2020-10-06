@@ -1,5 +1,5 @@
 import Foundation
 import RealmSwift
 
-protocol IPublicWorkRepository: ILocalPublicWorkDataSource {
+protocol IPublicWorkRepository: ILocalPublicWorkDataSource, IRemotePublicWorkDataSource {
 }

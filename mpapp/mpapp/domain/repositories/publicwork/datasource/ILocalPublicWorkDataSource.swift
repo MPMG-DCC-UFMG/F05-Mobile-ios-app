@@ -14,4 +14,10 @@ protocol ILocalPublicWorkDataSource{
     func deletePublicWorkById(publicWorkId: String) throws
     
     func listAllPublicWorks() -> Results<PublicWork>
+    
+    func getPublicWorkById(publicWorkId: String) -> PublicWork?
+    
+    func markPublicWorkCollectSent(publicWorkId: String) throws
+    
+    func markPublicWorkSent(publicWorkId: String) throws
 }

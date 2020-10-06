@@ -1,17 +1,18 @@
 import SwiftUI
+import Resolver
 
 struct SyncListItem: View {
     
-    var syncUI: SyncUI
+    @ObservedObject var syncUI: SyncUI
     
     var body: some View {
         VStack(alignment: .leading){
             HStack{
                 Text("\(syncUI.name)").h2(color: ColorProvider.white)
                 Spacer()
-                Text("\(syncUI.syncProgress) %").h2()
+                Text("\(syncUI.progress) %").h2()
             }
-            Text("\(syncUI.syncMessage)").h4().padding(.vertical,5)
+            Text("\(syncUI.message)").h4().padding(.vertical,5)
             Divider().background(ColorProvider.grey4)
         }.padding()
             .frame(minWidth: 0, maxWidth: .infinity)

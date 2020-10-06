@@ -71,7 +71,7 @@ struct UPLOAD {
             Promise { seal in
                 let imageData = image.jpegData(compressionQuality: 0.5)                
                 AF.upload(multipartFormData: {multipartFormData in
-                    multipartFormData.append(imageData!, withName: imageName, fileName: "\(imageName).png", mimeType: "image/png")
+                    multipartFormData.append(imageData!, withName: "file", fileName: "\(imageName)", mimeType: "image/png")
                 },to: Config.baseURL.appendingPathComponent(self.callUrl), method: .post , headers: headers).responseData{response in
                     switch response.result {
                     case .success(let data):

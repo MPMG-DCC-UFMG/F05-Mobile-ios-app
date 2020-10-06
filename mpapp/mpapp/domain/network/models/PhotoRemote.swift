@@ -12,7 +12,7 @@ class PhotoRemote: Codable{
     
     enum CodingKeys: String, CodingKey {
         case id
-        case idCollect = "id_collect"
+        case idCollect = "collect_id"
         case filepath
         case comment
         case timestamp

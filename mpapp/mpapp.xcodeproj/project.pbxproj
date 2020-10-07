@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		380A0861252C8A910074C9B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380A0860252C8A910074C9B8 /* GoogleService-Info.plist */; };
 		380BC736250836CD00B73451 /* CollectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380BC735250836CD00B73451 /* CollectView.swift */; };
 		380BC73A2508373A00B73451 /* CollectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380BC7392508373A00B73451 /* CollectScreen.swift */; };
 		380FA6472518D68C00DF57AD /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380FA6462518D68C00DF57AD /* PhotoView.swift */; };
@@ -140,6 +141,8 @@
 		3890091624EEF2AA00954A95 /* BaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890091524EEF2AA00954A95 /* BaseDataSource.swift */; };
 		3890091824EEF7D600954A95 /* TypeWorkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890091724EEF7D600954A95 /* TypeWorkRepository.swift */; };
 		3890091B24EF111600954A95 /* TypeWorkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890091A24EF111600954A95 /* TypeWorkViewModel.swift */; };
+		3890B516252DD65400E11A7F /* GoogleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890B515252DD65400E11A7F /* GoogleDelegate.swift */; };
+		3890B53F252DE67600E11A7F /* FacebookDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890B53E252DE67600E11A7F /* FacebookDelegate.swift */; };
 		38928A84251413CA00D09962 /* CommentBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38928A83251413CA00D09962 /* CommentBottom.swift */; };
 		38990CFA2502E51300872476 /* TrenaTextWithAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38990CF92502E51300872476 /* TrenaTextWithAction.swift */; };
 		389997C3251A211400744ED6 /* PhotoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389997C2251A211400744ED6 /* PhotoItem.swift */; };
@@ -207,6 +210,7 @@
 
 /* Begin PBXFileReference section */
 		1FF7FD100383B9F70012827D /* Pods-mpapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mpapp.release.xcconfig"; path = "Target Support Files/Pods-mpapp/Pods-mpapp.release.xcconfig"; sourceTree = "<group>"; };
+		380A0860252C8A910074C9B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		380BC735250836CD00B73451 /* CollectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectView.swift; sourceTree = "<group>"; };
 		380BC7392508373A00B73451 /* CollectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectScreen.swift; sourceTree = "<group>"; };
 		380FA6462518D68C00DF57AD /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
@@ -346,6 +350,8 @@
 		3890091524EEF2AA00954A95 /* BaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
 		3890091724EEF7D600954A95 /* TypeWorkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeWorkRepository.swift; sourceTree = "<group>"; };
 		3890091A24EF111600954A95 /* TypeWorkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeWorkViewModel.swift; sourceTree = "<group>"; };
+		3890B515252DD65400E11A7F /* GoogleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleDelegate.swift; sourceTree = "<group>"; };
+		3890B53E252DE67600E11A7F /* FacebookDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookDelegate.swift; sourceTree = "<group>"; };
 		38928A83251413CA00D09962 /* CommentBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentBottom.swift; sourceTree = "<group>"; };
 		38990CF92502E51300872476 /* TrenaTextWithAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaTextWithAction.swift; sourceTree = "<group>"; };
 		38990CFB250300F700872476 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
@@ -873,6 +879,7 @@
 		389008CE24EEE6FE00954A95 /* mpapp */ = {
 			isa = PBXGroup;
 			children = (
+				380A0860252C8A910074C9B8 /* GoogleService-Info.plist */,
 				389008FF24EEE93600954A95 /* core */,
 				3864070C24F3E6A5000B9345 /* workers */,
 				3890090224EEEA4900954A95 /* ui */,
@@ -916,6 +923,7 @@
 		389008FF24EEE93600954A95 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				3890B514252DD64600E11A7F /* delegates */,
 				3838FC4B25018F98007BEBD1 /* services */,
 				386406B624F02DF5000B9345 /* config */,
 				386406A424EF4EAE000B9345 /* extensions */,
@@ -951,7 +959,6 @@
 				386406D224F130E1000B9345 /* components */,
 				386406C324F044EE000B9345 /* screens */,
 				3890091924EF110500954A95 /* viewmodels */,
-				389008D124EEE6FE00954A95 /* SceneDelegate.swift */,
 				386406C624F051B2000B9345 /* MainScreen.swift */,
 			);
 			path = ui;
@@ -1032,6 +1039,16 @@
 				382DF5502523571D00DE023E /* SyncViewModel.swift */,
 			);
 			path = viewmodels;
+			sourceTree = "<group>";
+		};
+		3890B514252DD64600E11A7F /* delegates */ = {
+			isa = PBXGroup;
+			children = (
+				3890B515252DD65400E11A7F /* GoogleDelegate.swift */,
+				389008D124EEE6FE00954A95 /* SceneDelegate.swift */,
+				3890B53E252DE67600E11A7F /* FacebookDelegate.swift */,
+			);
+			path = delegates;
 			sourceTree = "<group>";
 		};
 		38990CFC2503011200872476 /* Config */ = {
@@ -1317,6 +1334,7 @@
 			files = (
 				386406FE24F18E6A000B9345 /* gotham_book.otf in Resources */,
 				3864070224F18E6A000B9345 /* Nunito-Italic.ttf in Resources */,
+				380A0861252C8A910074C9B8 /* GoogleService-Info.plist in Resources */,
 				386406FD24F18E6A000B9345 /* GothamRounded-Book.otf in Resources */,
 				3864070024F18E6A000B9345 /* gotham_rounded_light_italic.otf in Resources */,
 				386406FC24F18E6A000B9345 /* nunito_bold.ttf in Resources */,
@@ -1564,6 +1582,7 @@
 				38B1DE7D251689D000BCAC9E /* CollectUI.swift in Sources */,
 				389997C3251A211400744ED6 /* PhotoItem.swift in Sources */,
 				3864071724F4031C000B9345 /* WorkerStatus.swift in Sources */,
+				3890B53F252DE67600E11A7F /* FacebookDelegate.swift in Sources */,
 				38C2E01624F6DBBE00121039 /* Background.swift in Sources */,
 				386406D424F13106000B9345 /* TrenaTextField.swift in Sources */,
 				38B1DE57251645D400BCAC9E /* Database.swift in Sources */,
@@ -1624,6 +1643,7 @@
 				3899CD7724FCE95200FC078F /* PublicWorkAddView.swift in Sources */,
 				385275C2252679E100A6528E /* CollectRemote.swift in Sources */,
 				3864075C24F561F7000B9345 /* LocalWorkStatusDataSource.swift in Sources */,
+				3890B516252DD65400E11A7F /* GoogleDelegate.swift in Sources */,
 				386406C524F04514000B9345 /* SplashView.swift in Sources */,
 				386406A624EF4EBE000B9345 /* Injection.swift in Sources */,
 				3864077824F5929C000B9345 /* LocalPublicWorkDataSource.swift in Sources */,

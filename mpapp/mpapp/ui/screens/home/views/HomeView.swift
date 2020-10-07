@@ -37,7 +37,7 @@ struct HomeView: View {
     }
     
     private func logout(){
-        loginViewModel.toggleLogin()
+        loginViewModel.logout()
         configurationViewModel.resetWorkerStatus()
     }
     

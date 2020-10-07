@@ -12,6 +12,9 @@ target 'mpapp' do
   pod 'Sentry', :git => 'https://github.com/getsentry/sentry-cocoa.git', :tag => '5.2.0'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
+  pod 'FBSDKLoginKit'
 
   target 'mpappTests' do
     inherit! :search_paths

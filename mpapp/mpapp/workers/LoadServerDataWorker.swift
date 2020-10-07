@@ -35,7 +35,7 @@ class LoadServerDataWorker{
             self.updateProgress(message: "Baixando dados de: \(downloadInfo.name())")
             return downloadInfo.loadInfo()
         }else{
-            return Promise<Array<Decodable  >>{ seal in
+            return Promise<Array<Decodable>> { seal in
                 seal.fulfill([])
             }
         }
@@ -57,7 +57,7 @@ class LoadServerDataWorker{
                 seal.fulfill(downloadInfo.onSuccess(list: dataFromServer))
             }.catch{ error in
                 self.updateProgress(message: "Falha ao baixar: \(downloadInfo.name())")
-                seal.fulfill(false)
+                seal.reject(error)
             }
         }
     }

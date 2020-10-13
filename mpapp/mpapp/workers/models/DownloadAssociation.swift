@@ -1,6 +1,5 @@
 import Foundation
 import Resolver
-import Gloss
 import PromiseKit
 
 class DownloadAssociation: BaseDownloadInfo,Resolving{
@@ -24,7 +23,7 @@ class DownloadAssociation: BaseDownloadInfo,Resolving{
         configRepository.saveAssociationsVersion(associationVersion: serverVersion)
     }
     
-    func loadInfo() -> Promise<Array<JSONDecodable>>{
+    func loadInfo() -> Promise<Array<Decodable>>{
         return configRepository.loadAssociationTPTW()
     }
     

@@ -1,6 +1,5 @@
 import Foundation
 import Resolver
-import Gloss
 import PromiseKit
 
 class DownloadTypeWork : BaseDownloadInfo,Resolving{
@@ -24,7 +23,7 @@ class DownloadTypeWork : BaseDownloadInfo,Resolving{
         configRepository.saveTypeWorksVersion(typeWorksVersion: serverVersion)
     }
     
-    func loadInfo() -> Promise<Array<JSONDecodable>>{
+    func loadInfo() -> Promise<Array<Decodable>>{
         return configRepository.loadTypeWorks()
     }
     

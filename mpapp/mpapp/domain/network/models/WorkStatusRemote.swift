@@ -1,22 +1,28 @@
 import Foundation
-import Gloss
 
-class WorkStatusRemote: JSONDecodable{
-    let name: String?
-    let flag: Int?
-    let comments: String?
+class WorkStatusRemote: Decodable{
+    var name: String
+    var flag: Int
+    var description: String
     
-    required init?(json: JSON) {
-        self.name = "name" <~~ json
-        self.flag = "flag" <~~ json
-        self.comments = "description" <~~ json
+    enum CodingKeys: String, CodingKey {
+        case name
+        case flag
+        case description
+    }
+    
+    init(_ jsonData: Data) {
+        let response = try! JSONDecoder().decode(WorkStatusRemote.self, from: jsonData)
+        self.name = response.name
+        self.flag = response.flag
+        self.description = response.description
     }
     
     func toWorkStatusDB() -> WorkStatus{
         let workStatus =  WorkStatus()
-        workStatus.flag = self.flag!
-        workStatus.name = self.name!
-        workStatus.comment = self.comments
+        workStatus.flag = self.flag
+        workStatus.name = self.name
+        workStatus.comment = self.description
         return workStatus
     }
 }

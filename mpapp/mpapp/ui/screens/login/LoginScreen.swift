@@ -7,15 +7,20 @@ struct LoginScreen: View {
         
     var body: some View {
         VStack{
-            if loginViewModel.logged{
-                LoadingDataScreen()
-                    .transition(AnyTransition.opacity)
-                    .animation(.default)
-            }else{
-                LoginView()
-            }
+            self.containedView().transition(AnyTransition.opacity)
+                .animation(.default)
         }
-        
+    }
+    
+    private func containedView() -> AnyView {
+        switch loginViewModel.navigate {
+        case .login:
+            return AnyView(LoginView())
+        case .loading:
+            return AnyView(LoadingDataScreen())
+        default:
+            return AnyView(CreateUserView())
+        }
     }
 }
 

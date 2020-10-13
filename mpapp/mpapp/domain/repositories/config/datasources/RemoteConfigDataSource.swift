@@ -1,17 +1,14 @@
 import Foundation
-import Gloss
 import Alamofire
 import PromiseKit
 
 class RemoteConfigDataSource: IRemoteConfigDataSource{
     
-    func loadTypeWorks() -> Promise<Array<JSONDecodable>> {
+    func loadTypeWorks() -> Promise<Array<Decodable>> {
         return firstly{
             MPApi.loadTypeWorks(nil)
         }.map{ data in
-            guard let parsed = [TypeWorkRemote].from(data: data) else{
-                return [TypeWorkRemote]()
-            }
+            let parsed =  try JSONDecoder().decode([TypeWorkRemote].self,from: data)
             return parsed
         }
     }
@@ -21,17 +18,15 @@ class RemoteConfigDataSource: IRemoteConfigDataSource{
         return firstly{
             MPApi.getTypeWorkVersion(nil)
         }.map{ data in
-            EntityVersion(data: data)!
+            EntityVersion(data)
         }
     }
     
-    func loadTypePhotos() -> Promise<Array<JSONDecodable>> {
+    func loadTypePhotos() -> Promise<Array<Decodable>> {
         return firstly{
             MPApi.loadTypePhotos(nil)
         }.map{ data in
-            guard let parsed = [TypePhotoRemote].from(data: data) else{
-                return [TypePhotoRemote]()
-            }
+            let parsed =  try JSONDecoder().decode([TypePhotoRemote].self,from: data)
             return parsed
         }
     }
@@ -40,17 +35,15 @@ class RemoteConfigDataSource: IRemoteConfigDataSource{
         return firstly{
             MPApi.getTypePhotosVersion(nil)
         }.map{ data in
-            EntityVersion(data: data)!
+            EntityVersion(data)
         }
     }
     
-    func loadCities() -> Promise<Array<JSONDecodable>>{
+    func loadCities() -> Promise<Array<Decodable>>{
         return firstly{
             MPApi.loadCities(nil)
         }.map{ data in
-            guard let parsed = [CityRemote].from(data: data) else{
-                return [CityRemote]()
-            }
+            let parsed =  try JSONDecoder().decode([CityRemote].self,from: data)
             return parsed
         }
     }
@@ -59,37 +52,32 @@ class RemoteConfigDataSource: IRemoteConfigDataSource{
         return firstly{
             MPApi.getCitiesVersion(nil)
         }.map{ data in
-            EntityVersion(data: data)!
+            EntityVersion(data)
         }
     }
     
-    func loadWorkStatus() -> Promise<Array<JSONDecodable>>{
+    func loadWorkStatus() -> Promise<Array<Decodable>>{
         return firstly{
             MPApi.loadWorkStatus(nil)
         }.map{ data in
-            guard let parsed = [WorkStatusRemote].from(data: data) else{
-                return [WorkStatusRemote]()
-            }
+            let parsed =  try JSONDecoder().decode([WorkStatusRemote].self,from: data)
             return parsed
         }
-        
     }
     
     func getWorkStatusVersion() -> Promise<EntityVersion>{
         return firstly{
             MPApi.getWorkStatusVersion(nil)
         }.map{ data in
-            EntityVersion(data: data)!
+            EntityVersion(data)
         }
     }
     
-    func loadAssociationTPTW() -> Promise<Array<JSONDecodable>>{
+    func loadAssociationTPTW() -> Promise<Array<Decodable>>{
         return firstly{
             MPApi.loadAssociation(nil)
         }.map{ data in
-            guard let parsed = [AssociationTPTWRemote].from(data: data) else{
-                return [AssociationTPTWRemote]()
-            }
+            let parsed =  try JSONDecoder().decode([AssociationTPTWRemote].self,from: data)
             return parsed
         }
     }
@@ -98,18 +86,16 @@ class RemoteConfigDataSource: IRemoteConfigDataSource{
         return firstly{
             MPApi.getAssociationsVersion(nil)
         }.map{ data in
-            EntityVersion(data: data)!
+            EntityVersion(data)
         }
     }
     
-    func loadPublicWorkChanges(currVersion: Int) -> Promise<Array<JSONDecodable>> {
+    func loadPublicWorkChanges(currVersion: Int) -> Promise<Array<Decodable>> {
         let queryParameters : Parameters = ["version": currVersion]
         return firstly{
             MPApi.loadPublicWorksChange(queryParameters)
         }.map{ data in
-            guard let parsed = [PublicWorkRemote].from(data: data) else{
-                return [PublicWorkRemote]()
-            }
+            let parsed =  try JSONDecoder().decode([PublicWorkRemote].self,from: data)
             return parsed
         }
     }
@@ -118,7 +104,7 @@ class RemoteConfigDataSource: IRemoteConfigDataSource{
         return firstly{
             MPApi.getPublicWorkVersion(nil)
         }.map{ data in
-            EntityVersion(data: data)!
+            EntityVersion(data)
         }
     }
     

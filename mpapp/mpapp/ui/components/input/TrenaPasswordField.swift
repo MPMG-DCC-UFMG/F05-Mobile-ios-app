@@ -16,10 +16,10 @@ struct TrenaPasswordField: View {
             HStack {
                 if self.hide{
                     SecureField(placeHolder, text: $input).foregroundColor(ColorProvider.white)
-                    .h2()
+                    .h2().disableAutocorrection(true)
                 }else{
                     TextField(placeHolder, text: $input).foregroundColor(ColorProvider.white)
-                    .h2()
+                    .h2().disableAutocorrection(true)
                 }
                 
                 Button(action:{

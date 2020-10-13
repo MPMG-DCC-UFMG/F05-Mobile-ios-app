@@ -29,4 +29,16 @@ struct MPApi{
     @GET(url: "publicworks/version") static var getPublicWorkVersion: (_ queryParameters: Parameters?) -> Promise<Data>
 
     @GET(url: "publicworks/changes") static var loadPublicWorksChange: (_ queryParameters: Parameters?) -> Promise<Data>
+    
+    @POST(url: "security/users/create") static var createUser : (_ body: Data) -> Promise<Data>
+    
+    @POST(url: "photos/add") static var sendPhoto: (_ body: Data) -> Promise<Data>
+    
+    @POST(url: "publicworks/upsert") static var sendPublicWork: (_ body: Data) -> Promise<Data>
+    
+    @POST(url: "collects/add") static var sendCollect: (_ body: Data) -> Promise<Data>
+    
+    @UPLOAD(url: "images/upload") static var sendImage: (_ image: UIImage, _ imageName: String) -> Promise<Data>
+    
+    @LOGIN(url: "security/token") static var login: (_ username: String, _ password: String) -> Promise<Data>
 }

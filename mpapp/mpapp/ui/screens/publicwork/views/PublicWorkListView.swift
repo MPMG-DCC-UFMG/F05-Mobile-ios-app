@@ -24,7 +24,8 @@ struct PublicWorkListView: View {
                     }
                     .listRowBackground(ColorProvider.darkBackground)
                 }
-                .onAppear { UITableView.appearance().separatorStyle = .none
+                .onAppear {
+                    UITableView.appearance().separatorStyle = .none
                     UITableView.appearance().bounces = false
                     UITableView.appearance().backgroundColor = UIColor.clear
                 }

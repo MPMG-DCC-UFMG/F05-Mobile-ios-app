@@ -1,6 +1,5 @@
 import Foundation
 import Resolver
-import Gloss
 import PromiseKit
 
 class DownloadPublicWork: BaseDownloadInfo,Resolving{
@@ -24,7 +23,7 @@ class DownloadPublicWork: BaseDownloadInfo,Resolving{
         configRepository.savePublicWorkVersion(publicWorkVersion: serverVersion)
     }
     
-    func loadInfo() -> Promise<Array<JSONDecodable>>{
+    func loadInfo() -> Promise<Array<Decodable>>{
         return configRepository.loadPublicWorkChanges(currVersion: currentVersion())
     }
     
@@ -45,7 +44,7 @@ class DownloadPublicWork: BaseDownloadInfo,Resolving{
     private func handlePublicWorkDiff(listPublicWorkRemote: Array<PublicWorkRemote>) throws {
         try listPublicWorkRemote.forEach { publicWork in
             if (publicWork.operation == 2) {
-                try self.publicWorkRepository.deletePublicWorkById(publicWorkId: publicWork.id!)
+                try self.publicWorkRepository.deletePublicWorkById(publicWorkId: publicWork.id)
             } else {
                 try self.publicWorkRepository.insertPublicWork(publicWork: publicWork.toPublicWorkDB())
             }

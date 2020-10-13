@@ -1,4 +1,4 @@
 import Foundation
 
-protocol ICollectRepository : ILocalCollectDataSource {
+protocol ICollectRepository : ILocalCollectDataSource, IRemotePhotoDataSource, IRemoteCollectDataSource {
 }

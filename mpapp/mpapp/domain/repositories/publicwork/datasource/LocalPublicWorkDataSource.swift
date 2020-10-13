@@ -8,7 +8,15 @@ class LocalPublicWorkDataSource: BaseDataSource<PublicWork>, ILocalPublicWorkDat
     }
     
     func insertPublicWork(publicWork: PublicWork) throws {
-        try self.insert(entity: publicWork)
+        let oldPublicWork = self.mpDatabase().object(ofType: PublicWork.self, forPrimaryKey: publicWork.id)
+        if(oldPublicWork != nil && oldPublicWork!.toSend){
+            return
+        }else{
+            try mpDatabase().write{
+                publicWork.idCollect = oldPublicWork?.idCollect
+                mpDatabase().add(publicWork,update: .modified)
+            }
+        }
     }
     
     func insertPublicWork(publicWork: PublicWorkUI) throws{
@@ -38,5 +46,29 @@ class LocalPublicWorkDataSource: BaseDataSource<PublicWork>, ILocalPublicWorkDat
     
     func listAllPublicWorks() -> Results<PublicWork>{
         return self.listAll()
+    }
+    
+    func getPublicWorkById(publicWorkId: String) -> PublicWork?{
+        return self.mpDatabase().object(ofType: PublicWork.self, forPrimaryKey: publicWorkId)
+    }
+    
+    func markPublicWorkCollectSent(publicWorkId: String) throws{
+        guard let publicWork = self.mpDatabase().object(ofType: PublicWork.self, forPrimaryKey: publicWorkId) else{
+            return
+        }
+        try mpDatabase().write{
+            publicWork.idCollect = nil
+            mpDatabase().add(publicWork,update: .modified)
+        }
+    }
+    
+    func markPublicWorkSent(publicWorkId: String) throws{
+        guard let publicWork = self.mpDatabase().object(ofType: PublicWork.self, forPrimaryKey: publicWorkId) else{
+            return
+        }
+        try mpDatabase().write{
+            publicWork.toSend = false
+            mpDatabase().add(publicWork,update: .modified)
+        }
     }
 }

@@ -1,5 +1,4 @@
 import Foundation
-import Gloss
 import PromiseKit
 
 class ConfigRepository: IConfigRepository {
@@ -61,7 +60,7 @@ class ConfigRepository: IConfigRepository {
         localConfigDataSource.saveCityVersion(cityVersion: cityVersion)
     }
     
-    func loadTypeWorks() -> Promise<Array<JSONDecodable>> {
+    func loadTypeWorks() -> Promise<Array<Decodable>> {
         return remoteConfigDataSource.loadTypeWorks()
     }
     
@@ -69,7 +68,7 @@ class ConfigRepository: IConfigRepository {
         return remoteConfigDataSource.getTypeWorkVersion()
     }
     
-    func loadTypePhotos() -> Promise<Array<JSONDecodable>> {
+    func loadTypePhotos() -> Promise<Array<Decodable>> {
         return remoteConfigDataSource.loadTypePhotos()
     }
     
@@ -77,7 +76,7 @@ class ConfigRepository: IConfigRepository {
         return remoteConfigDataSource.getTypePhotosVersion()
     }
     
-    func loadCities() -> Promise<Array<JSONDecodable>>{
+    func loadCities() -> Promise<Array<Decodable>>{
         return remoteConfigDataSource.loadCities()
     }
     
@@ -85,7 +84,7 @@ class ConfigRepository: IConfigRepository {
         return remoteConfigDataSource.getCityVersion()
     }
     
-    func loadWorkStatus() -> Promise<Array<JSONDecodable>>{
+    func loadWorkStatus() -> Promise<Array<Decodable>>{
         return remoteConfigDataSource.loadWorkStatus()
     }
     
@@ -93,7 +92,7 @@ class ConfigRepository: IConfigRepository {
         return remoteConfigDataSource.getWorkStatusVersion()
     }
     
-    func loadAssociationTPTW() -> Promise<Array<JSONDecodable>>{
+    func loadAssociationTPTW() -> Promise<Array<Decodable>>{
         return remoteConfigDataSource.loadAssociationTPTW()
     }
     
@@ -101,7 +100,7 @@ class ConfigRepository: IConfigRepository {
         return remoteConfigDataSource.getAssociationTPTWVersion()
     }
     
-    func loadPublicWorkChanges(currVersion: Int) -> Promise<Array<JSONDecodable>>{
+    func loadPublicWorkChanges(currVersion: Int) -> Promise<Array<Decodable>>{
         return remoteConfigDataSource.loadPublicWorkChanges(currVersion: currVersion)
     }
     

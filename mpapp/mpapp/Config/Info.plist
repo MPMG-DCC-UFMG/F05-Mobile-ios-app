@@ -2,27 +2,34 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>FacebookAppID</key>
+	<string>905164349957024</string>
+	<key>FacebookDisplayName</key>
+	<string>TRENA</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fbapi20130214</string>
+		<string>fbapi20130410</string>
+		<string>fbapi20130702</string>
+		<string>fbapi20131010</string>
+		<string>fbapi20131219</string>
+		<string>fbapi20140410</string>
+		<string>fbapi20140116</string>
+		<string>fbapi20150313</string>
+		<string>fbapi20150629</string>
+		<string>fbapi20160328</string>
+		<string>fbauth</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 	<key>BASE_URL</key>
 	<string>$(BASE_URL)</string>
-	<key>ENVIRONMENT</key>
-	<string>$(ENVIRONMENT)</string>
-	<key>SENTRY_DNS</key>
-	<string>$(SENTRY_DNS)</string>
-	<key>TRENA_KEY</key>
-	<string>$(TRENA_KEY)</string>
-	<key>GOOGLE_API_KEY</key>
-	<string>$(GOOGLE_API_KEY)</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-	<key>CFBundleDisplayName</key>
-	<string></string>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>TRENA</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -35,10 +42,50 @@
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.123440303481-47d8oaahr562b139vo99mudgtcfavoap</string>
+				<string>fb905164349957024</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>ENVIRONMENT</key>
+	<string>$(ENVIRONMENT)</string>
+	<key>GOOGLE_API_KEY</key>
+	<string>$(GOOGLE_API_KEY)</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>O app precisa da permissão da câmera para tirar fotos</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>O app precisa de localização para funcionar</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>O app precisa de localização para funcionar</string>
+	<key>SENTRY_DNS</key>
+	<string>$(SENTRY_DNS)</string>
+	<key>TRENA_KEY</key>
+	<string>$(TRENA_KEY)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Nunito-Italic.ttf</string>
+		<string>GothamRounded-Book.otf</string>
+		<string>Gotham-Bold.otf</string>
+		<string>GothamRounded-Medium.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -75,18 +122,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Nunito-Italic.ttf</string>
-		<string>GothamRounded-Book.otf</string>
-		<string>Gotham-Bold.otf</string>
-		<string>GothamRounded-Medium.otf</string>
-	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>O app precisa de localização para funcionar</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>O app precisa de localização para funcionar</string>
-	<key>NSCameraUsageDescription</key>
-	<string>O app precisa da permissão da câmera para tirar fotos</string>
 </dict>
 </plist>

@@ -21,6 +21,10 @@ struct HomeScreen: View {
             return AnyView(PublicWorkAddScreen(onCancelClicked:{
                 self.navigateTo(HomeNavigation.home)
             }))
+        case .sync:
+            return AnyView(SyncView(onBackPressed: {
+                self.navigateTo(HomeNavigation.home)
+            }))
         default:
             return AnyView(HomeView(navigate: $navigate))
         }

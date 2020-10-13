@@ -1,30 +1,29 @@
 import Foundation
-import Gloss
 import PromiseKit
 
 protocol IRemoteConfigDataSource {
     
-    func loadTypeWorks() -> Promise<Array<JSONDecodable>>
+    func loadTypeWorks() -> Promise<Array<Decodable>>
     
     func getTypeWorkVersion() -> Promise<EntityVersion>
     
-    func loadTypePhotos() -> Promise<Array<JSONDecodable>>
+    func loadTypePhotos() -> Promise<Array<Decodable>>
     
     func getTypePhotosVersion() -> Promise<EntityVersion>
     
-    func loadCities() -> Promise<Array<JSONDecodable>>
+    func loadCities() -> Promise<Array<Decodable>>
     
     func getCityVersion() -> Promise<EntityVersion>
     
-    func loadWorkStatus() -> Promise<Array<JSONDecodable>>
+    func loadWorkStatus() -> Promise<Array<Decodable>>
     
     func getWorkStatusVersion() -> Promise<EntityVersion>
     
-    func loadAssociationTPTW() -> Promise<Array<JSONDecodable>>
+    func loadAssociationTPTW() -> Promise<Array<Decodable>>
     
     func getAssociationTPTWVersion() -> Promise<EntityVersion>
     
-    func loadPublicWorkChanges(currVersion: Int) -> Promise<Array<JSONDecodable>>
+    func loadPublicWorkChanges(currVersion: Int) -> Promise<Array<Decodable>>
     
     func getPublicWorkVersion() -> Promise<EntityVersion>
 }

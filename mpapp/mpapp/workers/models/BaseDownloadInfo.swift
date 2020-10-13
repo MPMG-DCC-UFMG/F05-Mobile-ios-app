@@ -1,6 +1,5 @@
 import Foundation
 import Resolver
-import Gloss
 import PromiseKit
 
 protocol BaseDownloadInfo {
@@ -8,6 +7,6 @@ protocol BaseDownloadInfo {
     func currentVersion() -> Int
     func serverVersion() -> Promise<EntityVersion>
     func updateCurrentVersion(serverVersion: Int)
-    func loadInfo() -> Promise<Array<JSONDecodable>>
+    func loadInfo() -> Promise<Array<Decodable>>
     func onSuccess(list: Array<Any>) -> Bool
 }

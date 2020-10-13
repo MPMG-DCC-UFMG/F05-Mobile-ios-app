@@ -9,6 +9,8 @@ public enum Config {
             static let sentryDNS = "SENTRY_DNS"
             static let environment = "ENVIRONMENT"
             static let googleAPIKey = "GOOGLE_API_KEY"
+            static let twitterAPIKey = "TWITTER_API_KEY"
+            static let twitterAPISecret = "TWITTER_API_SECRET"
         }
     }
     
@@ -59,4 +61,17 @@ public enum Config {
         return googleAPIKey
     }()
     
+    static let twitterAPIKey: String = {
+        guard let twitterAPIKey = Config.infoDictionary[Keys.Plist.twitterAPIKey] as? String else {
+            fatalError("Twitter API Key not set in plist for this environment")
+        }
+        return twitterAPIKey
+    }()
+    
+    static let twitterAPISecret: String = {
+        guard let twitterAPISecret = Config.infoDictionary[Keys.Plist.twitterAPISecret] as? String else {
+            fatalError("Twitter API Secret not set in plist for this environment")
+        }
+        return twitterAPISecret
+    }()
 }

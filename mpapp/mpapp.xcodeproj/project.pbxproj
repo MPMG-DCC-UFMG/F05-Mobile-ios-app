@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		380A0861252C8A910074C9B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380A0860252C8A910074C9B8 /* GoogleService-Info.plist */; };
 		380BC736250836CD00B73451 /* CollectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380BC735250836CD00B73451 /* CollectView.swift */; };
 		380BC73A2508373A00B73451 /* CollectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380BC7392508373A00B73451 /* CollectScreen.swift */; };
 		380FA6472518D68C00DF57AD /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380FA6462518D68C00DF57AD /* PhotoView.swift */; };
@@ -14,7 +15,14 @@
 		380FA6512518DC4700DF57AD /* TrenaTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380FA6502518DC4700DF57AD /* TrenaTopBar.swift */; };
 		380FA65E2518DDDC00DF57AD /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380FA65D2518DDDC00DF57AD /* PhotoViewModel.swift */; };
 		380FA6632518DE0000DF57AD /* PhotoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380FA6622518DE0000DF57AD /* PhotoUI.swift */; };
+		382DF54C2523566A00DE023E /* SyncView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382DF54B2523566A00DE023E /* SyncView.swift */; };
+		382DF5512523571D00DE023E /* SyncViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382DF5502523571D00DE023E /* SyncViewModel.swift */; };
+		382DF557252357A200DE023E /* SyncUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382DF556252357A200DE023E /* SyncUI.swift */; };
+		382DF55F252358F200DE023E /* SyncListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382DF55E252358F200DE023E /* SyncListItem.swift */; };
+		38313E09252526D00046F162 /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38313E08252526D00046F162 /* CreateUserView.swift */; };
+		38313E132525288A0046F162 /* LoginNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38313E122525288A0046F162 /* LoginNavigation.swift */; };
 		3838FC4D25018FDE007BEBD1 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3838FC4C25018FDE007BEBD1 /* LocationManager.swift */; };
+		384536FA2530A69A00989A7A /* TwitterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384536F92530A69A00989A7A /* TwitterDelegate.swift */; };
 		3847EBA824F97FAB00B2C4A5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3847EBA724F97FAB00B2C4A5 /* HomeView.swift */; };
 		3847EBAA24F97FE400B2C4A5 /* LoadingDataScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3847EBA924F97FE400B2C4A5 /* LoadingDataScreen.swift */; };
 		3847EBAD24F9D37800B2C4A5 /* HomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3847EBAC24F9D37800B2C4A5 /* HomeButton.swift */; };
@@ -25,6 +33,16 @@
 		3847EBC124FAACDD00B2C4A5 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3847EBC024FAACDD00B2C4A5 /* HomeScreen.swift */; };
 		38481E4A25006358004D9E07 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38481E4925006358004D9E07 /* TabBarItem.swift */; };
 		38481E4C2500677B004D9E07 /* TrenaTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38481E4B2500677B004D9E07 /* TrenaTabBar.swift */; };
+		385275C2252679E100A6528E /* CollectRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275C1252679E100A6528E /* CollectRemote.swift */; };
+		385275C725267BC700A6528E /* PhotoRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275C625267BC700A6528E /* PhotoRemote.swift */; };
+		385275CC25274A2400A6528E /* ImageUploadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275CB25274A2400A6528E /* ImageUploadResponse.swift */; };
+		385275D125274AAF00A6528E /* IRemotePhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275D025274AAF00A6528E /* IRemotePhotoDataSource.swift */; };
+		385275D625274B0F00A6528E /* RemotePhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275D525274B0F00A6528E /* RemotePhotoDataSource.swift */; };
+		385275DB25274E7100A6528E /* IRemotePublicWorkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275DA25274E7100A6528E /* IRemotePublicWorkDataSource.swift */; };
+		385275E025274EF600A6528E /* RemotePublicWorkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275DF25274EF600A6528E /* RemotePublicWorkDataSource.swift */; };
+		385275E52527565200A6528E /* IRemoteCollectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275E42527565200A6528E /* IRemoteCollectDataSource.swift */; };
+		385275EA2527569400A6528E /* RemoteCollectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275E92527569400A6528E /* RemoteCollectDataSource.swift */; };
+		385275F225276CF200A6528E /* PublicWorkUploadWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385275F125276CF200A6528E /* PublicWorkUploadWorker.swift */; };
 		385E1D31250A66440032F2E9 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E1D30250A66440032F2E9 /* RadioButton.swift */; };
 		385E1D33250A6D400032F2E9 /* TrenaRadioGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E1D32250A6D400032F2E9 /* TrenaRadioGroup.swift */; };
 		386406A624EF4EBE000B9345 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386406A524EF4EBE000B9345 /* Injection.swift */; };
@@ -60,7 +78,6 @@
 		3864071324F3F1B5000B9345 /* DownloadTypeWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864071224F3F1B5000B9345 /* DownloadTypeWork.swift */; };
 		3864071524F401BF000B9345 /* LoadServerDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864071424F401BF000B9345 /* LoadServerDataWorker.swift */; };
 		3864071724F4031C000B9345 /* WorkerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864071624F4031C000B9345 /* WorkerStatus.swift */; };
-		3864071924F42753000B9345 /* TypeWorkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864071824F42752000B9345 /* TypeWorkView.swift */; };
 		3864071D24F42C3B000B9345 /* LoadingDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864071C24F42C3B000B9345 /* LoadingDataView.swift */; };
 		3864072424F52E6A000B9345 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864072324F52E6A000B9345 /* Address.swift */; };
 		3864072624F5318F000B9345 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864072524F5318F000B9345 /* City.swift */; };
@@ -106,6 +123,8 @@
 		3864078124F69E89000B9345 /* ScaledFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864078024F69E89000B9345 /* ScaledFont.swift */; };
 		3864078624F69F68000B9345 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864078524F69F68000B9345 /* LoginView.swift */; };
 		38687E3B251195140068637C /* TrenaMultiPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38687E3A251195140068637C /* TrenaMultiPicker.swift */; };
+		387E54832535D57C00A07CED /* TokenRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387E54822535D57C00A07CED /* TokenRemote.swift */; };
+		387E54882535DA8400A07CED /* LoginRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387E54872535DA8400A07CED /* LoginRemote.swift */; };
 		388FB272250194130057C510 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388FB271250194130057C510 /* MapView.swift */; };
 		388FB274250196700057C510 /* PublicWorkLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388FB273250196700057C510 /* PublicWorkLocationView.swift */; };
 		388FB2762501974D0057C510 /* PublicWorkAddScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388FB2752501974D0057C510 /* PublicWorkAddScreen.swift */; };
@@ -125,6 +144,8 @@
 		3890091624EEF2AA00954A95 /* BaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890091524EEF2AA00954A95 /* BaseDataSource.swift */; };
 		3890091824EEF7D600954A95 /* TypeWorkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890091724EEF7D600954A95 /* TypeWorkRepository.swift */; };
 		3890091B24EF111600954A95 /* TypeWorkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890091A24EF111600954A95 /* TypeWorkViewModel.swift */; };
+		3890B516252DD65400E11A7F /* GoogleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890B515252DD65400E11A7F /* GoogleDelegate.swift */; };
+		3890B53F252DE67600E11A7F /* FacebookDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890B53E252DE67600E11A7F /* FacebookDelegate.swift */; };
 		38928A84251413CA00D09962 /* CommentBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38928A83251413CA00D09962 /* CommentBottom.swift */; };
 		38990CFA2502E51300872476 /* TrenaTextWithAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38990CF92502E51300872476 /* TrenaTextWithAction.swift */; };
 		389997C3251A211400744ED6 /* PhotoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389997C2251A211400744ED6 /* PhotoItem.swift */; };
@@ -155,6 +176,13 @@
 		38CF10C824FE67CA00040FE1 /* TrenaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CF10C724FE67CA00040FE1 /* TrenaPicker.swift */; };
 		38CF10CF24FED5C500040FE1 /* PublicWorkListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CF10CE24FED5C500040FE1 /* PublicWorkListScreen.swift */; };
 		38CF10D124FED7A100040FE1 /* PublicWorkFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CF10D024FED7A100040FE1 /* PublicWorkFilterView.swift */; };
+		38D5A1302525F9BB005FE609 /* MPUserRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D5A12F2525F9BB005FE609 /* MPUserRemote.swift */; };
+		38D5A1372525FC87005FE609 /* IRemoteUserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D5A1362525FC87005FE609 /* IRemoteUserDataSource.swift */; };
+		38D5A13F2525FCEE005FE609 /* ResponseRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D5A13E2525FCEE005FE609 /* ResponseRemote.swift */; };
+		38D5A1442525FD30005FE609 /* ErrorRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D5A1432525FD30005FE609 /* ErrorRemote.swift */; };
+		38D5A149252604ED005FE609 /* RemoteUserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D5A148252604ED005FE609 /* RemoteUserDataSource.swift */; };
+		38D5A14E252606D1005FE609 /* IUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D5A14D252606D1005FE609 /* IUserRepository.swift */; };
+		38D5A153252606EF005FE609 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D5A152252606EF005FE609 /* UserRepository.swift */; };
 		38E92DF4251550FC0017EE48 /* CollectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E92DF3251550FC0017EE48 /* CollectViewModel.swift */; };
 		38E92DFA251554850017EE48 /* CollectNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E92DF9251554850017EE48 /* CollectNavigation.swift */; };
 		38E9F072251290D20040DECB /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E9F071251290D20040DECB /* FloatingButton.swift */; };
@@ -185,6 +213,7 @@
 
 /* Begin PBXFileReference section */
 		1FF7FD100383B9F70012827D /* Pods-mpapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mpapp.release.xcconfig"; path = "Target Support Files/Pods-mpapp/Pods-mpapp.release.xcconfig"; sourceTree = "<group>"; };
+		380A0860252C8A910074C9B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		380BC735250836CD00B73451 /* CollectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectView.swift; sourceTree = "<group>"; };
 		380BC7392508373A00B73451 /* CollectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectScreen.swift; sourceTree = "<group>"; };
 		380FA6462518D68C00DF57AD /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
@@ -192,7 +221,14 @@
 		380FA6502518DC4700DF57AD /* TrenaTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaTopBar.swift; sourceTree = "<group>"; };
 		380FA65D2518DDDC00DF57AD /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		380FA6622518DE0000DF57AD /* PhotoUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUI.swift; sourceTree = "<group>"; };
+		382DF54B2523566A00DE023E /* SyncView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncView.swift; sourceTree = "<group>"; };
+		382DF5502523571D00DE023E /* SyncViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncViewModel.swift; sourceTree = "<group>"; };
+		382DF556252357A200DE023E /* SyncUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUI.swift; sourceTree = "<group>"; };
+		382DF55E252358F200DE023E /* SyncListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncListItem.swift; sourceTree = "<group>"; };
+		38313E08252526D00046F162 /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
+		38313E122525288A0046F162 /* LoginNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigation.swift; sourceTree = "<group>"; };
 		3838FC4C25018FDE007BEBD1 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		384536F92530A69A00989A7A /* TwitterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterDelegate.swift; sourceTree = "<group>"; };
 		3847EBA724F97FAB00B2C4A5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3847EBA924F97FE400B2C4A5 /* LoadingDataScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDataScreen.swift; sourceTree = "<group>"; };
 		3847EBAC24F9D37800B2C4A5 /* HomeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButton.swift; sourceTree = "<group>"; };
@@ -203,6 +239,16 @@
 		3847EBC024FAACDD00B2C4A5 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		38481E4925006358004D9E07 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		38481E4B2500677B004D9E07 /* TrenaTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaTabBar.swift; sourceTree = "<group>"; };
+		385275C1252679E100A6528E /* CollectRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectRemote.swift; sourceTree = "<group>"; };
+		385275C625267BC700A6528E /* PhotoRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRemote.swift; sourceTree = "<group>"; };
+		385275CB25274A2400A6528E /* ImageUploadResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadResponse.swift; sourceTree = "<group>"; };
+		385275D025274AAF00A6528E /* IRemotePhotoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRemotePhotoDataSource.swift; sourceTree = "<group>"; };
+		385275D525274B0F00A6528E /* RemotePhotoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePhotoDataSource.swift; sourceTree = "<group>"; };
+		385275DA25274E7100A6528E /* IRemotePublicWorkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRemotePublicWorkDataSource.swift; sourceTree = "<group>"; };
+		385275DF25274EF600A6528E /* RemotePublicWorkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePublicWorkDataSource.swift; sourceTree = "<group>"; };
+		385275E42527565200A6528E /* IRemoteCollectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRemoteCollectDataSource.swift; sourceTree = "<group>"; };
+		385275E92527569400A6528E /* RemoteCollectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCollectDataSource.swift; sourceTree = "<group>"; };
+		385275F125276CF200A6528E /* PublicWorkUploadWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkUploadWorker.swift; sourceTree = "<group>"; };
 		385E1D30250A66440032F2E9 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		385E1D32250A6D400032F2E9 /* TrenaRadioGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaRadioGroup.swift; sourceTree = "<group>"; };
 		386406A524EF4EBE000B9345 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
@@ -238,7 +284,6 @@
 		3864071224F3F1B5000B9345 /* DownloadTypeWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadTypeWork.swift; sourceTree = "<group>"; };
 		3864071424F401BF000B9345 /* LoadServerDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadServerDataWorker.swift; sourceTree = "<group>"; };
 		3864071624F4031C000B9345 /* WorkerStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerStatus.swift; sourceTree = "<group>"; };
-		3864071824F42752000B9345 /* TypeWorkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeWorkView.swift; sourceTree = "<group>"; };
 		3864071C24F42C3B000B9345 /* LoadingDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDataView.swift; sourceTree = "<group>"; };
 		3864072324F52E6A000B9345 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		3864072524F5318F000B9345 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -284,6 +329,8 @@
 		3864078024F69E89000B9345 /* ScaledFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledFont.swift; sourceTree = "<group>"; };
 		3864078524F69F68000B9345 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		38687E3A251195140068637C /* TrenaMultiPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaMultiPicker.swift; sourceTree = "<group>"; };
+		387E54822535D57C00A07CED /* TokenRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRemote.swift; sourceTree = "<group>"; };
+		387E54872535DA8400A07CED /* LoginRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRemote.swift; sourceTree = "<group>"; };
 		388FB271250194130057C510 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		388FB273250196700057C510 /* PublicWorkLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkLocationView.swift; sourceTree = "<group>"; };
 		388FB2752501974D0057C510 /* PublicWorkAddScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkAddScreen.swift; sourceTree = "<group>"; };
@@ -309,6 +356,8 @@
 		3890091524EEF2AA00954A95 /* BaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
 		3890091724EEF7D600954A95 /* TypeWorkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeWorkRepository.swift; sourceTree = "<group>"; };
 		3890091A24EF111600954A95 /* TypeWorkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeWorkViewModel.swift; sourceTree = "<group>"; };
+		3890B515252DD65400E11A7F /* GoogleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleDelegate.swift; sourceTree = "<group>"; };
+		3890B53E252DE67600E11A7F /* FacebookDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookDelegate.swift; sourceTree = "<group>"; };
 		38928A83251413CA00D09962 /* CommentBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentBottom.swift; sourceTree = "<group>"; };
 		38990CF92502E51300872476 /* TrenaTextWithAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaTextWithAction.swift; sourceTree = "<group>"; };
 		38990CFB250300F700872476 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
@@ -341,6 +390,13 @@
 		38CF10C724FE67CA00040FE1 /* TrenaPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaPicker.swift; sourceTree = "<group>"; };
 		38CF10CE24FED5C500040FE1 /* PublicWorkListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkListScreen.swift; sourceTree = "<group>"; };
 		38CF10D024FED7A100040FE1 /* PublicWorkFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkFilterView.swift; sourceTree = "<group>"; };
+		38D5A12F2525F9BB005FE609 /* MPUserRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPUserRemote.swift; sourceTree = "<group>"; };
+		38D5A1362525FC87005FE609 /* IRemoteUserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRemoteUserDataSource.swift; sourceTree = "<group>"; };
+		38D5A13E2525FCEE005FE609 /* ResponseRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseRemote.swift; sourceTree = "<group>"; };
+		38D5A1432525FD30005FE609 /* ErrorRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorRemote.swift; sourceTree = "<group>"; };
+		38D5A148252604ED005FE609 /* RemoteUserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUserDataSource.swift; sourceTree = "<group>"; };
+		38D5A14D252606D1005FE609 /* IUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IUserRepository.swift; sourceTree = "<group>"; };
+		38D5A152252606EF005FE609 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		38E92DF3251550FC0017EE48 /* CollectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectViewModel.swift; sourceTree = "<group>"; };
 		38E92DF9251554850017EE48 /* CollectNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectNavigation.swift; sourceTree = "<group>"; };
 		38E9F071251290D20040DECB /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
@@ -413,6 +469,40 @@
 			path = views;
 			sourceTree = "<group>";
 		};
+		382DF5472523559700DE023E /* sync */ = {
+			isa = PBXGroup;
+			children = (
+				382DF5552523579000DE023E /* models */,
+				382DF54B2523566A00DE023E /* SyncView.swift */,
+			);
+			path = sync;
+			sourceTree = "<group>";
+		};
+		382DF5552523579000DE023E /* models */ = {
+			isa = PBXGroup;
+			children = (
+				382DF556252357A200DE023E /* SyncUI.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		38313E0D252527620046F162 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				3864078524F69F68000B9345 /* LoginView.swift */,
+				38313E08252526D00046F162 /* CreateUserView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		38313E112525287E0046F162 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				38313E122525288A0046F162 /* LoginNavigation.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		3838FC4B25018F98007BEBD1 /* services */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,6 +554,7 @@
 				385E1D30250A66440032F2E9 /* RadioButton.swift */,
 				38B781AD250C26E60006168A /* Checkbox.swift */,
 				389997C2251A211400744ED6 /* PhotoItem.swift */,
+				382DF55E252358F200DE023E /* SyncListItem.swift */,
 			);
 			path = items;
 			sourceTree = "<group>";
@@ -537,6 +628,14 @@
 				3864075F24F56698000B9345 /* AssociationTPTWRemote.swift */,
 				3864076D24F58AA8000B9345 /* PublicWorkRemote.swift */,
 				3864076F24F58B0F000B9345 /* AddressRemote.swift */,
+				38D5A12F2525F9BB005FE609 /* MPUserRemote.swift */,
+				38D5A13E2525FCEE005FE609 /* ResponseRemote.swift */,
+				38D5A1432525FD30005FE609 /* ErrorRemote.swift */,
+				385275C1252679E100A6528E /* CollectRemote.swift */,
+				385275C625267BC700A6528E /* PhotoRemote.swift */,
+				385275CB25274A2400A6528E /* ImageUploadResponse.swift */,
+				387E54822535D57C00A07CED /* TokenRemote.swift */,
+				387E54872535DA8400A07CED /* LoginRemote.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -544,6 +643,7 @@
 		386406C324F044EE000B9345 /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				382DF5472523559700DE023E /* sync */,
 				380BC734250836B800B73451 /* collect */,
 				3847EBAE24FA7C8900B2C4A5 /* publicwork */,
 				3847EBA624F97F9700B2C4A5 /* home */,
@@ -557,7 +657,6 @@
 		386406CA24F05864000B9345 /* setup */ = {
 			isa = PBXGroup;
 			children = (
-				3864071824F42752000B9345 /* TypeWorkView.swift */,
 				3864071C24F42C3B000B9345 /* LoadingDataView.swift */,
 				3847EBA924F97FE400B2C4A5 /* LoadingDataScreen.swift */,
 			);
@@ -627,6 +726,7 @@
 			children = (
 				3864070D24F3E6B9000B9345 /* models */,
 				3864071424F401BF000B9345 /* LoadServerDataWorker.swift */,
+				385275F125276CF200A6528E /* PublicWorkUploadWorker.swift */,
 			);
 			path = workers;
 			sourceTree = "<group>";
@@ -737,6 +837,8 @@
 			children = (
 				3864077524F590C5000B9345 /* ILocalPublicWorkDataSource.swift */,
 				3864077724F5929C000B9345 /* LocalPublicWorkDataSource.swift */,
+				385275DA25274E7100A6528E /* IRemotePublicWorkDataSource.swift */,
+				385275DF25274EF600A6528E /* RemotePublicWorkDataSource.swift */,
 			);
 			path = datasource;
 			sourceTree = "<group>";
@@ -744,7 +846,8 @@
 		3864078224F69F48000B9345 /* login */ = {
 			isa = PBXGroup;
 			children = (
-				3864078524F69F68000B9345 /* LoginView.swift */,
+				38313E112525287E0046F162 /* models */,
+				38313E0D252527620046F162 /* views */,
 				38BC8D4224F7C270006BCE48 /* LoginScreen.swift */,
 			);
 			path = login;
@@ -784,6 +887,7 @@
 		389008CE24EEE6FE00954A95 /* mpapp */ = {
 			isa = PBXGroup;
 			children = (
+				380A0860252C8A910074C9B8 /* GoogleService-Info.plist */,
 				389008FF24EEE93600954A95 /* core */,
 				3864070C24F3E6A5000B9345 /* workers */,
 				3890090224EEEA4900954A95 /* ui */,
@@ -827,6 +931,7 @@
 		389008FF24EEE93600954A95 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				3890B514252DD64600E11A7F /* delegates */,
 				3838FC4B25018F98007BEBD1 /* services */,
 				386406B624F02DF5000B9345 /* config */,
 				386406A424EF4EAE000B9345 /* extensions */,
@@ -862,7 +967,6 @@
 				386406D224F130E1000B9345 /* components */,
 				386406C324F044EE000B9345 /* screens */,
 				3890091924EF110500954A95 /* viewmodels */,
-				389008D124EEE6FE00954A95 /* SceneDelegate.swift */,
 				386406C624F051B2000B9345 /* MainScreen.swift */,
 			);
 			path = ui;
@@ -887,6 +991,7 @@
 		3890090824EEED2B00954A95 /* repositories */ = {
 			isa = PBXGroup;
 			children = (
+				38D5A1342525FC6A005FE609 /* user */,
 				38B1DE5E25164AAA00BCAC9E /* collect */,
 				3864077124F58DFC000B9345 /* publicwork */,
 				3864076124F5681F000B9345 /* association */,
@@ -939,8 +1044,20 @@
 				38B1DE37251638E200BCAC9E /* WorkStatusViewModel.swift */,
 				380FA64B2518D71600DF57AD /* TypePhotoViewModel.swift */,
 				380FA65D2518DDDC00DF57AD /* PhotoViewModel.swift */,
+				382DF5502523571D00DE023E /* SyncViewModel.swift */,
 			);
 			path = viewmodels;
+			sourceTree = "<group>";
+		};
+		3890B514252DD64600E11A7F /* delegates */ = {
+			isa = PBXGroup;
+			children = (
+				3890B515252DD65400E11A7F /* GoogleDelegate.swift */,
+				389008D124EEE6FE00954A95 /* SceneDelegate.swift */,
+				3890B53E252DE67600E11A7F /* FacebookDelegate.swift */,
+				384536F92530A69A00989A7A /* TwitterDelegate.swift */,
+			);
+			path = delegates;
 			sourceTree = "<group>";
 		};
 		38990CFC2503011200872476 /* Config */ = {
@@ -1001,6 +1118,10 @@
 			children = (
 				38B1DE6025164AC200BCAC9E /* ILocalCollectDataSource.swift */,
 				38B1DE6825164B0600BCAC9E /* LocalCollectDataSource.swift */,
+				385275D025274AAF00A6528E /* IRemotePhotoDataSource.swift */,
+				385275D525274B0F00A6528E /* RemotePhotoDataSource.swift */,
+				385275E42527565200A6528E /* IRemoteCollectDataSource.swift */,
+				385275E92527569400A6528E /* RemoteCollectDataSource.swift */,
 			);
 			path = datasource;
 			sourceTree = "<group>";
@@ -1047,6 +1168,25 @@
 				388FB2752501974D0057C510 /* PublicWorkAddScreen.swift */,
 			);
 			path = screens;
+			sourceTree = "<group>";
+		};
+		38D5A1342525FC6A005FE609 /* user */ = {
+			isa = PBXGroup;
+			children = (
+				38D5A1352525FC71005FE609 /* datasource */,
+				38D5A14D252606D1005FE609 /* IUserRepository.swift */,
+				38D5A152252606EF005FE609 /* UserRepository.swift */,
+			);
+			path = user;
+			sourceTree = "<group>";
+		};
+		38D5A1352525FC71005FE609 /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				38D5A1362525FC87005FE609 /* IRemoteUserDataSource.swift */,
+				38D5A148252604ED005FE609 /* RemoteUserDataSource.swift */,
+			);
+			path = datasource;
 			sourceTree = "<group>";
 		};
 		38E92DF8251554780017EE48 /* models */ = {
@@ -1203,6 +1343,7 @@
 			files = (
 				386406FE24F18E6A000B9345 /* gotham_book.otf in Resources */,
 				3864070224F18E6A000B9345 /* Nunito-Italic.ttf in Resources */,
+				380A0861252C8A910074C9B8 /* GoogleService-Info.plist in Resources */,
 				386406FD24F18E6A000B9345 /* GothamRounded-Book.otf in Resources */,
 				3864070024F18E6A000B9345 /* gotham_rounded_light_italic.otf in Resources */,
 				386406FC24F18E6A000B9345 /* nunito_bold.ttf in Resources */,
@@ -1378,10 +1519,14 @@
 			files = (
 				38C2E02124F718A400121039 /* TrenaDivider.swift in Sources */,
 				3899CD7B24FCEDA100FC078F /* HomeNavigation.swift in Sources */,
+				385275DB25274E7100A6528E /* IRemotePublicWorkDataSource.swift in Sources */,
 				3864074A24F5594C000B9345 /* ICityRepository.swift in Sources */,
+				382DF5512523571D00DE023E /* SyncViewModel.swift in Sources */,
+				384536FA2530A69A00989A7A /* TwitterDelegate.swift in Sources */,
 				3847EBAA24F97FE400B2C4A5 /* LoadingDataScreen.swift in Sources */,
 				38B1DE4725163C9100BCAC9E /* RoundedCorners.swift in Sources */,
 				38C2E02324F7191600121039 /* TrenaPasswordField.swift in Sources */,
+				385275E025274EF600A6528E /* RemotePublicWorkDataSource.swift in Sources */,
 				386406ED24F189EB000B9345 /* FontProvider.swift in Sources */,
 				38C2E01A24F7053200121039 /* TrenaButton.swift in Sources */,
 				386406AE24F01616000B9345 /* LocalConfigDataSource.swift in Sources */,
@@ -1399,12 +1544,16 @@
 				38CF10CF24FED5C500040FE1 /* PublicWorkListScreen.swift in Sources */,
 				3890091824EEF7D600954A95 /* TypeWorkRepository.swift in Sources */,
 				3847EBBC24FAA97400B2C4A5 /* PublicWorkViewModel.swift in Sources */,
+				382DF557252357A200DE023E /* SyncUI.swift in Sources */,
 				38E9F072251290D20040DECB /* FloatingButton.swift in Sources */,
 				3847EBA824F97FAB00B2C4A5 /* HomeView.swift in Sources */,
+				38D5A14E252606D1005FE609 /* IUserRepository.swift in Sources */,
 				388FB272250194130057C510 /* MapView.swift in Sources */,
+				38D5A13F2525FCEE005FE609 /* ResponseRemote.swift in Sources */,
 				3864073224F53A53000B9345 /* WorkStatus.swift in Sources */,
 				3864076324F56855000B9345 /* IAssociationRepository.swift in Sources */,
 				380FA6472518D68C00DF57AD /* PhotoView.swift in Sources */,
+				385275D125274AAF00A6528E /* IRemotePhotoDataSource.swift in Sources */,
 				3864071524F401BF000B9345 /* LoadServerDataWorker.swift in Sources */,
 				3864078124F69E89000B9345 /* ScaledFont.swift in Sources */,
 				3890090724EEEC8F00954A95 /* TypeWork.swift in Sources */,
@@ -1414,6 +1563,7 @@
 				38B1DE38251638E200BCAC9E /* WorkStatusViewModel.swift in Sources */,
 				3864075524F561C9000B9345 /* WorkStatusRepository.swift in Sources */,
 				388FB27925019A9E0057C510 /* AddNavigation.swift in Sources */,
+				382DF54C2523566A00DE023E /* SyncView.swift in Sources */,
 				38928A84251413CA00D09962 /* CommentBottom.swift in Sources */,
 				38B1DE4F25163EDD00BCAC9E /* ImageButton.swift in Sources */,
 				386406C224F03BDE000B9345 /* RemoteConfigDataSource.swift in Sources */,
@@ -1421,14 +1571,20 @@
 				3864073824F550E2000B9345 /* DownloadTypePhoto.swift in Sources */,
 				389008D024EEE6FE00954A95 /* AppDelegate.swift in Sources */,
 				3890091624EEF2AA00954A95 /* BaseDataSource.swift in Sources */,
+				385275E52527565200A6528E /* IRemoteCollectDataSource.swift in Sources */,
 				38B1DE782516760300BCAC9E /* PublicWorkUI.swift in Sources */,
 				386406BD24F0393F000B9345 /* IRemoteConfigDataSource.swift in Sources */,
 				380FA6512518DC4700DF57AD /* TrenaTopBar.swift in Sources */,
+				387E54882535DA8400A07CED /* LoginRemote.swift in Sources */,
+				385275CC25274A2400A6528E /* ImageUploadResponse.swift in Sources */,
 				3864074824F5593C000B9345 /* ILocalCityDataSource.swift in Sources */,
 				3864077F24F69DE2000B9345 /* Headers.swift in Sources */,
+				38D5A1302525F9BB005FE609 /* MPUserRemote.swift in Sources */,
 				386406B024F016B2000B9345 /* Constants.swift in Sources */,
 				38CF10D124FED7A100040FE1 /* PublicWorkFilterView.swift in Sources */,
 				3864072A24F534AC000B9345 /* TypePhoto.swift in Sources */,
+				38313E09252526D00046F162 /* CreateUserView.swift in Sources */,
+				38313E132525288A0046F162 /* LoginNavigation.swift in Sources */,
 				38687E3B251195140068637C /* TrenaMultiPicker.swift in Sources */,
 				3890090424EEEA8000954A95 /* MPDatabase.swift in Sources */,
 				3864075224F56162000B9345 /* WorkStatusRemote.swift in Sources */,
@@ -1437,6 +1593,7 @@
 				38B1DE7D251689D000BCAC9E /* CollectUI.swift in Sources */,
 				389997C3251A211400744ED6 /* PhotoItem.swift in Sources */,
 				3864071724F4031C000B9345 /* WorkerStatus.swift in Sources */,
+				3890B53F252DE67600E11A7F /* FacebookDelegate.swift in Sources */,
 				38C2E01624F6DBBE00121039 /* Background.swift in Sources */,
 				386406D424F13106000B9345 /* TrenaTextField.swift in Sources */,
 				38B1DE57251645D400BCAC9E /* Database.swift in Sources */,
@@ -1445,10 +1602,14 @@
 				380FA6632518DE0000DF57AD /* PhotoUI.swift in Sources */,
 				3864076624F56874000B9345 /* ILocalAssociationDataSource.swift in Sources */,
 				3864071324F3F1B5000B9345 /* DownloadTypeWork.swift in Sources */,
+				385275D625274B0F00A6528E /* RemotePhotoDataSource.swift in Sources */,
+				387E54832535D57C00A07CED /* TokenRemote.swift in Sources */,
 				38481E4C2500677B004D9E07 /* TrenaTabBar.swift in Sources */,
 				3864072C24F535D7000B9345 /* Photo.swift in Sources */,
 				3864073424F54C7F000B9345 /* AssociationTPTW.swift in Sources */,
 				3864071D24F42C3B000B9345 /* LoadingDataView.swift in Sources */,
+				38D5A1372525FC87005FE609 /* IRemoteUserDataSource.swift in Sources */,
+				385275C725267BC700A6528E /* PhotoRemote.swift in Sources */,
 				3864072424F52E6A000B9345 /* Address.swift in Sources */,
 				38B1DE6E25164B5D00BCAC9E /* ICollectRepository.swift in Sources */,
 				3864071124F3EAB2000B9345 /* EntityVersion.swift in Sources */,
@@ -1458,8 +1619,9 @@
 				3864076824F569E9000B9345 /* LocalAssociationDataSource.swift in Sources */,
 				386406C024F03A42000B9345 /* TypeWorkRemote.swift in Sources */,
 				3890091124EEF0E400954A95 /* ILocalTypeWorkDataSource.swift in Sources */,
+				38D5A1442525FD30005FE609 /* ErrorRemote.swift in Sources */,
 				3864072824F5335C000B9345 /* PublicWork.swift in Sources */,
-				3864071924F42753000B9345 /* TypeWorkView.swift in Sources */,
+				382DF55F252358F200DE023E /* SyncListItem.swift in Sources */,
 				388FB2762501974D0057C510 /* PublicWorkAddScreen.swift in Sources */,
 				3838FC4D25018FDE007BEBD1 /* LocationManager.swift in Sources */,
 				38BC8D4324F7C270006BCE48 /* LoginScreen.swift in Sources */,
@@ -1470,10 +1632,12 @@
 				38481E4A25006358004D9E07 /* TabBarItem.swift in Sources */,
 				385E1D31250A66440032F2E9 /* RadioButton.swift in Sources */,
 				3847EBBA24FAA4D700B2C4A5 /* PublicWorkListItem.swift in Sources */,
+				38D5A149252604ED005FE609 /* RemoteUserDataSource.swift in Sources */,
 				3864074C24F55966000B9345 /* LocalCityDataSource.swift in Sources */,
 				38CF10C624FE5EA900040FE1 /* TrenaClickableField.swift in Sources */,
 				38E92DF4251550FC0017EE48 /* CollectViewModel.swift in Sources */,
 				380FA65E2518DDDC00DF57AD /* PhotoViewModel.swift in Sources */,
+				385275EA2527569400A6528E /* RemoteCollectDataSource.swift in Sources */,
 				3864077324F58E0D000B9345 /* IPublicWorkRepository.swift in Sources */,
 				3847EBB024FA7CA000B2C4A5 /* PublicWorkListView.swift in Sources */,
 				380BC736250836CD00B73451 /* CollectView.swift in Sources */,
@@ -1489,10 +1653,13 @@
 				3864075724F561D5000B9345 /* IWorkStatusRepository.swift in Sources */,
 				3864076C24F586E9000B9345 /* DownloadAssociation.swift in Sources */,
 				3899CD7724FCE95200FC078F /* PublicWorkAddView.swift in Sources */,
+				385275C2252679E100A6528E /* CollectRemote.swift in Sources */,
 				3864075C24F561F7000B9345 /* LocalWorkStatusDataSource.swift in Sources */,
+				3890B516252DD65400E11A7F /* GoogleDelegate.swift in Sources */,
 				386406C524F04514000B9345 /* SplashView.swift in Sources */,
 				386406A624EF4EBE000B9345 /* Injection.swift in Sources */,
 				3864077824F5929C000B9345 /* LocalPublicWorkDataSource.swift in Sources */,
+				38D5A153252606EF005FE609 /* UserRepository.swift in Sources */,
 				385E1D33250A6D400032F2E9 /* TrenaRadioGroup.swift in Sources */,
 				38CF10C824FE67CA00040FE1 /* TrenaPicker.swift in Sources */,
 				3890091324EEF17200954A95 /* LocalTypeWorkDataSource.swift in Sources */,
@@ -1507,6 +1674,7 @@
 				3864074024F55226000B9345 /* ITypePhotoRepository.swift in Sources */,
 				38C2E01F24F70E3200121039 /* SignInButton.swift in Sources */,
 				386406BB24F03351000B9345 /* NetworkWrappers.swift in Sources */,
+				385275F225276CF200A6528E /* PublicWorkUploadWorker.swift in Sources */,
 				3864072624F5318F000B9345 /* City.swift in Sources */,
 				3847EBC124FAACDD00B2C4A5 /* HomeScreen.swift in Sources */,
 				3847EBB224FA7E0800B2C4A5 /* SearchField.swift in Sources */,

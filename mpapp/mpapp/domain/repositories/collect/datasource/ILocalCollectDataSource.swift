@@ -10,6 +10,8 @@ protocol ILocalCollectDataSource {
     
     func getCollectByPublicWorkId(publicWorkId: String) -> Collect?
     
+    func getCollectByCollectId(collectId: String) -> Collect?
+    
     func getPhotoByCollectId(collectId: String) -> [Photo]
     
     func deletePhotoById(_ photoId: String) throws

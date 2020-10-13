@@ -123,6 +123,8 @@
 		3864078124F69E89000B9345 /* ScaledFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864078024F69E89000B9345 /* ScaledFont.swift */; };
 		3864078624F69F68000B9345 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864078524F69F68000B9345 /* LoginView.swift */; };
 		38687E3B251195140068637C /* TrenaMultiPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38687E3A251195140068637C /* TrenaMultiPicker.swift */; };
+		387E54832535D57C00A07CED /* TokenRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387E54822535D57C00A07CED /* TokenRemote.swift */; };
+		387E54882535DA8400A07CED /* LoginRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387E54872535DA8400A07CED /* LoginRemote.swift */; };
 		388FB272250194130057C510 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388FB271250194130057C510 /* MapView.swift */; };
 		388FB274250196700057C510 /* PublicWorkLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388FB273250196700057C510 /* PublicWorkLocationView.swift */; };
 		388FB2762501974D0057C510 /* PublicWorkAddScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388FB2752501974D0057C510 /* PublicWorkAddScreen.swift */; };
@@ -327,6 +329,8 @@
 		3864078024F69E89000B9345 /* ScaledFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledFont.swift; sourceTree = "<group>"; };
 		3864078524F69F68000B9345 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		38687E3A251195140068637C /* TrenaMultiPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaMultiPicker.swift; sourceTree = "<group>"; };
+		387E54822535D57C00A07CED /* TokenRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRemote.swift; sourceTree = "<group>"; };
+		387E54872535DA8400A07CED /* LoginRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRemote.swift; sourceTree = "<group>"; };
 		388FB271250194130057C510 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		388FB273250196700057C510 /* PublicWorkLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkLocationView.swift; sourceTree = "<group>"; };
 		388FB2752501974D0057C510 /* PublicWorkAddScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkAddScreen.swift; sourceTree = "<group>"; };
@@ -630,6 +634,8 @@
 				385275C1252679E100A6528E /* CollectRemote.swift */,
 				385275C625267BC700A6528E /* PhotoRemote.swift */,
 				385275CB25274A2400A6528E /* ImageUploadResponse.swift */,
+				387E54822535D57C00A07CED /* TokenRemote.swift */,
+				387E54872535DA8400A07CED /* LoginRemote.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -1569,6 +1575,7 @@
 				38B1DE782516760300BCAC9E /* PublicWorkUI.swift in Sources */,
 				386406BD24F0393F000B9345 /* IRemoteConfigDataSource.swift in Sources */,
 				380FA6512518DC4700DF57AD /* TrenaTopBar.swift in Sources */,
+				387E54882535DA8400A07CED /* LoginRemote.swift in Sources */,
 				385275CC25274A2400A6528E /* ImageUploadResponse.swift in Sources */,
 				3864074824F5593C000B9345 /* ILocalCityDataSource.swift in Sources */,
 				3864077F24F69DE2000B9345 /* Headers.swift in Sources */,
@@ -1596,6 +1603,7 @@
 				3864076624F56874000B9345 /* ILocalAssociationDataSource.swift in Sources */,
 				3864071324F3F1B5000B9345 /* DownloadTypeWork.swift in Sources */,
 				385275D625274B0F00A6528E /* RemotePhotoDataSource.swift in Sources */,
+				387E54832535D57C00A07CED /* TokenRemote.swift in Sources */,
 				38481E4C2500677B004D9E07 /* TrenaTabBar.swift in Sources */,
 				3864072C24F535D7000B9345 /* Photo.swift in Sources */,
 				3864073424F54C7F000B9345 /* AssociationTPTW.swift in Sources */,

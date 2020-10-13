@@ -64,4 +64,16 @@ class LoginViewModel: ObservableObject {
         }
     }
     
+    func loginMP(email: String, password: String){
+        firstly{
+            userRepository.login(email: email, password: password)
+        }.done{response in
+            if(response.token != "error"){
+                self.navigateLoading()
+            }
+        }.catch{error in
+            print(error)
+        }
+    }
+    
 }

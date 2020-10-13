@@ -49,7 +49,7 @@ struct LoginView: View {
     }
     
     private func login(){
-        self.loginViewModel.navigateLoading()
+        self.loginViewModel.loginMP(email: email,password: password)
     }
     
     private func handleGoogleLogin(){

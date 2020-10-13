@@ -58,6 +58,32 @@ struct POST {
 }
 
 @propertyWrapper
+struct LOGIN{
+    private var callUrl: String
+    private let headers: HTTPHeaders = ["X-TRENA-KEY" : Config.trenaKey,"Content-Type":"application/x-www-form-urlencoded"]
+    
+    init(url: String) {
+        self.callUrl = url
+    }
+    
+    var wrappedValue : (_ username: String, _ password: String) -> Promise<Data> {
+        return {username, password in
+            Promise { seal in
+                let parameters = ["username": username, "password":password]
+                AF.request(Config.baseURL.appendingPathComponent(self.callUrl), method: .post,parameters: parameters,headers: headers).responseData { response in
+                    switch response.result {
+                    case .success(let data):
+                        seal.fulfill(data)
+                    case .failure(let error):
+                        seal.reject(error)
+                    }
+                }
+            }
+        }
+    }
+}
+
+@propertyWrapper
 struct UPLOAD {
     private var callUrl: String
     private let headers: HTTPHeaders = ["X-TRENA-KEY" : Config.trenaKey]

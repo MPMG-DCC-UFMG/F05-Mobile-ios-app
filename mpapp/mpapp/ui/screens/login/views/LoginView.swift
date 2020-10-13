@@ -11,6 +11,7 @@ struct LoginView: View {
     @State private var password: String = ""
     
     private let facebookDelegate = FacebookDelegate()
+    private let twitterDelegate = TwitterDelegate()
     
     var body: some View {
         ZStack{
@@ -39,7 +40,7 @@ struct LoginView: View {
                 SignInButton(action: handleGoogleLogin,label: "Entre com Google", image: "google_logo",backgroundColor: ColorProvider.white, textColor: ColorProvider.grey2)
                 SignInButton(action: handleFacebookLogin,label: "Entre com Facebook", image: "facebook_logo",backgroundColor: ColorProvider.blueFacebook, textColor: ColorProvider.white)
                     .padding(.top,10)
-                SignInButton(action: login,label: "Entre com Twitter", image: "twitter_logo",backgroundColor: ColorProvider.blueTwitter, textColor: ColorProvider.white)
+                SignInButton(action: handleTwitterLogin,label: "Entre com Twitter", image: "twitter_logo",backgroundColor: ColorProvider.blueTwitter, textColor: ColorProvider.white)
                     .padding(.top,10)
                 Spacer()
             }.padding(.horizontal, 30)
@@ -57,6 +58,10 @@ struct LoginView: View {
     
     private func handleFacebookLogin(){
         facebookDelegate.tryLogin()
+    }
+    
+    private func handleTwitterLogin(){
+        twitterDelegate.tryLogin()
     }
     
     private func registerClicked(){

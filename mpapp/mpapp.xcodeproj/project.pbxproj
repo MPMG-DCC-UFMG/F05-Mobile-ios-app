@@ -22,6 +22,7 @@
 		38313E09252526D00046F162 /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38313E08252526D00046F162 /* CreateUserView.swift */; };
 		38313E132525288A0046F162 /* LoginNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38313E122525288A0046F162 /* LoginNavigation.swift */; };
 		3838FC4D25018FDE007BEBD1 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3838FC4C25018FDE007BEBD1 /* LocationManager.swift */; };
+		384536FA2530A69A00989A7A /* TwitterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384536F92530A69A00989A7A /* TwitterDelegate.swift */; };
 		3847EBA824F97FAB00B2C4A5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3847EBA724F97FAB00B2C4A5 /* HomeView.swift */; };
 		3847EBAA24F97FE400B2C4A5 /* LoadingDataScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3847EBA924F97FE400B2C4A5 /* LoadingDataScreen.swift */; };
 		3847EBAD24F9D37800B2C4A5 /* HomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3847EBAC24F9D37800B2C4A5 /* HomeButton.swift */; };
@@ -225,6 +226,7 @@
 		38313E08252526D00046F162 /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
 		38313E122525288A0046F162 /* LoginNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigation.swift; sourceTree = "<group>"; };
 		3838FC4C25018FDE007BEBD1 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		384536F92530A69A00989A7A /* TwitterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterDelegate.swift; sourceTree = "<group>"; };
 		3847EBA724F97FAB00B2C4A5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3847EBA924F97FE400B2C4A5 /* LoadingDataScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDataScreen.swift; sourceTree = "<group>"; };
 		3847EBAC24F9D37800B2C4A5 /* HomeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButton.swift; sourceTree = "<group>"; };
@@ -1047,6 +1049,7 @@
 				3890B515252DD65400E11A7F /* GoogleDelegate.swift */,
 				389008D124EEE6FE00954A95 /* SceneDelegate.swift */,
 				3890B53E252DE67600E11A7F /* FacebookDelegate.swift */,
+				384536F92530A69A00989A7A /* TwitterDelegate.swift */,
 			);
 			path = delegates;
 			sourceTree = "<group>";
@@ -1513,6 +1516,7 @@
 				385275DB25274E7100A6528E /* IRemotePublicWorkDataSource.swift in Sources */,
 				3864074A24F5594C000B9345 /* ICityRepository.swift in Sources */,
 				382DF5512523571D00DE023E /* SyncViewModel.swift in Sources */,
+				384536FA2530A69A00989A7A /* TwitterDelegate.swift in Sources */,
 				3847EBAA24F97FE400B2C4A5 /* LoadingDataScreen.swift in Sources */,
 				38B1DE4725163C9100BCAC9E /* RoundedCorners.swift in Sources */,
 				38C2E02324F7191600121039 /* TrenaPasswordField.swift in Sources */,

@@ -19,9 +19,9 @@ Both files should be defined similar as:
 ```bash
 #include "Pods/Target Support Files/Pods-mpapp/Pods-mpapp.debug.xcconfig"
 
-BASE_URL = "http:/$()/0.0.0.0:8000/"
-SENTRY_DNS = "<SENTRY_DNS>"
-ENVIRONMENT = "development"
-TRENA_KEY = "<TRENA_KEY>"
-GOOGLE_API_KEY = "<GOOGLE_API_KEY>"
+BASE_URL = http:/$()/0.0.0.0:8000/
+SENTRY_DNS = <SENTRY_DNS>
+ENVIRONMENT = development
+TRENA_KEY = <TRENA_KEY>
+GOOGLE_API_KEY = <GOOGLE_API_KEY>
 ```

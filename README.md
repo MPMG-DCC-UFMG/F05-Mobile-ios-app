@@ -25,3 +25,16 @@ ENVIRONMENT = development
 TRENA_KEY = <TRENA_KEY>
 GOOGLE_API_KEY = <GOOGLE_API_KEY>
 ```
+
+## Sponsors
+
+<h1 align="center">
+  <a href="https://www.mpmg.mp.br/">
+      <img src="./assets/mmpg_logo.png" alt="MPMG">
+  </a>
+  <br>
+  <a href="https://sentry.io/">
+      <img src="./assets/sentry-logo-black.png" alt="Sentry">
+  </a>
+  <br>
+</h1>

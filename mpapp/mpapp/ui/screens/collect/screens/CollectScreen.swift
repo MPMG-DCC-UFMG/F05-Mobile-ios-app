@@ -23,7 +23,7 @@ struct CollectScreen: View {
                 CommentBottom(closed: $commentOn, comment: collectViewModel.currentCollect.comments ?? "",onConfirmClicked:self.collectConfirmClicked).transition(AnyTransition.opacity).animation(.default)
             }
             if(deleteClicked){
-                TrenaDialog( title: "Deletar Coleta",message: "A coleta não poderá ser restaurada",onPositiveClicked: handleDeleteCollect,onCloseClicked: {deleteClicked.toggle()})
+                TrenaDialog( title: "Deletar Coleta",message: "A coleta não poderá ser restaurada, deseja continuar?",onPositiveClicked: handleDeleteCollect,onCloseClicked: {deleteClicked.toggle()})
             }
             if(openWorkStatusPicker){
                 createTrenaPicker()

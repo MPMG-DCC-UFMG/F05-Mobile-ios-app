@@ -10,8 +10,8 @@ class PublicWorkViewModel: ObservableObject{
     private var sortListAscending: Bool = true
     
     @Published var selected:Int = 0
-    @Published var collectToSend: Bool = false
-    @Published var dataToSend: Bool = false
+    @Published var collectToSend: Bool = true
+    @Published var dataToSend: Bool = true
     @Published var searchTerm: String = ""
     @Published var filterTypeWorkFlags: [Int] = []
     
@@ -34,17 +34,18 @@ class PublicWorkViewModel: ObservableObject{
             predicates.append(NSPredicate(format: "name BEGINSWITH %@",searchTerm))
         }
         
-        if(collectToSend){
-            predicates.append(NSPredicate(format: "self.idCollect != nil", []))
+        if(!collectToSend){
+            predicates.append(NSPredicate(format: "self.idCollect == nil", []))
         }
         
-        if(dataToSend){
-            predicates.append(NSPredicate(format: "self.toSend == YES", []))
+        if(!dataToSend){
+            predicates.append(NSPredicate(format: "self.toSend == NO", []))
         }
         
         if(!filterTypeWorkFlags.isEmpty){
             predicates.append(NSPredicate(format: "self.typeWorkFlag IN %@", filterTypeWorkFlags))
         }
+        
         
         return NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
     }

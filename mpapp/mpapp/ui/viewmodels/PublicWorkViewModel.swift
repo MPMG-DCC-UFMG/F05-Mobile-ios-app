@@ -3,11 +3,16 @@ import RealmSwift
 import RxSwift
 import RxRealm
 import Realm
+import GeoQueries
+import MapKit
+import Resolver
 
 class PublicWorkViewModel: ObservableObject{
     
     private let publicWorkRepository: IPublicWorkRepository
     private var sortListAscending: Bool = true
+    
+    private var locationManager: LocationManager = Resolver.resolve()
     
     @Published var selected:Int = 0
     @Published var collectToSend: Bool = true
@@ -19,8 +24,13 @@ class PublicWorkViewModel: ObservableObject{
         self.publicWorkRepository = publicWorkRepository
     }
     
-    func publicWorksList() -> Results<PublicWork>{
-        return publicWorkRepository.listAllPublicWorks().filter(createFilter()).sorted(byKeyPath: "name", ascending: sortAscending())
+    func publicWorksList() -> [PublicWork]{
+        let filteredResult = publicWorkRepository.listAllPublicWorks().filter(createFilter())
+        if(selected==2 && locationManager.location != nil){
+            let location = locationManager.location!.coordinate
+            return filteredResult.sortByDistance(center: location, ascending: true)
+        }
+        return filteredResult.sorted(byKeyPath: "name", ascending: sortAscending()).toArray()
     }
     
     private func sortAscending() -> Bool{

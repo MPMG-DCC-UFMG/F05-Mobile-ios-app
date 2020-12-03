@@ -5,6 +5,7 @@ struct HomeView: View {
     
     @ObservedObject private var loginViewModel: LoginViewModel = Resolver.resolve()
     @ObservedObject private var configurationViewModel: ConfigurationViewModel = Resolver.resolve()
+    @ObservedObject private var syncViewModel: SyncViewModel = Resolver.resolve()
     @Binding var navigate:HomeNavigation
     
     var body: some View {
@@ -15,7 +16,7 @@ struct HomeView: View {
                     Image("trena_white").padding(.top, 50.0)
                     Spacer()
                 }.padding(.leading,10)
-                Text("Bem vindo ao TRENA, o aplicativo de fiscalização do Ministério Público de Minas Gerais").h2().padding(.top,40)
+                Text("Bem-vindo(a) ao TRENA, o aplicativo de fiscalização do Ministério Público de Minas Gerais").h2().padding(.top,40)
                     .padding(.leading,14)
                 HomeButton(action: {
                     self.navigateTo(.publicWorkList)
@@ -27,7 +28,7 @@ struct HomeView: View {
                     .padding(.top,10)
                 HomeButton(action: {
                     self.navigateTo(.sync)
-                }, label: "Enviar dados", image: "sync")
+                }, label: "Enviar dados", image: "sync", badgeCount: syncViewModel.countObjectsToSync())
                     .padding(.top,10)
                 HomeButton(action: logout, label: "Sair", image: "logout")
                     .padding(.top,10)

@@ -4,6 +4,7 @@ struct TrenaClickableField: View {
     var label: String
     var input: String
     var image: String = "chevron.down"
+    var hint: String = ""
     var action: () -> Void
     
     var body: some View {
@@ -16,8 +17,8 @@ struct TrenaClickableField: View {
             HStack {
                 Button(action: action){
                     HStack{
-                        Text(input)
-                            .foregroundColor(ColorProvider.white)
+                        Text(getFieldText())
+                            .foregroundColor(input.isEmpty ? ColorProvider.grey4 : ColorProvider.white)
                             .h2()
                         Spacer()
                         Image(systemName: image)
@@ -30,6 +31,14 @@ struct TrenaClickableField: View {
             }
             .frame(minWidth: 0, maxWidth: .infinity)
             .inputField()
+        }
+    }
+    
+    private func getFieldText() -> String {
+        if input.isEmpty {
+            return hint
+        }else{
+            return input
         }
     }
 }

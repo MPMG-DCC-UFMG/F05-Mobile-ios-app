@@ -11,6 +11,8 @@ class PublicWork: Object,Identifiable{
     @objc dynamic var typeWorkFlag = 0
     @objc dynamic var toSend = false
     @objc dynamic var userStatusFlag = 0
+    @objc dynamic var lat: Double = 0.0
+    @objc dynamic var lng: Double = 0.0
     
     override static func primaryKey() -> String? {
         return "id"

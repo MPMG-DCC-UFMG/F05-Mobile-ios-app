@@ -38,8 +38,10 @@ class CollectViewModel: ObservableObject {
         currentCollect.comments = comment
     }
     
-    func updateCollect(workStatus: WorkStatus, publicWorkUI: PublicWorkUI){
-        currentCollect.publicWorkStatus = workStatus.flag
+    func updateCollect(workStatus: WorkStatus?, publicWorkUI: PublicWorkUI){
+        if(workStatus != nil){
+            currentCollect.publicWorkStatus = workStatus!.flag
+        }
         currentCollect.idPublicWork = publicWorkUI.getId()
         do {
             try collectRepository.insertCollect(collect: currentCollect,publicWork: publicWorkUI.getPublicWork(),photoUI:photoList.map{$0.value})

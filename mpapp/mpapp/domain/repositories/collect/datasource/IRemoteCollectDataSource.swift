@@ -3,5 +3,5 @@ import PromiseKit
 
 protocol IRemoteCollectDataSource {
     
-    func sendCollect(collectRemote: CollectRemote) -> Promise<CollectRemote>
+    func sendCollect(collectRemote: CollectRemote) -> Promise<ResponseRemote>
 }

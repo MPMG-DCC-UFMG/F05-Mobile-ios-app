@@ -12,7 +12,8 @@ class LocalTypeWorkDataSource: BaseDataSource<TypeWork>,ILocalTypeWorkDataSource
     }
     
     func listAllTypeWorks() -> Results<TypeWork>{
-        return self.listAll()
+        let all = self.listAll()
+        return all
     }
     
     func deleteTypeWorks() throws {

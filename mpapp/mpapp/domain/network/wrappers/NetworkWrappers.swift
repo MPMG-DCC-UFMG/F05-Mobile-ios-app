@@ -14,7 +14,7 @@ struct GET {
     var wrappedValue : (_ queryParameters: Parameters?) -> Promise<Data> {
         return {queryParameters in
             Promise { seal in
-                AF.request(Config.baseURL.appendingPathComponent(self.callUrl),parameters: queryParameters, headers: self.headers).responseData { response in
+                NetworkSession.APIManager.request(Config.baseURL.appendingPathComponent(self.callUrl),parameters: queryParameters, headers: self.headers).responseData { response in
                     switch response.result {
                     case .success(let data):
                         seal.fulfill(data)
@@ -44,7 +44,7 @@ struct POST {
                 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                 request.httpBody = body
                 request.headers = self.headers
-                AF.request(request).responseData { response in
+                NetworkSession.APIManager.request(request).responseData { response in
                     switch response.result {
                     case .success(let data):
                         seal.fulfill(data)
@@ -70,7 +70,7 @@ struct LOGIN{
         return {username, password in
             Promise { seal in
                 let parameters = ["username": username, "password":password]
-                AF.request(Config.baseURL.appendingPathComponent(self.callUrl), method: .post,parameters: parameters,headers: headers).responseData { response in
+                NetworkSession.APIManager.request(Config.baseURL.appendingPathComponent(self.callUrl), method: .post,parameters: parameters,headers: headers).responseData { response in
                     switch response.result {
                     case .success(let data):
                         seal.fulfill(data)
@@ -96,7 +96,7 @@ struct UPLOAD {
         return {image, imageName in
             Promise { seal in
                 let imageData = image.jpegData(compressionQuality: 0.5)                
-                AF.upload(multipartFormData: {multipartFormData in
+                NetworkSession.APIManager.upload(multipartFormData: {multipartFormData in
                     multipartFormData.append(imageData!, withName: "file", fileName: "\(imageName)", mimeType: "image/png")
                 },to: Config.baseURL.appendingPathComponent(self.callUrl), method: .post , headers: headers).responseData{response in
                     switch response.result {

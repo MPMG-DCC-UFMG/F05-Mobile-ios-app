@@ -60,6 +60,7 @@ class AddressRemote: Codable{
         address.city = self.city
         address.number = self.number
         address.cep = self.cep
+        address.neighborhood = self.neighborhood
         address.latitude = self.latitude
         address.longitude = self.longitude
         address.idPublicWork = self.publicWorkId

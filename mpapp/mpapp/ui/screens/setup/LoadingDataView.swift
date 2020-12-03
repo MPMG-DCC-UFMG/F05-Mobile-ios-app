@@ -10,6 +10,7 @@ struct LoadingDataView: View {
             ColorProvider.darkBackground.edgesIgnoringSafeArea(.all)
             VStack{
                 Spacer()
+                TrenaLoading()
                 Text(configurationViewModel.message).h1()
                     .multilineTextAlignment(.center)
                 Spacer()

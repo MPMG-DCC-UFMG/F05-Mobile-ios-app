@@ -13,16 +13,26 @@ class LoadServerDataWorker{
         let downloadCalls: [BaseDownloadInfo] = [DownloadTypeWork(), DownloadTypePhoto(), DownloadCities(),
                                                  DownloadWorkStatus(), DownloadAssociation(), DownloadPublicWork()]
         self.updateStatus(status: WorkerStatus.running,message: "Conectando ao servidor...")
-        when(resolved: downloadCalls.map{self.downloadData(downloadInfo: $0)})
-            .done{result in
-                if(result.allSatisfy({$0.isFulfilled})){
-                    self.updateStatus(status: WorkerStatus.success,message: "Download completo")
+        executeHelper(downloadCalls: downloadCalls, index: 0)
+    }
+    
+    private func executeHelper(downloadCalls: [BaseDownloadInfo], index: Int){
+        if(index<downloadCalls.count){
+            firstly{
+                downloadData(downloadInfo: downloadCalls[index])
+            }.done{ result in
+                if(result){
+                    self.executeHelper(downloadCalls: downloadCalls, index: index+1)
                 }else{
                     self.updateStatus(status: WorkerStatus.failed,message: "Falha ao baixar dados")
                 }
+            }.catch{_ in
+                self.updateStatus(status: WorkerStatus.failed,message: "Falha ao baixar dados")
+            }
+        }else{
+            self.updateStatus(status: WorkerStatus.success,message: "Download completo")
         }
     }
-    
     
     private func serverVersionChanged(serverVersion: Int,currentVersion: Int) -> Promise<Bool>{
         return Promise<Bool> {seal in
@@ -45,16 +55,27 @@ class LoadServerDataWorker{
         self.updateProgress(message: "Verificando versão: \(downloadInfo.name())")
         return Promise<Bool>{ seal in
             let currentVersion = downloadInfo.currentVersion()
+            var _serverVersion = -1
             self.updateProgress(message: "Verificando versão: \(downloadInfo.name())")
             firstly{
                 downloadInfo.serverVersion()
+            }.map{serverVersion in
+                _serverVersion = serverVersion.version
+                return _serverVersion
             }.then{serverVersion in
-                self.serverVersionChanged(serverVersion: serverVersion.version, currentVersion: currentVersion)
+                self.serverVersionChanged(serverVersion: serverVersion, currentVersion: currentVersion)
             }.then{hasServerChanged in
                 self.downloadFromServer(downloadInfo: downloadInfo, hasServerChanged: hasServerChanged)
-            }.done{
-                dataFromServer in
-                seal.fulfill(downloadInfo.onSuccess(list: dataFromServer))
+            }.done{dataFromServer in
+                var updated = true
+                if(!dataFromServer.isEmpty){
+                    updated = downloadInfo.onSuccess(list: dataFromServer)
+                    if(updated){
+                        downloadInfo.updateCurrentVersion(serverVersion: _serverVersion)
+                    }
+                }
+                
+                seal.fulfill(updated)
             }.catch{ error in
                 self.updateProgress(message: "Falha ao baixar: \(downloadInfo.name())")
                 seal.reject(error)

@@ -35,12 +35,19 @@ struct CollectScreen: View {
     
     private func createTrenaPicker() -> TrenaPicker {
         let workStatus = workStatusViewModel.getWorkStatusesForPublicWork(publicWork)
-        return TrenaPicker(options: workStatus.map{$0.name}, closed: self.$openWorkStatusPicker, selectedOption: 0,negativeText: "Descartar", onConfirmClicked: {index in
-            updateCollect(workStatus[index])
+        var options = workStatus.map{$0.name}
+        options.insert("--------", at: 0)
+        return TrenaPicker(options: options, closed: self.$openWorkStatusPicker, selectedOption: 0,negativeText: "Descartar", onConfirmClicked: {index in
+            
+            var selectedWorkStatus: WorkStatus? = nil
+            if(index > 0){
+                selectedWorkStatus = workStatus[index-1]
+            }
+            updateCollect(selectedWorkStatus)
         }, onNegativeClicked: self.onBackPressed)
     }
     
-    private func updateCollect(_ workStatus: WorkStatus){
+    private func updateCollect(_ workStatus: WorkStatus?){
         collectViewModel.updateCollect(workStatus: workStatus, publicWorkUI: publicWork)
         self.onBackPressed?()
     }

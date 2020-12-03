@@ -24,7 +24,8 @@ class DownloadPublicWork: BaseDownloadInfo,Resolving{
     }
     
     func loadInfo() -> Promise<Array<Decodable>>{
-        return configRepository.loadPublicWorkChanges(currVersion: currentVersion())
+        let publicWorks = configRepository.loadPublicWorkChanges(currVersion: currentVersion())
+        return publicWorks
     }
     
     func onSuccess(list: Array<Any>) -> Bool {

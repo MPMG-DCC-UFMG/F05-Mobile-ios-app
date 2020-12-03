@@ -5,6 +5,7 @@ import Firebase
 class LoginViewModel: ObservableObject {
     
     @Published var navigate = LoginNavigation.login
+    @Published var invalidCreationMessage: String? = nil
     
     private let userRepository: IUserRepository
     
@@ -18,6 +19,12 @@ class LoginViewModel: ObservableObject {
     
     func navigateLoading(){
         navigate = .loading
+    }
+    
+    func checkLoggedUser(){
+        if Auth.auth().currentUser != nil {
+            navigateLoading()
+        }
     }
     
     func navigateLogin(){
@@ -41,13 +48,15 @@ class LoginViewModel: ObservableObject {
         }.done{ response in
             if(response.success){
                 self.navigate = .login
+                self.invalidCreationMessage = nil
+            }else{
+                self.invalidCreationMessage = response.error?.message
             }
         }
     }
     
     func isValidEmail(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
     }

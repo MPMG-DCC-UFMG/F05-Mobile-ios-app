@@ -36,7 +36,7 @@ class PublicWorkUploadWorker: ObservableObject{
         if(publicWork.toSend){
             firstly{
                 publicWorkRepository.sendPublicWork(publicWorkRemote: PublicWorkRemote(publicWork))
-            }.done{ data in
+            }.done{ responseRemote in
                 try self.publicWorkRepository.markPublicWorkSent(publicWorkId: publicWork.id)
                 self.sendCollect(publicWork: publicWork)
             }.catch{error in
@@ -58,7 +58,7 @@ class PublicWorkUploadWorker: ObservableObject{
             self.updateProgress(message: "Enviando dados da coleta",progress: 30)
             firstly{
                 self.collectRepository.sendCollect(collectRemote: CollectRemote(collect))
-            }.then {collectRemote in
+            }.then {responseRemote in
                 self.sendCollectPhotos(collectId: collect.id)
             }.done{ sent in
                 if(sent){
@@ -70,6 +70,8 @@ class PublicWorkUploadWorker: ObservableObject{
             }.catch{ error in
                 self.updateStatus(status: .failed, message: "Não foi possível enviar coleta",progress: 0)
             }
+        }else{
+            self.updateProgress(message: "Dados enviados com sucesso",progress: 100)
         }
     }
     
@@ -84,8 +86,8 @@ class PublicWorkUploadWorker: ObservableObject{
                     self.collectRepository.sendImage(imageName: photo.fileName!)
                 }.then{ imageResponse in
                     self.collectRepository.sendPhoto(photo: PhotoRemote(photo,filePath: imageResponse.filepath))
-                }.done{ photoResponse in
-                    allPhotosSent = allPhotosSent && true
+                }.done{ responseRemote in
+                    allPhotosSent = allPhotosSent && responseRemote.success
                 }.catch{ error in
                     allPhotosSent = false
                 }

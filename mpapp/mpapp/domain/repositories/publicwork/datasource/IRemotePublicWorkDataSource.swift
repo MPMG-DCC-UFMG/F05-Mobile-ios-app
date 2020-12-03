@@ -3,5 +3,5 @@ import PromiseKit
 
 protocol IRemotePublicWorkDataSource {
     
-    func sendPublicWork(publicWorkRemote: PublicWorkRemote) -> Promise<PublicWorkRemote>
+    func sendPublicWork(publicWorkRemote: PublicWorkRemote) -> Promise<ResponseRemote>
 }

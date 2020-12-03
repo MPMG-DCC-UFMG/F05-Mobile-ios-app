@@ -41,7 +41,7 @@ class PublicWorkRepository: IPublicWorkRepository{
         return self.localPublicWorkDataSource.getPublicWorkById(publicWorkId: publicWorkId)
     }
     
-    func sendPublicWork(publicWorkRemote: PublicWorkRemote) -> Promise<PublicWorkRemote> {
+    func sendPublicWork(publicWorkRemote: PublicWorkRemote) -> Promise<ResponseRemote> {
         return self.remotePublicWorkDataSource.sendPublicWork(publicWorkRemote: publicWorkRemote)
     }
     

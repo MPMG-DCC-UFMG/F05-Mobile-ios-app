@@ -15,24 +15,28 @@ struct SyncView: View {
             ColorProvider.darkBackground.edgesIgnoringSafeArea(.all)
             VStack{
                 TrenaTopBar(title: "Enviar dados", onBackPressed: self.onBackPressed).padding(.bottom,15)
-                List{
-                    ForEach(sortedPublicWorks,id: \.key){ (key, value) in
-                        SyncListItem(syncUI:value)
+                if(sortedPublicWorks.isEmpty){
+                    EmptyListView(emptyMessage: "Lista de dados para enviar vazia, tente realizar coletas ou atualizar informações das obras")
+                }else{
+                    List{
+                        ForEach(sortedPublicWorks,id: \.key){ (key, value) in
+                            SyncListItem(syncUI:value)
+                        }
+                        .listRowBackground(ColorProvider.darkBackground)
                     }
-                    .listRowBackground(ColorProvider.darkBackground)
+                    .onAppear {
+                        UITableView.appearance().separatorStyle = .none
+                        UITableView.appearance().bounces = false
+                        UITableView.appearance().backgroundColor = UIColor.clear
+                    }
+                    .onDisappear {
+                        UITableView.appearance().separatorStyle = .singleLine
+                    }
+                    .padding(.horizontal, -20)
+                    .listStyle(PlainListStyle())
+                    TrenaButton(label: "Enviar dados", style: .button2, action: sendClicked)
+                        .padding()
                 }
-                .onAppear {
-                    UITableView.appearance().separatorStyle = .none
-                    UITableView.appearance().bounces = false
-                    UITableView.appearance().backgroundColor = UIColor.clear
-                }
-                .onDisappear {
-                    UITableView.appearance().separatorStyle = .singleLine
-                }
-                .padding(.horizontal, -20)
-                .listStyle(PlainListStyle())
-                TrenaButton(label: "Enviar dados", style: .button2, action: sendClicked)
-                    .padding()
             }.onAppear{
                 syncViewModel.loadPublicWorksList()
             }

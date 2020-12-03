@@ -47,11 +47,11 @@ class CollectRepository: ICollectRepository{
         return self.remotePhotoDataSource.sendImage(imageName: imageName)
     }
     
-    func sendPhoto(photo: PhotoRemote) -> Promise<PhotoRemote> {
+    func sendPhoto(photo: PhotoRemote) -> Promise<ResponseRemote> {
         return self.remotePhotoDataSource.sendPhoto(photo: photo)
     }
     
-    func sendCollect(collectRemote: CollectRemote) -> Promise<CollectRemote> {
+    func sendCollect(collectRemote: CollectRemote) -> Promise<ResponseRemote> {
         return self.remoteCollectDataSource.sendCollect(collectRemote: collectRemote)
     }
     

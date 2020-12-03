@@ -15,7 +15,8 @@ struct PublicWorkFilterView: View {
                 Text("Filtrar")
                     .h1()
                     .padding(.top,20)
-                TrenaClickableField(label: "Tipo de Obra", input: getAppliedTypeWorksString(publicWorkViewModel.filterTypeWorkFlags), action: self.openPicker)
+                TrenaClickableField(label: "Tipo de Obra", input: getAppliedTypeWorksString(publicWorkViewModel.filterTypeWorkFlags),
+                    hint:"Clique para selecionar tipo de obra",action: self.openPicker)
                     .padding(.top, 15)
                 Text("Ordenar por".uppercased())
                     .foregroundColor(ColorProvider.white)

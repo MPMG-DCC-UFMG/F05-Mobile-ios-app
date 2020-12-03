@@ -5,19 +5,29 @@ struct HomeButton: View {
     var action: () -> Void
     var label:String
     var image:String
+    var badgeCount: Int = 0
     
     var body: some View {
         Button(action: action) {
             HStack {
                 ZStack{
-                    Image(image)
-                        .renderingMode(.original)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 25, height: 25)
-                }.frame(width: 50, height: 50)
+                    ZStack{
+                        Image(image)
+                            .renderingMode(.original)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25, height: 25)
+                    }.frame(width: 50, height: 50)
                     .background(ColorProvider.grey2)
                     .clipShape(Circle())
+                    if(badgeCount>0){
+                        VStack(alignment: .trailing){
+                            TrenaBadge(badgeNumber: "\(badgeCount)")
+                            Spacer()
+                        }
+                        .frame(width: 60, height: 50, alignment: .trailing)
+                    }
+                }
                 
                 Text(label)
                     .buttonTextStyle(color:ColorProvider.white)

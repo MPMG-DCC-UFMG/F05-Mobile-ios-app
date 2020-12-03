@@ -34,6 +34,9 @@ class SyncViewModel: ObservableObject{
         return publicWorkRepository.listAllPublicWorks().filter(createFilter()).sorted(byKeyPath: "name", ascending: true)
     }
     
+    func countObjectsToSync() -> Int{
+       return publicWorksList().count
+    }
     private func createFilter() -> NSPredicate{
         var predicates: [NSPredicate] = []
     

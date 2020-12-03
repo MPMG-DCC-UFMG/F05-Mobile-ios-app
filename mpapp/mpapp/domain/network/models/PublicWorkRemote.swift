@@ -2,9 +2,9 @@ import Foundation
 
 class PublicWorkRemote: Codable{
     var id: String
-    var name: String
-    var typeWorkFlag: Int
-    var address: AddressRemote
+    var name: String?
+    var typeWorkFlag: Int?
+    var address: AddressRemote?
     var operation: Int?
     var userStatus: Int
     
@@ -38,12 +38,16 @@ class PublicWorkRemote: Codable{
     func toPublicWorkDB() -> PublicWork{
         let publicWork =  PublicWork()
         publicWork.id = self.id
-        publicWork.name = self.name
-        publicWork.idAddress = self.address.id
-        publicWork.typeWorkFlag = self.typeWorkFlag
+        publicWork.name = self.name  ?? ""
+        publicWork.typeWorkFlag = self.typeWorkFlag  ?? -1
         publicWork.userStatusFlag = self.userStatus
         publicWork.toSend = false
-        publicWork.address = self.address.toAddressDB()
+        if(self.address != nil){
+            publicWork.idAddress = self.address!.id
+            publicWork.address = self.address!.toAddressDB()
+            publicWork.lat = self.address!.latitude
+            publicWork.lng = self.address!.longitude
+        }
         return publicWork
     }
     

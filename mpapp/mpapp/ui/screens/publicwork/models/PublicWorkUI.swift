@@ -66,6 +66,8 @@ class PublicWorkUI: ObservableObject{
         publicWork.typeWorkFlag = self.typeWorkFlag
         publicWork.idCollect = self.idCollect
         publicWork.toSend = true
+        publicWork.lat = self.latitude
+        publicWork.lng = self.longitude
         address.idPublicWork = publicWork.id
         address.cep = self.cep
         address.city = self.city

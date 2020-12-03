@@ -45,7 +45,10 @@ struct LoginView: View {
                 Spacer()
             }.padding(.horizontal, 30)
         }.navigationBarTitle("")
-            .navigationBarHidden(true)
+        .navigationBarHidden(true)
+        .onAppear{
+            self.loginViewModel.checkLoggedUser()
+        }
     }
     
     private func login(){

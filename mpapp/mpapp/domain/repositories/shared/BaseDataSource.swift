@@ -1,6 +1,7 @@
 import Foundation
 import RealmSwift
 
+
 class BaseDataSource<T: Object> {
     
     func mpDatabase()-> Realm {
@@ -23,7 +24,6 @@ class BaseDataSource<T: Object> {
         try self.mpDatabase().write{
             self.mpDatabase().delete(self.listAll())
         }
-        
     }
     
     internal func insertAll(entities: Array<T>) throws {

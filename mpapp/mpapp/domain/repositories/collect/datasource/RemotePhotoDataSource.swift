@@ -17,11 +17,11 @@ class RemotePhotoDataSource: IRemotePhotoDataSource{
         }
     }
     
-    func sendPhoto(photo: PhotoRemote) -> Promise<PhotoRemote>{
+    func sendPhoto(photo: PhotoRemote) -> Promise<ResponseRemote>{
         return firstly{
             MPApi.sendPhoto(photo.toParameter())
         }.map{ data in
-            PhotoRemote(data)
+            ResponseRemote(data)
         }
     }
     

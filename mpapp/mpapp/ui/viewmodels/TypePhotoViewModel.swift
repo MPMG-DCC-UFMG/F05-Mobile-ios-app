@@ -7,9 +7,9 @@ class TypePhotoViewModel: ObservableObject{
     
     @Published var typePhotos = [TypePhoto]()
     
-    private let typePhotoRepository: ITypePhotoRepository
+    private let typePhotoRepository: TypePhotoRepository
     
-    init(typePhotoRepository: ITypePhotoRepository){
+    init(typePhotoRepository: TypePhotoRepository){
         self.typePhotoRepository = typePhotoRepository
         fetchTypePhotos()
     }

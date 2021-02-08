@@ -1,11 +1,11 @@
 import Foundation
 import RealmSwift
 
-class TypePhotoRepository: ITypePhotoRepository {
+class TypePhotoRepository {
    
-    private let localTypePhotoDataSource: ILocalTypePhotoDataSource
+    private let localTypePhotoDataSource: LocalTypePhotoDataSource
     
-    init(localTypePhotoDataSource: ILocalTypePhotoDataSource) {
+    init(localTypePhotoDataSource: LocalTypePhotoDataSource) {
         self.localTypePhotoDataSource = localTypePhotoDataSource
     }
     

@@ -4,8 +4,8 @@ import PromiseKit
 
 class DownloadAssociation: BaseDownloadInfo,Resolving{
     
-    private lazy var associationRepository: IAssociationRepository = resolver.resolve()
-    private lazy var configRepository: IConfigRepository = resolver.resolve()
+    private lazy var associationRepository: AssociationRepository = resolver.resolve()
+    private lazy var configRepository: ConfigRepository = resolver.resolve()
     
     func name() -> String{
         return "associações"

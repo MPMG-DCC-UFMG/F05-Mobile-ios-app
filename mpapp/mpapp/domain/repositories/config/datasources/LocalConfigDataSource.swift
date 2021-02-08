@@ -1,6 +1,6 @@
 import Foundation
 
-class LocalConfigDataSource: ILocalConfigDataSource {
+class LocalConfigDataSource {
     
     private let preferences = UserDefaults.standard
     

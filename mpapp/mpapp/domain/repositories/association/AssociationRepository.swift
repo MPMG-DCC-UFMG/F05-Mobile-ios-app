@@ -1,10 +1,10 @@
 import Foundation
 
-class AssociationRepository: IAssociationRepository{
+class AssociationRepository{
     
-    private let localAssociationDataSource: ILocalAssociationDataSource
+    private let localAssociationDataSource: LocalAssociationDataSource
     
-    init(localAssociationDataSource: ILocalAssociationDataSource) {
+    init(localAssociationDataSource: LocalAssociationDataSource) {
         self.localAssociationDataSource = localAssociationDataSource
     }
     

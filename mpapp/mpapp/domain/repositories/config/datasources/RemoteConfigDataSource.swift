@@ -2,7 +2,7 @@ import Foundation
 import Alamofire
 import PromiseKit
 
-class RemoteConfigDataSource: IRemoteConfigDataSource{
+class RemoteConfigDataSource{
     
     func loadTypeWorks() -> Promise<Array<Decodable>> {
         return firstly{

@@ -2,11 +2,11 @@ import Foundation
 
 class WorkStatusViewModel: ObservableObject {
     
-    private let typeWorkRepository: ITypeWorkRepository
-    private let workStatusRepository: IWorkStatusRepository
+    private let typeWorkRepository: TypeWorkRepository
+    private let workStatusRepository: WorkStatusRepository
     
-    init(typeWorkRepository: ITypeWorkRepository,
-         workStatusRepository: IWorkStatusRepository){
+    init(typeWorkRepository: TypeWorkRepository,
+         workStatusRepository: WorkStatusRepository){
         self.typeWorkRepository = typeWorkRepository
         self.workStatusRepository = workStatusRepository
     }

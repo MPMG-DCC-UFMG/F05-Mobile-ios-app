@@ -1,11 +1,11 @@
 import Foundation
 import RealmSwift
 
-class CityRepository: ICityRepository{
+class CityRepository{
     
-    private let localCityDataSource: ILocalCityDataSource
+    private let localCityDataSource: LocalCityDataSource
     
-    init(localCityDataSource: ILocalCityDataSource) {
+    init(localCityDataSource: LocalCityDataSource) {
         self.localCityDataSource = localCityDataSource
     }
     

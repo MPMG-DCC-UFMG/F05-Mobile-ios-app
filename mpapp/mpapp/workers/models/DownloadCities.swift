@@ -4,8 +4,8 @@ import PromiseKit
 
 class DownloadCities: BaseDownloadInfo,Resolving{
     
-    private lazy var cityRepository: ICityRepository = resolver.resolve()
-    private lazy var configRepository: IConfigRepository = resolver.resolve()
+    private lazy var cityRepository: CityRepository = resolver.resolve()
+    private lazy var configRepository: ConfigRepository = resolver.resolve()
     
     func name() -> String{
         return "cidades"

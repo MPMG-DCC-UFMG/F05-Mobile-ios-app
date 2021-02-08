@@ -1,13 +1,13 @@
 import Foundation
 import PromiseKit
 
-class ConfigRepository: IConfigRepository {
+class ConfigRepository {
     
-    let localConfigDataSource: ILocalConfigDataSource
-    let remoteConfigDataSource: IRemoteConfigDataSource
+    let localConfigDataSource: LocalConfigDataSource
+    let remoteConfigDataSource: RemoteConfigDataSource
     
-    init(localConfigDataSource: ILocalConfigDataSource,
-         remoteConfigDataSource: IRemoteConfigDataSource) {
+    init(localConfigDataSource: LocalConfigDataSource,
+         remoteConfigDataSource: RemoteConfigDataSource) {
         self.localConfigDataSource = localConfigDataSource
         self.remoteConfigDataSource = remoteConfigDataSource
     }

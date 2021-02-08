@@ -4,9 +4,7 @@ import Resolver
 struct SyncView: View {
     
     @ObservedObject var syncViewModel: SyncViewModel = Resolver.resolve()
-    
-    var onBackPressed: (() -> Void)?
-    
+        
     var body: some View {
         
         let sortedPublicWorks = syncViewModel.syncWorkers.sorted(by: { $0.key < $1.key })
@@ -14,7 +12,9 @@ struct SyncView: View {
         ZStack{
             ColorProvider.darkBackground.edgesIgnoringSafeArea(.all)
             VStack{
-                TrenaTopBar(title: "Enviar dados", onBackPressed: self.onBackPressed).padding(.bottom,15)
+                TrenaTopBar(title: "Enviar dados", onBackPressed: {
+                    syncViewModel.navigateBack()
+                }).padding(.bottom,15)
                 if(sortedPublicWorks.isEmpty){
                     EmptyListView(emptyMessage: "Lista de dados para enviar vazia, tente realizar coletas ou atualizar informações das obras")
                 }else{

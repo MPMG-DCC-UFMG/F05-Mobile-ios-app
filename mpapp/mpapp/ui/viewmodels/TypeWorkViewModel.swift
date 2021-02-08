@@ -7,9 +7,9 @@ class TypeWorkViewModel: ObservableObject{
         
     @Published var typeworks = [TypeWork]()
     
-    private let typeWorkRepository: ITypeWorkRepository
+    private let typeWorkRepository: TypeWorkRepository
     
-    init(typeWorkRepository: ITypeWorkRepository){
+    init(typeWorkRepository: TypeWorkRepository){
         self.typeWorkRepository = typeWorkRepository
         fetchTypeWorks()
     }

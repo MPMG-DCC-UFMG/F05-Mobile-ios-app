@@ -2,11 +2,11 @@ import Foundation
 import RealmSwift
 
 
-class TypeWorkRepository: ITypeWorkRepository {
+class TypeWorkRepository {
     
-    private let localTypeWorkDataSource: ILocalTypeWorkDataSource
+    private let localTypeWorkDataSource: LocalTypeWorkDataSource
     
-    init(localTypeWorkDataSource: ILocalTypeWorkDataSource) {
+    init(localTypeWorkDataSource: LocalTypeWorkDataSource) {
         self.localTypeWorkDataSource = localTypeWorkDataSource
     }
     

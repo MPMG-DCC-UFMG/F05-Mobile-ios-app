@@ -1,11 +1,11 @@
 import Foundation
 import RealmSwift
 
-class WorkStatusRepository: IWorkStatusRepository{
+class WorkStatusRepository{
     
-    private let localWorkStatusDataSource: ILocalWorkStatusDataSource
+    private let localWorkStatusDataSource: LocalWorkStatusDataSource
     
-    init(localWorkStatusDataSource: ILocalWorkStatusDataSource) {
+    init(localWorkStatusDataSource: LocalWorkStatusDataSource) {
         self.localWorkStatusDataSource = localWorkStatusDataSource
     }
     

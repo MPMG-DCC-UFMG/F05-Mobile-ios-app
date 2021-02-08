@@ -1,7 +1,7 @@
 import Foundation
 import RealmSwift
 
-class LocalPublicWorkDataSource: BaseDataSource<PublicWork>, ILocalPublicWorkDataSource {
+class LocalPublicWorkDataSource: BaseDataSource<PublicWork> {
     
     func deletePublicWork(publicWork: PublicWork) throws {
         try self.delete(entity: publicWork)

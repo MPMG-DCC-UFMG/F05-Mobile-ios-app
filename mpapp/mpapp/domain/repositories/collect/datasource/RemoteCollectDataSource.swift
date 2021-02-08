@@ -1,7 +1,7 @@
 import Foundation
 import PromiseKit
 
-class RemoteCollectDataSource: IRemoteCollectDataSource{
+class RemoteCollectDataSource{
     
     func sendCollect(collectRemote: CollectRemote) -> Promise<ResponseRemote> {
         return firstly{

@@ -1,11 +1,14 @@
 import Foundation
 import GoogleSignIn
 import Firebase
-import Resolver
 
 class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject{
     
-    private var loginViewModel: LoginViewModel = Resolver.resolve()
+    private var loginViewModel: LoginViewModel
+    
+    init(_ loginViewModel: LoginViewModel) {
+        self.loginViewModel = loginViewModel
+    }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {

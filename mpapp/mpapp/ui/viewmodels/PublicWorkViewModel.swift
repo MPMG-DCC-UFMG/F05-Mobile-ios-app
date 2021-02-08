@@ -7,9 +7,12 @@ import GeoQueries
 import MapKit
 import Resolver
 
-class PublicWorkViewModel: ObservableObject{
+class PublicWorkViewModel: BaseViewModel, ObservableObject{
     
-    private let publicWorkRepository: IPublicWorkRepository
+    var typeworks = [TypeWork]()
+    
+    private let publicWorkRepository: PublicWorkRepository
+    private let typeWorkRepository: TypeWorkRepository
     private var sortListAscending: Bool = true
     
     private var locationManager: LocationManager = Resolver.resolve()
@@ -20,8 +23,10 @@ class PublicWorkViewModel: ObservableObject{
     @Published var searchTerm: String = ""
     @Published var filterTypeWorkFlags: [Int] = []
     
-    init(publicWorkRepository: IPublicWorkRepository){
+    init(publicWorkRepository: PublicWorkRepository, typeWorkRepository: TypeWorkRepository){
         self.publicWorkRepository = publicWorkRepository
+        self.typeWorkRepository = typeWorkRepository
+        self.typeworks = typeWorkRepository.listAllTypeWorks().toArray()
     }
     
     func publicWorksList() -> [PublicWork]{
@@ -60,15 +65,11 @@ class PublicWorkViewModel: ObservableObject{
         return NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
     }
     
-    func addToDb(_ publicWork: PublicWorkUI){
-        do{
-            try publicWorkRepository.insertPublicWork(publicWork: publicWork)
-        }catch{
-            print(error)
-        }
-    }
-    
     func updateFilteredWorkFlags(filterTypeWorkFlags: [Int]){
         self.filterTypeWorkFlags = filterTypeWorkFlags
+    }
+    
+    func navigateBack(){
+        self.navController.navigateBack()
     }
 }

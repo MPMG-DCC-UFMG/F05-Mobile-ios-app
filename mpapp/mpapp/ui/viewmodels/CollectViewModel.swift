@@ -5,11 +5,11 @@ class CollectViewModel: ObservableObject {
     @Published var currentCollect = CollectUI()
     @Published var photoList : [String:PhotoUI] = [:]
     
-    private let collectRepository: ICollectRepository
-    private let publicWorkRepository: IPublicWorkRepository
+    private let collectRepository: CollectRepository
+    private let publicWorkRepository: PublicWorkRepository
     
-    init(collectRepository: ICollectRepository,
-         publicWorkRepository: IPublicWorkRepository){
+    init(collectRepository: CollectRepository,
+         publicWorkRepository: PublicWorkRepository){
         self.collectRepository = collectRepository
         self.publicWorkRepository = publicWorkRepository
     }

@@ -1,6 +1,6 @@
 import Foundation
 
-class LocalCollectDataSource: BaseDataSource<Collect>, ILocalCollectDataSource{
+class LocalCollectDataSource: BaseDataSource<Collect>{
     
     func deleteCollect(collect: Collect,publicWork: PublicWork) throws {
         let collectDb = self.mpDatabase().object(ofType: Collect.self, forPrimaryKey: collect.id)

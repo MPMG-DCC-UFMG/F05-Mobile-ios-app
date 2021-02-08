@@ -56,7 +56,7 @@ struct CollectScreen: View {
         switch navigate {
         case .editPublicWork:
             return AnyView(
-                PublicWorkAddScreen(publicWorkUI: publicWork,onCancelClicked: {self.navigateTo(.collectMain)})
+                PublicWorkAddView()
             )
         case .photo:
             return AnyView(

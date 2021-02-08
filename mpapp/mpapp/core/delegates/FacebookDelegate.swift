@@ -1,11 +1,14 @@
 import Foundation
 import FBSDKLoginKit
-import Resolver
 import Firebase
 
 class FacebookDelegate{
     private let loginManager = LoginManager()
-    private var loginViewModel: LoginViewModel = Resolver.resolve()
+    private var loginViewModel: LoginViewModel
+    
+    init(_ loginViewModel: LoginViewModel) {
+        self.loginViewModel = loginViewModel
+    }
     
     func tryLogin(){
         loginManager.logIn(permissions: [.publicProfile,.email], viewController: nil){loginResult in
@@ -15,7 +18,10 @@ class FacebookDelegate{
             case .cancelled:
                 print("User cancelled login.")
             case .success( _, _, let accessToken):
-                let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+                guard let token = accessToken?.tokenString else{
+                    return
+                }
+                let credential = FacebookAuthProvider.credential(withAccessToken: token)
                 self.loginViewModel.authFirebase(credential: credential)
             }
         }

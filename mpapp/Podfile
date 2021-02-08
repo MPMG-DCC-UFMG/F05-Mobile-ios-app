@@ -7,9 +7,6 @@ target 'mpapp' do
   pod 'RealmSwift'
   pod 'RxRealm'
   pod "Resolver"
-  pod "PromiseKit"
-  pod 'Alamofire', '~> 5.2'
-  pod 'Sentry', :git => 'https://github.com/getsentry/sentry-cocoa.git', :tag => '6.0.9'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'Firebase/Auth'

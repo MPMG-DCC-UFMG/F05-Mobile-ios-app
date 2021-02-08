@@ -48,7 +48,7 @@ struct CollectScreen: View {
     }
     
     private func updateCollect(_ workStatus: WorkStatus?){
-        collectViewModel.updateCollect(workStatus: workStatus, publicWorkUI: publicWork)
+        collectViewModel.updateCollect(workStatus: workStatus)
         self.onBackPressed?()
     }
     
@@ -64,12 +64,7 @@ struct CollectScreen: View {
             )
         default:
             return AnyView(
-                CollectView(publicWork: self.publicWork, onBackPressed:self.handleOnBackPressed,
-                    onEditClicked: {self.navigateTo(.editPublicWork)},
-                    onDeleteClicked: self.onDeleteClicked,
-                    onAddClicked: self.handleOnAddClicked,
-                    onCommentClicked: self.onCommentClicked,
-                    onPhotoClicked:self.onPhotoClicked)
+                CollectView(publicWorkId: self.publicWork.getId())
             )
             
         }
@@ -85,7 +80,6 @@ struct CollectScreen: View {
     }
     
     private func handleDeleteCollect(){
-        collectViewModel.deleteCollect(publicWorkUI: self.publicWork)
         self.onBackPressed?()
     }
     

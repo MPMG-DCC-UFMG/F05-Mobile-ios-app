@@ -166,6 +166,7 @@
 		38D5A1442525FD30005FE609 /* ErrorRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D5A1432525FD30005FE609 /* ErrorRemote.swift */; };
 		38D5A149252604ED005FE609 /* RemoteUserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D5A148252604ED005FE609 /* RemoteUserDataSource.swift */; };
 		38D5A153252606EF005FE609 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D5A152252606EF005FE609 /* UserRepository.swift */; };
+		38D75C1825D1ADDD0056BBCE /* PublicWorkMapListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D75C1725D1ADDD0056BBCE /* PublicWorkMapListView.swift */; };
 		38E92DF4251550FC0017EE48 /* CollectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E92DF3251550FC0017EE48 /* CollectViewModel.swift */; };
 		38E92DFA251554850017EE48 /* CollectNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E92DF9251554850017EE48 /* CollectNavigation.swift */; };
 		38E9F072251290D20040DECB /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E9F071251290D20040DECB /* FloatingButton.swift */; };
@@ -362,6 +363,7 @@
 		38D5A1432525FD30005FE609 /* ErrorRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorRemote.swift; sourceTree = "<group>"; };
 		38D5A148252604ED005FE609 /* RemoteUserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUserDataSource.swift; sourceTree = "<group>"; };
 		38D5A152252606EF005FE609 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		38D75C1725D1ADDD0056BBCE /* PublicWorkMapListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkMapListView.swift; sourceTree = "<group>"; };
 		38E92DF3251550FC0017EE48 /* CollectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectViewModel.swift; sourceTree = "<group>"; };
 		38E92DF9251554850017EE48 /* CollectNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectNavigation.swift; sourceTree = "<group>"; };
 		38E9F071251290D20040DECB /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
@@ -858,6 +860,7 @@
 		386DEF4225CEE83900EF926D /* viewmodels */ = {
 			isa = PBXGroup;
 			children = (
+				3847EBBB24FAA97400B2C4A5 /* PublicWorkViewModel.swift */,
 				99405698C2088E8A184C4873 /* LocationViewModel.swift */,
 				386DEF4625CEE90A00EF926D /* PublicWorkAddViewModel.swift */,
 			);
@@ -1046,7 +1049,6 @@
 			isa = PBXGroup;
 			children = (
 				3890091A24EF111600954A95 /* TypeWorkViewModel.swift */,
-				3847EBBB24FAA97400B2C4A5 /* PublicWorkViewModel.swift */,
 				38E92DF3251550FC0017EE48 /* CollectViewModel.swift */,
 				38B1DE37251638E200BCAC9E /* WorkStatusViewModel.swift */,
 				380FA64B2518D71600DF57AD /* TypePhotoViewModel.swift */,
@@ -1217,6 +1219,7 @@
 			children = (
 				3847EBAF24FA7CA000B2C4A5 /* PublicWorkListView.swift */,
 				38CF10D024FED7A100040FE1 /* PublicWorkFilterView.swift */,
+				38D75C1725D1ADDD0056BBCE /* PublicWorkMapListView.swift */,
 			);
 			path = list;
 			sourceTree = "<group>";
@@ -1623,6 +1626,7 @@
 				3864077F24F69DE2000B9345 /* Headers.swift in Sources */,
 				38D5A1302525F9BB005FE609 /* MPUserRemote.swift in Sources */,
 				386406B024F016B2000B9345 /* Constants.swift in Sources */,
+				38D75C1825D1ADDD0056BBCE /* PublicWorkMapListView.swift in Sources */,
 				38CF10D124FED7A100040FE1 /* PublicWorkFilterView.swift in Sources */,
 				3864072A24F534AC000B9345 /* TypePhoto.swift in Sources */,
 				38313E09252526D00046F162 /* CreateUserView.swift in Sources */,

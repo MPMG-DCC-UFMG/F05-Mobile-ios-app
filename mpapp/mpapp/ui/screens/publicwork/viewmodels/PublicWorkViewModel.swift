@@ -6,6 +6,7 @@ import Realm
 import GeoQueries
 import MapKit
 import Resolver
+import SwiftUI
 
 class PublicWorkViewModel: BaseViewModel, ObservableObject{
     
@@ -71,5 +72,9 @@ class PublicWorkViewModel: BaseViewModel, ObservableObject{
     
     func navigateBack(){
         self.navController.navigateBack()
+    }
+    
+    func navigateToCollect(publicWorkId: String){
+        self.navController.navigateTo(AnyView(CollectView(publicWorkId: publicWorkId)))
     }
 }

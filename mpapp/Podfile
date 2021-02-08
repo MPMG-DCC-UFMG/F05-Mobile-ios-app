@@ -13,6 +13,7 @@ target 'mpapp' do
   pod 'GoogleSignIn'
   pod 'FBSDKLoginKit'
   pod "RealmGeoQueries"
+  pod "Google-Maps-iOS-Utils"
 
   target 'mpappTests' do
     inherit! :search_paths

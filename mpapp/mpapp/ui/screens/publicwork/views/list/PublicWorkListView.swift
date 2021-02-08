@@ -44,7 +44,7 @@ struct PublicWorkListView: View {
     }
     
     private func onPublicWorkClicked(_ publicWork: PublicWork){
-        
+        publicWorkViewModel.navigateToCollect(publicWorkId: publicWork.id)
     }
 }
 

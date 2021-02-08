@@ -78,23 +78,21 @@ class PublicWorkAddViewModel : BaseViewModel, ObservableObject{
         self.longitude = address.longitude
     }
     
-    private func toDbModel() -> PublicWork{
+    private func toDbModel() -> PublicWorkUI{
+        let publicWork: PublicWorkUI = PublicWorkUI(self.publicWork)
         publicWork.name = self.name
-        publicWork.address = address
-        publicWork.idAddress = address.id
         publicWork.typeWorkFlag = self.typeWorkFlag
         publicWork.idCollect = self.idCollect
         publicWork.toSend = true
-        publicWork.lat = self.latitude
-        publicWork.lng = self.longitude
-        address.idPublicWork = publicWork.id
-        address.cep = self.cep
-        address.city = self.city
-        address.latitude = self.latitude
-        address.longitude = self.longitude
-        address.neighborhood = self.neighborhood
-        address.number = self.number
-        address.street = self.street
+        publicWork.latitude = self.latitude
+        publicWork.longitude = self.longitude
+        publicWork.cep = self.cep
+        publicWork.city = self.city
+        publicWork.latitude = self.latitude
+        publicWork.longitude = self.longitude
+        publicWork.neighborhood = self.neighborhood
+        publicWork.number = self.number
+        publicWork.street = self.street
         return publicWork
     }
     

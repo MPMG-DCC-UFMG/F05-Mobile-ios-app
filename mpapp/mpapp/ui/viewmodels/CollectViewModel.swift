@@ -1,17 +1,44 @@
 import Foundation
+import SwiftUI
 
-
-class CollectViewModel: ObservableObject {
+class CollectViewModel: BaseViewModel,ObservableObject {
     @Published var currentCollect = CollectUI()
     @Published var photoList : [String:PhotoUI] = [:]
     
     private let collectRepository: CollectRepository
     private let publicWorkRepository: PublicWorkRepository
+    private let typeWorkRepository: TypeWorkRepository
+    private let workStatusRepository: WorkStatusRepository
+    
+    @Published var publicWork: PublicWorkUI? = nil
     
     init(collectRepository: CollectRepository,
-         publicWorkRepository: PublicWorkRepository){
+         publicWorkRepository: PublicWorkRepository,
+         typeWorkRepository: TypeWorkRepository,
+         workStatusRepository: WorkStatusRepository){
         self.collectRepository = collectRepository
         self.publicWorkRepository = publicWorkRepository
+        self.typeWorkRepository = typeWorkRepository
+        self.workStatusRepository = workStatusRepository
+    }
+    
+    func getWorkStatusesForPublicWork() -> [WorkStatus]{
+        guard let _publicWork = publicWork?.getPublicWork() else {
+            return []
+        }
+        guard let typeWork = typeWorkRepository.getTypeWorkByFlag(typeWorkFlag: _publicWork.typeWorkFlag) else {
+            return []
+        }
+        let workStatuses = typeWork.getWorkStatusIds()
+        return workStatusRepository.listWorKStatusByFlags(workStatusFlags: workStatuses).toArray()
+    }
+    
+    func setPublicWork(publicWorkId: String){
+        guard let publicWork = publicWorkRepository.getPublicWorkById(publicWorkId: publicWorkId) else{
+            return
+        }
+        
+        self.publicWork = PublicWorkUI(publicWork)
     }
     
     func updateCurrentCollect(_ publicWork: PublicWorkUI){
@@ -38,21 +65,27 @@ class CollectViewModel: ObservableObject {
         currentCollect.comments = comment
     }
     
-    func updateCollect(workStatus: WorkStatus?, publicWorkUI: PublicWorkUI){
+    func updateCollect(workStatus: WorkStatus?){
+        guard let _publicWork = publicWork else{
+            return
+        }
         if(workStatus != nil){
             currentCollect.publicWorkStatus = workStatus!.flag
         }
-        currentCollect.idPublicWork = publicWorkUI.getId()
+        currentCollect.idPublicWork = _publicWork.getId()
         do {
-            try collectRepository.insertCollect(collect: currentCollect,publicWork: publicWorkUI.getPublicWork(),photoUI:photoList.map{$0.value})
+            try collectRepository.insertCollect(collect: currentCollect,publicWork: _publicWork.getPublicWork(),photoUI:photoList.map{$0.value})
         } catch {
             print(error)
         }
     }
     
-    func deleteCollect(publicWorkUI: PublicWorkUI){
+    func deleteCollect(){
+        guard let _publicWork = publicWork?.getPublicWork() else{
+            return
+        }
         do{
-            try collectRepository.deleteCollect(collect: currentCollect.getCollect(), publicWork: publicWorkUI.getPublicWork())
+            try collectRepository.deleteCollect(collect: currentCollect.getCollect(), publicWork: _publicWork)
         }catch{
             print(error)
         }
@@ -85,5 +118,16 @@ class CollectViewModel: ObservableObject {
                 print("couldn't remove file at path", removeError)
             }
         }
+    }
+    
+    func navigateBack(){
+        self.navController.navigateBack()
+    }
+    
+    func editPublicWork(){
+        guard let _publicWork = publicWork?.getPublicWork() else{
+            return
+        }
+        self.navController.navigateTo(AnyView(PublicWorkAddView(screenTitle: "Editar obra", publicWorkId: _publicWork.id)))
     }
 }

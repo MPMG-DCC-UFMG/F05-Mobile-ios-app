@@ -4,7 +4,7 @@ import SwiftUI
 class CollectViewModel: BaseViewModel,ObservableObject {
     @Published var currentCollect = CollectUI()
     @Published var photoList : [String:PhotoUI] = [:]
-    
+        
     private let collectRepository: CollectRepository
     private let publicWorkRepository: PublicWorkRepository
     private let typeWorkRepository: TypeWorkRepository
@@ -38,10 +38,12 @@ class CollectViewModel: BaseViewModel,ObservableObject {
             return
         }
         
-        self.publicWork = PublicWorkUI(publicWork)
+        let _publicWorkUi = PublicWorkUI(publicWork)
+        self.publicWork = _publicWorkUi
+        updateCurrentCollect(_publicWorkUi)
     }
     
-    func updateCurrentCollect(_ publicWork: PublicWorkUI){
+    private func updateCurrentCollect(_ publicWork: PublicWorkUI){
         photoList = [:]
         guard let idCollect = publicWork.idCollect else {
             currentCollect = CollectUI()
@@ -58,7 +60,7 @@ class CollectViewModel: BaseViewModel,ObservableObject {
     }
     
     private func fetchPhotoList(_ collectId: String){
-        photoList = Dictionary(uniqueKeysWithValues: collectRepository.getPhotoByCollectId(collectId: collectId).map{ ($0.id, PhotoUI($0)) })
+            self.photoList =   Dictionary(uniqueKeysWithValues: self.collectRepository.getPhotoByCollectId(collectId: collectId).map{ ($0.id, PhotoUI($0)) })
     }
     
     func updateComment(_ comment: String){
@@ -118,6 +120,19 @@ class CollectViewModel: BaseViewModel,ObservableObject {
                 print("couldn't remove file at path", removeError)
             }
         }
+    }
+    
+    func navigateToPhoto(_ photoId: String? = nil){
+        self.navController.navigateTo(AnyView(
+            PhotoView(collectId: self.currentCollect.getId(),
+                      photoId: photoId,
+                      onAddPhoto: { photo in
+                        self.addPhotoToList(photo: photo)
+                      }, onDeletePhoto: { photo in
+                        self.removePhotoFromList(photo)
+                      }
+            ))
+        )
     }
     
     func navigateBack(){

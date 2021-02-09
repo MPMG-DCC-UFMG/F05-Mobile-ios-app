@@ -55,5 +55,8 @@ class CollectRepository {
         return self.remoteCollectDataSource.sendCollect(collectRemote: collectRemote)
     }
     
-
+    func getPhotoById(photoId: String) -> Photo?{
+        return self.localCollectDataSource.getPhotoById(photoId: photoId)
+    }
+    
 }

@@ -15,14 +15,7 @@ extension Resolver:ResolverRegistering{
         register{PublicWorkAddViewModel(publicWorkRepository: resolve(), typeWorkRespository: resolve())}
         register{PublicWorkViewModel(publicWorkRepository: resolve(), typeWorkRepository: resolve())}
         register{CollectViewModel(collectRepository: resolve(), publicWorkRepository: resolve(),typeWorkRepository: resolve(),workStatusRepository: resolve())}
-        
-        
-        
-        
-        register{TypeWorkViewModel(typeWorkRepository: resolve())}.scope(cached)
-        register{WorkStatusViewModel(typeWorkRepository: resolve(),workStatusRepository: resolve())}.scope(cached)
-        register{TypePhotoViewModel(typePhotoRepository: resolve())}.scope(cached)
-        register{PhotoViewModel()}.scope(cached)
+        register{PhotoViewModel(collectRepository: resolve(), typePhotoRepository: resolve())}
         
         // Delegates
         register{FacebookDelegate(resolve())}.scope(cached)

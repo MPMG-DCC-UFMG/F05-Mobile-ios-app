@@ -53,6 +53,7 @@ struct CollectView: View {
                 .padding(.horizontal, -20)
                 .listStyle(PlainListStyle())
             }.padding(.horizontal,10)
+            FloatingMenu(onDeleteClicked: self.onDeleteClicked, onAddClicked: self.onAddClicked, onCommentClicked: self.onCommentClicked)
             if(commentOn){
                 CommentBottom(closed: $commentOn, comment: collectViewModel.currentCollect.comments ?? "",onConfirmClicked:self.collectConfirmClicked).transition(AnyTransition.opacity).animation(.default)
             }
@@ -62,7 +63,6 @@ struct CollectView: View {
             if(openWorkStatusPicker){
                 createTrenaPicker()
             }
-            FloatingMenu(onDeleteClicked: self.onDeleteClicked, onAddClicked: self.onAddClicked, onCommentClicked: self.onCommentClicked)
         }.onAppear{
             self.collectViewModel.setPublicWork(publicWorkId: publicWorkId)
         }
@@ -79,7 +79,9 @@ struct CollectView: View {
                 selectedWorkStatus = workStatus[index-1]
             }
             updateCollect(selectedWorkStatus)
-        }, onNegativeClicked: self.onBackPressed)
+        }, onNegativeClicked: {
+            collectViewModel.navigateBack()
+        })
     }
     
     private func updateCollect(_ workStatus: WorkStatus?){
@@ -92,7 +94,7 @@ struct CollectView: View {
     }
     
     private func onBackPressed(){
-        collectViewModel.navigateBack()
+        openWorkStatusPicker.toggle()
     }
     
     private func onDeleteClicked(){
@@ -109,7 +111,7 @@ struct CollectView: View {
     }
     
     private func onAddClicked(){
-        
+        collectViewModel.navigateToPhoto()
     }
     
     private func onEditClicked(){
@@ -117,7 +119,7 @@ struct CollectView: View {
     }
     
     private func onPhotoClicked(_ photo: PhotoUI){
-        
+        collectViewModel.navigateToPhoto(photo.getId())
     }
 }
 

@@ -3,13 +3,14 @@ import Resolver
 
 struct PhotoView: View {
     
-    @ObservedObject private var typePhotoViewModel: TypePhotoViewModel = Resolver.resolve()
     @ObservedObject private var photoViewModel: PhotoViewModel = Resolver.resolve()
-    @ObservedObject private var collectViewModel: CollectViewModel = Resolver.resolve()
     @ObservedObject private var locationManager: LocationManager = Resolver.resolve()
     
-    var onBackPressed: (() -> Void)?
-    var onDeletePhotoClicked: ((_ photoUI: PhotoUI) -> Void)?
+    var collectId: String
+    var photoId: String? = nil
+    var onAddPhoto: ((_ photoUI: PhotoUI) -> Void)?
+    var onDeletePhoto: ((_ photoUI: PhotoUI) -> Void)?
+    
     
     @State private var openPicker: Bool = false
     @State private var showCaptureImageView: Bool = false
@@ -71,6 +72,7 @@ struct PhotoView: View {
                 TrenaDialog( title: "Deletar foto",message: "A foto não poderá ser restaurada",onPositiveClicked: handleDeleteClicked,onCloseClicked: {deleteClicked.toggle()})
             }
         }.onAppear{
+            photoViewModel.startPhotoFlow(self.photoId, idCollect: self.collectId)
             self.openPicker = photoViewModel.currPhoto.typePhotoName == nil
             photoViewModel.currPhoto.updateLocation(locationManager.location)
         }
@@ -83,7 +85,7 @@ struct PhotoView: View {
     private func getNegativeButton(_ uiImage: UIImage?) -> TrenaButton{
         if(uiImage == nil){
             return TrenaButton(label: "Cancelar", style: .button4, action: {
-                self.onBackPressed?()
+                self.onBackPressed()
             })
         }else{
             return TrenaButton(label: "Deletar Foto",image: "trash", style: .button3, action:{deleteClicked.toggle()})
@@ -91,20 +93,25 @@ struct PhotoView: View {
     }
     
     private func addPhoto(){
-        let photo = photoViewModel.saveCurrPhoto()
-        if(photo != nil){
-            collectViewModel.addPhotoToList(photo: photo!)
-            self.onBackPressed?()
+        guard let photo = photoViewModel.saveCurrPhoto() else{
+            return
         }
+        self.onAddPhoto?(photo)
+        self.onBackPressed()
+        
     }
     
     private func handleDeleteClicked(){
-        onDeletePhotoClicked?(photoViewModel.currPhoto)
-        onBackPressed?()
+        onDeletePhoto?(photoViewModel.currPhoto)
+        onBackPressed()
+    }
+    
+    private func onBackPressed(){
+        self.photoViewModel.navigateBack()
     }
     
     private func createTrenaPicker() -> TrenaPicker {
-        let typePhotos = typePhotoViewModel.typePhotos
+        let typePhotos = photoViewModel.typePhotos
         return TrenaPicker(options: typePhotos.map{$0.name}, closed: self.$openPicker, selectedOption: 0, onConfirmClicked: {index in
             updatePhoto(typePhotos[index])
         }, onNegativeClicked: self.onBackPressed)
@@ -117,6 +124,6 @@ struct PhotoView: View {
 
 struct PhotoView_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoView()
+        PhotoView(collectId: "")
     }
 }

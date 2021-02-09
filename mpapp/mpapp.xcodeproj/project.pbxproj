@@ -9,11 +9,9 @@
 /* Begin PBXBuildFile section */
 		380A0861252C8A910074C9B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380A0860252C8A910074C9B8 /* GoogleService-Info.plist */; };
 		380BC736250836CD00B73451 /* CollectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380BC735250836CD00B73451 /* CollectView.swift */; };
-		380BC73A2508373A00B73451 /* CollectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380BC7392508373A00B73451 /* CollectScreen.swift */; };
 		380CFE7725CEAB8100884FA6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380CFE7625CEAB8100884FA6 /* ContentView.swift */; };
 		380CFE7C25CEAC4D00884FA6 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380CFE7B25CEAC4D00884FA6 /* BaseViewModel.swift */; };
 		380FA6472518D68C00DF57AD /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380FA6462518D68C00DF57AD /* PhotoView.swift */; };
-		380FA64C2518D71600DF57AD /* TypePhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380FA64B2518D71600DF57AD /* TypePhotoViewModel.swift */; };
 		380FA6512518DC4700DF57AD /* TrenaTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380FA6502518DC4700DF57AD /* TrenaTopBar.swift */; };
 		380FA65E2518DDDC00DF57AD /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380FA65D2518DDDC00DF57AD /* PhotoViewModel.swift */; };
 		380FA6632518DE0000DF57AD /* PhotoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380FA6622518DE0000DF57AD /* PhotoUI.swift */; };
@@ -118,7 +116,6 @@
 		387FA4752541E495003EB8B6 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387FA4742541E495003EB8B6 /* NetworkSession.swift */; };
 		388FB272250194130057C510 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388FB271250194130057C510 /* MapView.swift */; };
 		388FB274250196700057C510 /* PublicWorkLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388FB273250196700057C510 /* PublicWorkLocationView.swift */; };
-		388FB27925019A9E0057C510 /* AddNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388FB27825019A9E0057C510 /* AddNavigation.swift */; };
 		389008D024EEE6FE00954A95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389008CF24EEE6FE00954A95 /* AppDelegate.swift */; };
 		389008D624EEE70000954A95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 389008D524EEE70000954A95 /* Assets.xcassets */; };
 		389008D924EEE70000954A95 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 389008D824EEE70000954A95 /* Preview Assets.xcassets */; };
@@ -129,7 +126,6 @@
 		3890091324EEF17200954A95 /* LocalTypeWorkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890091224EEF17200954A95 /* LocalTypeWorkDataSource.swift */; };
 		3890091624EEF2AA00954A95 /* BaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890091524EEF2AA00954A95 /* BaseDataSource.swift */; };
 		3890091824EEF7D600954A95 /* TypeWorkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890091724EEF7D600954A95 /* TypeWorkRepository.swift */; };
-		3890091B24EF111600954A95 /* TypeWorkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890091A24EF111600954A95 /* TypeWorkViewModel.swift */; };
 		38907F7F256537620055CCD0 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38907F7E256537620055CCD0 /* EmptyListView.swift */; };
 		38907F8C256689DC0055CCD0 /* TrenaLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38907F8B256689DC0055CCD0 /* TrenaLoading.swift */; };
 		38907F94256690460055CCD0 /* TrenaBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38907F93256690460055CCD0 /* TrenaBadge.swift */; };
@@ -139,7 +135,6 @@
 		38990CFA2502E51300872476 /* TrenaTextWithAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38990CF92502E51300872476 /* TrenaTextWithAction.swift */; };
 		389997C3251A211400744ED6 /* PhotoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389997C2251A211400744ED6 /* PhotoItem.swift */; };
 		3899CD7724FCE95200FC078F /* PublicWorkAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899CD7624FCE95200FC078F /* PublicWorkAddView.swift */; };
-		38B1DE38251638E200BCAC9E /* WorkStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B1DE37251638E200BCAC9E /* WorkStatusViewModel.swift */; };
 		38B1DE3E25163A9800BCAC9E /* TrenaDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B1DE3D25163A9800BCAC9E /* TrenaDialog.swift */; };
 		38B1DE4725163C9100BCAC9E /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B1DE4625163C9100BCAC9E /* RoundedCorners.swift */; };
 		38B1DE4F25163EDD00BCAC9E /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B1DE4E25163EDD00BCAC9E /* ImageButton.swift */; };
@@ -168,7 +163,6 @@
 		38D5A153252606EF005FE609 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D5A152252606EF005FE609 /* UserRepository.swift */; };
 		38D75C1825D1ADDD0056BBCE /* PublicWorkMapListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D75C1725D1ADDD0056BBCE /* PublicWorkMapListView.swift */; };
 		38E92DF4251550FC0017EE48 /* CollectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E92DF3251550FC0017EE48 /* CollectViewModel.swift */; };
-		38E92DFA251554850017EE48 /* CollectNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E92DF9251554850017EE48 /* CollectNavigation.swift */; };
 		38E9F072251290D20040DECB /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E9F071251290D20040DECB /* FloatingButton.swift */; };
 		38E9F075251294380040DECB /* FloatingMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E9F074251294380040DECB /* FloatingMenu.swift */; };
 		38F911CA25C8306C00335832 /* MPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F911C925C8306C00335832 /* MPApp.swift */; };
@@ -201,11 +195,9 @@
 		1FF7FD100383B9F70012827D /* Pods-mpapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mpapp.release.xcconfig"; path = "Target Support Files/Pods-mpapp/Pods-mpapp.release.xcconfig"; sourceTree = "<group>"; };
 		380A0860252C8A910074C9B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		380BC735250836CD00B73451 /* CollectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectView.swift; sourceTree = "<group>"; };
-		380BC7392508373A00B73451 /* CollectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectScreen.swift; sourceTree = "<group>"; };
 		380CFE7625CEAB8100884FA6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		380CFE7B25CEAC4D00884FA6 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		380FA6462518D68C00DF57AD /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
-		380FA64B2518D71600DF57AD /* TypePhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypePhotoViewModel.swift; sourceTree = "<group>"; };
 		380FA6502518DC4700DF57AD /* TrenaTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaTopBar.swift; sourceTree = "<group>"; };
 		380FA65D2518DDDC00DF57AD /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		380FA6622518DE0000DF57AD /* PhotoUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUI.swift; sourceTree = "<group>"; };
@@ -307,7 +299,6 @@
 		387FA4742541E495003EB8B6 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		388FB271250194130057C510 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		388FB273250196700057C510 /* PublicWorkLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkLocationView.swift; sourceTree = "<group>"; };
-		388FB27825019A9E0057C510 /* AddNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNavigation.swift; sourceTree = "<group>"; };
 		389008CC24EEE6FE00954A95 /* TRENA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRENA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		389008CF24EEE6FE00954A95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		389008D524EEE70000954A95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -324,7 +315,6 @@
 		3890091224EEF17200954A95 /* LocalTypeWorkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTypeWorkDataSource.swift; sourceTree = "<group>"; };
 		3890091524EEF2AA00954A95 /* BaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
 		3890091724EEF7D600954A95 /* TypeWorkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeWorkRepository.swift; sourceTree = "<group>"; };
-		3890091A24EF111600954A95 /* TypeWorkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeWorkViewModel.swift; sourceTree = "<group>"; };
 		38907F7E256537620055CCD0 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		38907F8B256689DC0055CCD0 /* TrenaLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaLoading.swift; sourceTree = "<group>"; };
 		38907F93256690460055CCD0 /* TrenaBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaBadge.swift; sourceTree = "<group>"; };
@@ -336,7 +326,6 @@
 		38990CFD2503012B00872476 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		389997C2251A211400744ED6 /* PhotoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoItem.swift; sourceTree = "<group>"; };
 		3899CD7624FCE95200FC078F /* PublicWorkAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkAddView.swift; sourceTree = "<group>"; };
-		38B1DE37251638E200BCAC9E /* WorkStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkStatusViewModel.swift; sourceTree = "<group>"; };
 		38B1DE3D25163A9800BCAC9E /* TrenaDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaDialog.swift; sourceTree = "<group>"; };
 		38B1DE4625163C9100BCAC9E /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
 		38B1DE4E25163EDD00BCAC9E /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
@@ -365,7 +354,6 @@
 		38D5A152252606EF005FE609 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		38D75C1725D1ADDD0056BBCE /* PublicWorkMapListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkMapListView.swift; sourceTree = "<group>"; };
 		38E92DF3251550FC0017EE48 /* CollectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectViewModel.swift; sourceTree = "<group>"; };
-		38E92DF9251554850017EE48 /* CollectNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectNavigation.swift; sourceTree = "<group>"; };
 		38E9F071251290D20040DECB /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		38E9F074251294380040DECB /* FloatingMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingMenu.swift; sourceTree = "<group>"; };
 		38F911C925C8306C00335832 /* MPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPApp.swift; sourceTree = "<group>"; };
@@ -416,20 +404,12 @@
 		380BC734250836B800B73451 /* collect */ = {
 			isa = PBXGroup;
 			children = (
+				38D75C3E25D1D4680056BBCE /* viewmodels */,
 				38E92DF8251554780017EE48 /* models */,
 				38E9F073251294270040DECB /* components */,
 				380BC7382508372800B73451 /* views */,
-				380BC7372508371C00B73451 /* screens */,
 			);
 			path = collect;
-			sourceTree = "<group>";
-		};
-		380BC7372508371C00B73451 /* screens */ = {
-			isa = PBXGroup;
-			children = (
-				380BC7392508373A00B73451 /* CollectScreen.swift */,
-			);
-			path = screens;
 			sourceTree = "<group>";
 		};
 		380BC7382508372800B73451 /* views */ = {
@@ -870,7 +850,6 @@
 		388FB27725019A890057C510 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				388FB27825019A9E0057C510 /* AddNavigation.swift */,
 				38B1DE772516760300BCAC9E /* PublicWorkUI.swift */,
 			);
 			path = models;
@@ -1048,11 +1027,6 @@
 		3890091924EF110500954A95 /* viewmodels */ = {
 			isa = PBXGroup;
 			children = (
-				3890091A24EF111600954A95 /* TypeWorkViewModel.swift */,
-				38E92DF3251550FC0017EE48 /* CollectViewModel.swift */,
-				38B1DE37251638E200BCAC9E /* WorkStatusViewModel.swift */,
-				380FA64B2518D71600DF57AD /* TypePhotoViewModel.swift */,
-				380FA65D2518DDDC00DF57AD /* PhotoViewModel.swift */,
 				380CFE7B25CEAC4D00884FA6 /* BaseViewModel.swift */,
 			);
 			path = viewmodels;
@@ -1224,10 +1198,18 @@
 			path = list;
 			sourceTree = "<group>";
 		};
+		38D75C3E25D1D4680056BBCE /* viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+				38E92DF3251550FC0017EE48 /* CollectViewModel.swift */,
+				380FA65D2518DDDC00DF57AD /* PhotoViewModel.swift */,
+			);
+			path = viewmodels;
+			sourceTree = "<group>";
+		};
 		38E92DF8251554780017EE48 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				38E92DF9251554850017EE48 /* CollectNavigation.swift */,
 				38B1DE7C251689D000BCAC9E /* CollectUI.swift */,
 				380FA6622518DE0000DF57AD /* PhotoUI.swift */,
 			);
@@ -1584,7 +1566,6 @@
 				388FB274250196700057C510 /* PublicWorkLocationView.swift in Sources */,
 				386DEF4725CEE90A00EF926D /* PublicWorkAddViewModel.swift in Sources */,
 				3864070824F1B6F2000B9345 /* View.swift in Sources */,
-				380BC73A2508373A00B73451 /* CollectScreen.swift in Sources */,
 				38B1DE7325164B6900BCAC9E /* CollectRepository.swift in Sources */,
 				3864077C24F5F2DE000B9345 /* DownloadPublicWork.swift in Sources */,
 				386DEF3725CEC98D00EF926D /* HomeViewModel.swift in Sources */,
@@ -1608,9 +1589,7 @@
 				3864074224F55232000B9345 /* TypePhotoRepository.swift in Sources */,
 				3847EBAD24F9D37800B2C4A5 /* HomeButton.swift in Sources */,
 				3864076E24F58AA8000B9345 /* PublicWorkRemote.swift in Sources */,
-				38B1DE38251638E200BCAC9E /* WorkStatusViewModel.swift in Sources */,
 				3864075524F561C9000B9345 /* WorkStatusRepository.swift in Sources */,
-				388FB27925019A9E0057C510 /* AddNavigation.swift in Sources */,
 				382DF54C2523566A00DE023E /* SyncView.swift in Sources */,
 				38928A84251413CA00D09962 /* CommentBottom.swift in Sources */,
 				38B1DE4F25163EDD00BCAC9E /* ImageButton.swift in Sources */,
@@ -1635,7 +1614,6 @@
 				38687E3B251195140068637C /* TrenaMultiPicker.swift in Sources */,
 				3890090424EEEA8000954A95 /* MPDatabase.swift in Sources */,
 				3864075224F56162000B9345 /* WorkStatusRemote.swift in Sources */,
-				38E92DFA251554850017EE48 /* CollectNavigation.swift in Sources */,
 				38B1DE7D251689D000BCAC9E /* CollectUI.swift in Sources */,
 				389997C3251A211400744ED6 /* PhotoItem.swift in Sources */,
 				3864071724F4031C000B9345 /* WorkerStatus.swift in Sources */,
@@ -1680,7 +1658,6 @@
 				3847EBB024FA7CA000B2C4A5 /* PublicWorkListView.swift in Sources */,
 				380BC736250836CD00B73451 /* CollectView.swift in Sources */,
 				3864077024F58B0F000B9345 /* AddressRemote.swift in Sources */,
-				380FA64C2518D71600DF57AD /* TypePhotoViewModel.swift in Sources */,
 				38990CFA2502E51300872476 /* TrenaTextWithAction.swift in Sources */,
 				3864076024F56698000B9345 /* AssociationTPTWRemote.swift in Sources */,
 				38E9F075251294380040DECB /* FloatingMenu.swift in Sources */,
@@ -1699,7 +1676,6 @@
 				385E1D33250A6D400032F2E9 /* TrenaRadioGroup.swift in Sources */,
 				38CF10C824FE67CA00040FE1 /* TrenaPicker.swift in Sources */,
 				3890091324EEF17200954A95 /* LocalTypeWorkDataSource.swift in Sources */,
-				3890091B24EF111600954A95 /* TypeWorkViewModel.swift in Sources */,
 				386DEF2D25CEC59800EF926D /* CreateUserViewModel.swift in Sources */,
 				38BC8D4724F7D060006BCE48 /* ConfigurationViewModel.swift in Sources */,
 				38907F7F256537620055CCD0 /* EmptyListView.swift in Sources */,

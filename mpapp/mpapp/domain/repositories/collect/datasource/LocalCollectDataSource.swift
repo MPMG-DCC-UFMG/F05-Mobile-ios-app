@@ -34,6 +34,10 @@ class LocalCollectDataSource: BaseDataSource<Collect>{
         return self.mpDatabase().objects(Photo.self).filter(NSPredicate(format: "idCollect == %@",collectId)).toArray()
     }
     
+    func getPhotoById(photoId: String) -> Photo?{
+        return self.mpDatabase().object(ofType: Photo.self, forPrimaryKey: photoId)
+    }
+    
     func insertCollect(collect: Collect,publicWork: PublicWork) throws {
         try self.mpDatabase().write{
             self.mpDatabase().add(collect,update: .modified)

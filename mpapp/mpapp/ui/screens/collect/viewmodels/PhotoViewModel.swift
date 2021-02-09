@@ -2,13 +2,34 @@ import Foundation
 import SwiftUI
 import Resolver
 
-class PhotoViewModel: ObservableObject{
+class PhotoViewModel: BaseViewModel, ObservableObject{
     
     @Published var currPhoto: PhotoUI = PhotoUI()
     
-    func startPhotoFlow(_ photo:PhotoUI = PhotoUI(), idCollect: String){
-        currPhoto = photo
+    private let collectRepository: CollectRepository
+    private let typePhotoRepository: TypePhotoRepository
+
+    var typePhotos = [TypePhoto]()
+    
+    init(collectRepository: CollectRepository, typePhotoRepository: TypePhotoRepository) {
+        self.collectRepository = collectRepository
+        self.typePhotoRepository = typePhotoRepository
+        self.typePhotos = typePhotoRepository.listAllTypePhotos().toArray()
+    }
+    
+    func startPhotoFlow(_ photoId:String? = nil, idCollect: String){
+        currPhoto = getPhoto(photoId)
         currPhoto.idCollect = idCollect
+    }
+    
+    private func getPhoto(_ photoId:String? = nil) -> PhotoUI{
+        guard let _photoId = photoId else{
+            return PhotoUI()
+        }
+        guard let photo = self.collectRepository.getPhotoById(photoId: _photoId) else {
+            return PhotoUI()
+        }
+        return PhotoUI(photo)
     }
     
     func isPhotoValid() -> Bool{
@@ -49,5 +70,7 @@ class PhotoViewModel: ObservableObject{
         }
     }
     
-    
+    func navigateBack(){
+        self.navController.navigateBack()
+    }
 }

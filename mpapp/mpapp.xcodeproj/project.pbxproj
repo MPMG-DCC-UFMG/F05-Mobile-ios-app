@@ -15,6 +15,7 @@
 		380FA6512518DC4700DF57AD /* TrenaTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380FA6502518DC4700DF57AD /* TrenaTopBar.swift */; };
 		380FA65E2518DDDC00DF57AD /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380FA65D2518DDDC00DF57AD /* PhotoViewModel.swift */; };
 		380FA6632518DE0000DF57AD /* PhotoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380FA6622518DE0000DF57AD /* PhotoUI.swift */; };
+		382BE17725D80BAC0040DA01 /* PublicWorkMapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382BE17625D80BAC0040DA01 /* PublicWorkMapMarker.swift */; };
 		382DF54C2523566A00DE023E /* SyncView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382DF54B2523566A00DE023E /* SyncView.swift */; };
 		382DF5512523571D00DE023E /* SyncViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382DF5502523571D00DE023E /* SyncViewModel.swift */; };
 		382DF557252357A200DE023E /* SyncUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382DF556252357A200DE023E /* SyncUI.swift */; };
@@ -201,6 +202,7 @@
 		380FA6502518DC4700DF57AD /* TrenaTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenaTopBar.swift; sourceTree = "<group>"; };
 		380FA65D2518DDDC00DF57AD /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		380FA6622518DE0000DF57AD /* PhotoUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUI.swift; sourceTree = "<group>"; };
+		382BE17625D80BAC0040DA01 /* PublicWorkMapMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWorkMapMarker.swift; sourceTree = "<group>"; };
 		382DF54B2523566A00DE023E /* SyncView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncView.swift; sourceTree = "<group>"; };
 		382DF5502523571D00DE023E /* SyncViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncViewModel.swift; sourceTree = "<group>"; };
 		382DF556252357A200DE023E /* SyncUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncUI.swift; sourceTree = "<group>"; };
@@ -851,6 +853,7 @@
 			isa = PBXGroup;
 			children = (
 				38B1DE772516760300BCAC9E /* PublicWorkUI.swift */,
+				382BE17625D80BAC0040DA01 /* PublicWorkMapMarker.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -1573,6 +1576,7 @@
 				3890091824EEF7D600954A95 /* TypeWorkRepository.swift in Sources */,
 				3847EBBC24FAA97400B2C4A5 /* PublicWorkViewModel.swift in Sources */,
 				382DF557252357A200DE023E /* SyncUI.swift in Sources */,
+				382BE17725D80BAC0040DA01 /* PublicWorkMapMarker.swift in Sources */,
 				38E9F072251290D20040DECB /* FloatingButton.swift in Sources */,
 				3847EBA824F97FAB00B2C4A5 /* HomeView.swift in Sources */,
 				38F911D025C831A400335832 /* NavigationController.swift in Sources */,

@@ -6,9 +6,10 @@ struct TrenaTabBar: View {
     
     var body: some View {
         HStack {
-            TabBarItem(currentView: self.$currentView, imageName: "home",selectedImageNamge: "home", label:"Home", tab: .Tab1,onChanged: self.onChanged)
-            TabBarItem(currentView: self.$currentView, imageName: "list",selectedImageNamge: "list_selected", label:"Lista de Obras", tab: .Tab2,onChanged: self.onChanged)
-            TabBarItem(currentView: self.$currentView, imageName: "filter",selectedImageNamge: "filter_selected", label:"Filtrar", tab: .Tab3,onChanged: self.onChanged)
+            TabBarItem(currentView: self.$currentView, imageName: "home",selectedImageName: "home", label:"Home", tab: .Tab1,onChanged: self.onChanged)
+            TabBarItem(currentView: self.$currentView, imageName: "list",selectedImageName: "list_selected", label:"Lista", tab: .Tab2,onChanged: self.onChanged)
+            TabBarItem(currentView: self.$currentView, imageName: "filter",selectedImageName: "filter_selected", label:"Filtrar", tab: .Tab3,onChanged: self.onChanged)
+            TabBarItem(currentView: self.$currentView, imageName: "list",selectedImageName: "list_selected", label:"Mapa", tab: .Tab4, onChanged: self.onChanged)
         }
         .frame(minWidth: 0, maxWidth: .infinity)
         .frame(minHeight: 70)

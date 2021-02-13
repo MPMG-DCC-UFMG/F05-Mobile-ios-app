@@ -3,14 +3,14 @@ import SwiftUI
 struct TabBarItem: View {
     @Binding var currentView: Tab
     let imageName: String
-    let selectedImageNamge: String
+    let selectedImageName: String
     let label: String
     let tab: Tab
     let onChanged: ((_ tab: Tab) -> Void)?
     
     var body: some View {
         VStack(spacing:0){
-            Image(self.currentView == tab ? selectedImageNamge : imageName)
+            Image(self.currentView == tab ? selectedImageName : imageName)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .padding(5)
@@ -28,7 +28,7 @@ struct TabBarItem: View {
 struct TabBarItem_Previews: PreviewProvider {
     @State static var currentView:Tab = .Tab1
     static var previews: some View {
-        TabBarItem(currentView: self.$currentView, imageName: "list",selectedImageNamge: "list_selected", label:"Lista", tab: .Tab1, onChanged: nil)
+        TabBarItem(currentView: self.$currentView, imageName: "list",selectedImageName: "list_selected", label:"Lista", tab: .Tab1, onChanged: nil)
     }
 }
 
@@ -36,4 +36,5 @@ enum Tab {
     case Tab1
     case Tab2
     case Tab3
+    case Tab4
 }

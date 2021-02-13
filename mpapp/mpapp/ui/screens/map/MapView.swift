@@ -36,6 +36,7 @@ struct MapView: UIViewRepresentable {
         func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
             control.center = mapView.camera.target
         }
+        
     }
 }
 

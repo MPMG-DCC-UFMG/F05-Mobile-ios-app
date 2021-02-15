@@ -14,6 +14,8 @@ struct PublicWorkListScreen: View {
                     PublicWorkListView(publicWorkViewModel: publicWorkViewModel)
                 } else if self.currentView == .Tab3 {
                     PublicWorkFilterView(publicWorkViewModel:publicWorkViewModel)
+                } else if self.currentView == .Tab4 {
+                    PublicWorkMapListView(publicWorkViewModel: publicWorkViewModel)
                 }
                 TrenaTabBar(currentView: $currentView, onChanged: { tab in
                     if(tab == .Tab1){

@@ -22,4 +22,8 @@ class Address: Object,Identifiable {
         return latitude != 0.0 && longitude != 0.0
     }
     
+    func formatedAddress() -> String{
+        return "\(street), \(number) - \(neighborhood) , \(city) - \(cep)"
+    }
+    
 }

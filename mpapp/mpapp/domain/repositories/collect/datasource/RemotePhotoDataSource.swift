@@ -1,7 +1,8 @@
 import Foundation
 import PromiseKit
+import SwiftUI
 
-class RemotePhotoDataSource: IRemotePhotoDataSource{
+class RemotePhotoDataSource{
     
     func sendImage(imageName: String) -> Promise<ImageUploadResponse>{
         return Promise { seal in

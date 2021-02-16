@@ -5,8 +5,8 @@ import PromiseKit
 
 class PublicWorkUploadWorker: ObservableObject{
     
-    private let publicWorkRepository: IPublicWorkRepository = Resolver.resolve()
-    private let collectRepository: ICollectRepository = Resolver.resolve()
+    private let publicWorkRepository: PublicWorkRepository = Resolver.resolve()
+    private let collectRepository: CollectRepository = Resolver.resolve()
     
     let status = PublishSubject<(WorkerStatus,String,Int)>()
     

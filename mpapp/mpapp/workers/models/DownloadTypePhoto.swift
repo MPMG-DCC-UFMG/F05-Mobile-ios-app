@@ -4,8 +4,8 @@ import PromiseKit
 
 class DownloadTypePhoto: BaseDownloadInfo,Resolving{
     
-    private lazy var typePhotoRepository: ITypePhotoRepository = resolver.resolve()
-    private lazy var configRepository: IConfigRepository = resolver.resolve()
+    private lazy var typePhotoRepository: TypePhotoRepository = resolver.resolve()
+    private lazy var configRepository: ConfigRepository = resolver.resolve()
     
     func name() -> String{
         return "tipo de foto"

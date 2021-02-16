@@ -1,7 +1,7 @@
 import Foundation
 import PromiseKit
 
-class RemotePublicWorkDataSource: IRemotePublicWorkDataSource{
+class RemotePublicWorkDataSource{
     
     func sendPublicWork(publicWorkRemote: PublicWorkRemote) -> Promise<ResponseRemote>{
         return firstly{

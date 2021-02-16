@@ -1,7 +1,7 @@
 import Foundation
 import RealmSwift
 
-class LocalTypeWorkDataSource: BaseDataSource<TypeWork>,ILocalTypeWorkDataSource {
+class LocalTypeWorkDataSource: BaseDataSource<TypeWork> {
     
     func insertTypeWork(typeWork: TypeWork) throws {
         try self.insert(entity: typeWork)

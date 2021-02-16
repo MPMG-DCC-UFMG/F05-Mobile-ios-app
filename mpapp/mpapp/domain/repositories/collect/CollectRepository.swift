@@ -1,15 +1,15 @@
 import Foundation
 import PromiseKit
 
-class CollectRepository: ICollectRepository{
+class CollectRepository {
     
-    private let remotePhotoDataSource: IRemotePhotoDataSource
-    private let remoteCollectDataSource: IRemoteCollectDataSource
-    private let localCollectDataSource: ILocalCollectDataSource
+    private let remotePhotoDataSource: RemotePhotoDataSource
+    private let remoteCollectDataSource: RemoteCollectDataSource
+    private let localCollectDataSource: LocalCollectDataSource
     
-    init(localCollectDataSource: ILocalCollectDataSource,
-         remoteCollectDataSource: IRemoteCollectDataSource,
-         remotePhotoDataSource: IRemotePhotoDataSource) {
+    init(localCollectDataSource: LocalCollectDataSource,
+         remoteCollectDataSource: RemoteCollectDataSource,
+         remotePhotoDataSource: RemotePhotoDataSource) {
         self.localCollectDataSource = localCollectDataSource
         self.remotePhotoDataSource = remotePhotoDataSource
         self.remoteCollectDataSource = remoteCollectDataSource
@@ -55,5 +55,8 @@ class CollectRepository: ICollectRepository{
         return self.remoteCollectDataSource.sendCollect(collectRemote: collectRemote)
     }
     
-
+    func getPhotoById(photoId: String) -> Photo?{
+        return self.localCollectDataSource.getPhotoById(photoId: photoId)
+    }
+    
 }

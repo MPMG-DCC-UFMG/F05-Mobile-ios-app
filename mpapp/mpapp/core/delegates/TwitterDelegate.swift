@@ -1,9 +1,13 @@
 import Foundation
-import Resolver
 import FirebaseAuth
 
 class TwitterDelegate{
-    private var loginViewModel: LoginViewModel = Resolver.resolve()
+    
+    private var loginViewModel: LoginViewModel
+    
+    init(_ loginViewModel: LoginViewModel) {
+        self.loginViewModel = loginViewModel
+    }
     
     private static let provider = OAuthProvider(providerID: "twitter.com")
     

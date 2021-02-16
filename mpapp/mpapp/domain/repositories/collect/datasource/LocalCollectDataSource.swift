@@ -1,6 +1,6 @@
 import Foundation
 
-class LocalCollectDataSource: BaseDataSource<Collect>, ILocalCollectDataSource{
+class LocalCollectDataSource: BaseDataSource<Collect>{
     
     func deleteCollect(collect: Collect,publicWork: PublicWork) throws {
         let collectDb = self.mpDatabase().object(ofType: Collect.self, forPrimaryKey: collect.id)
@@ -32,6 +32,10 @@ class LocalCollectDataSource: BaseDataSource<Collect>, ILocalCollectDataSource{
     
     func getPhotoByCollectId(collectId: String) -> [Photo]{
         return self.mpDatabase().objects(Photo.self).filter(NSPredicate(format: "idCollect == %@",collectId)).toArray()
+    }
+    
+    func getPhotoById(photoId: String) -> Photo?{
+        return self.mpDatabase().object(ofType: Photo.self, forPrimaryKey: photoId)
     }
     
     func insertCollect(collect: Collect,publicWork: PublicWork) throws {

@@ -1,7 +1,7 @@
 import Foundation
 import RealmSwift
 
-class LocalCityDataSource: BaseDataSource<City>, ILocalCityDataSource{
+class LocalCityDataSource: BaseDataSource<City>{
     
     func insertCity(city: City) throws {
         try self.insert(entity: city)

@@ -4,8 +4,8 @@ import PromiseKit
 
 class DownloadTypeWork : BaseDownloadInfo,Resolving{
     
-    private lazy var typeWorkRepository: ITypeWorkRepository = resolver.resolve()
-    private lazy var configRepository: IConfigRepository = resolver.resolve()
+    private lazy var typeWorkRepository: TypeWorkRepository = resolver.resolve()
+    private lazy var configRepository: ConfigRepository = resolver.resolve()
     
     func name() -> String{
         return "tipo de obra"

@@ -1,7 +1,7 @@
 import Foundation
 import RealmSwift
 
-class LocalWorkStatusDataSource: BaseDataSource<WorkStatus>, ILocalWorkStatusDataSource{
+class LocalWorkStatusDataSource: BaseDataSource<WorkStatus>{
     
     func insertWorkStatus(workStatus: WorkStatus) throws {
         try self.insert(entity: workStatus)

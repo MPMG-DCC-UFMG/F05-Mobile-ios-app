@@ -2,13 +2,13 @@ import Foundation
 import RealmSwift
 import PromiseKit
 
-class PublicWorkRepository: IPublicWorkRepository{
+class PublicWorkRepository{
 
-    private let localPublicWorkDataSource: ILocalPublicWorkDataSource
-    private let remotePublicWorkDataSource: IRemotePublicWorkDataSource
+    private let localPublicWorkDataSource: LocalPublicWorkDataSource
+    private let remotePublicWorkDataSource: RemotePublicWorkDataSource
     
-    init(localPublicWorkDataSource: ILocalPublicWorkDataSource,
-         remotePublicWorkDataSource: IRemotePublicWorkDataSource) {
+    init(localPublicWorkDataSource: LocalPublicWorkDataSource,
+         remotePublicWorkDataSource: RemotePublicWorkDataSource) {
         self.localPublicWorkDataSource = localPublicWorkDataSource
         self.remotePublicWorkDataSource = remotePublicWorkDataSource
     }

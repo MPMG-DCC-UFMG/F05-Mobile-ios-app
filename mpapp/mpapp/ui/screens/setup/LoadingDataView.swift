@@ -10,9 +10,7 @@ struct LoadingDataView: View {
             ColorProvider.darkBackground.edgesIgnoringSafeArea(.all)
             VStack{
                 Spacer()
-                TrenaLoading()
-                Text(configurationViewModel.message).h1()
-                    .multilineTextAlignment(.center)
+                TrenaLoading(isLoading: configurationViewModel.workerStatus != WorkerStatus.failed, message: configurationViewModel.message )
                 Spacer()
                 if configurationViewModel.workerStatus == WorkerStatus.failed{
                     TrenaButton(label: "Tentar novamente",style: .button2){

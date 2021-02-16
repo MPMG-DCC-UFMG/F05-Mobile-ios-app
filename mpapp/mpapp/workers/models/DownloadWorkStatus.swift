@@ -4,8 +4,8 @@ import PromiseKit
 
 class DownloadWorkStatus: BaseDownloadInfo,Resolving{
     
-    private lazy var workStatusRepository: IWorkStatusRepository = resolver.resolve()
-    private lazy var configRepository: IConfigRepository = resolver.resolve()
+    private lazy var workStatusRepository: WorkStatusRepository = resolver.resolve()
+    private lazy var configRepository: ConfigRepository = resolver.resolve()
     
     func name() -> String{
         return "status da obra"

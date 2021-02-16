@@ -3,7 +3,7 @@ import Resolver
 
 struct CreateUserView: View {
     
-    @ObservedObject private var loginViewModel: LoginViewModel = Resolver.resolve()
+    @ObservedObject private var createUserViewModel: CreateUserViewModel = Resolver.resolve()
     
     @State private var email: String = ""
     @State private var password: String = ""
@@ -30,15 +30,15 @@ struct CreateUserView: View {
     }
     
     private func formValid() -> Bool{
-        return password == password2 && loginViewModel.isValidEmail(email) && !password.isEmpty
+        return password == password2 && createUserViewModel.isValidEmail(email) && !password.isEmpty
     }
     
     private func handleRegisterClicked(){
-        self.loginViewModel.registerUser(email: email, password: password)
+        self.createUserViewModel.registerUser(email: email, password: password)
     }
     
     private func handleCancelClicked(){
-        self.loginViewModel.navigateLogin()
+        self.createUserViewModel.navigateBack()
     }
 }
 

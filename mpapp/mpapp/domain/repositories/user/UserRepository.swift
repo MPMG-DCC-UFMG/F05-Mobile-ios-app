@@ -1,11 +1,11 @@
 import Foundation
 import PromiseKit
 
-class UserRepository: IUserRepository{
+class UserRepository{
     
-    let remoteUserDataSource: IRemoteUserDataSource
+    let remoteUserDataSource: RemoteUserDataSource
     
-    init(remoteUserDataSource: IRemoteUserDataSource) {
+    init(remoteUserDataSource: RemoteUserDataSource) {
         self.remoteUserDataSource = remoteUserDataSource
     }
     

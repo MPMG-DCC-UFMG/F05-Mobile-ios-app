@@ -1,6 +1,6 @@
 import Foundation
 
-class LocalAssociationDataSource:BaseDataSource<AssociationTPTW>,ILocalAssociationDataSource{
+class LocalAssociationDataSource:BaseDataSource<AssociationTPTW>{
     
     func insertAssociation(associationTWTP: AssociationTPTW) throws{
         try self.insert(entity: associationTWTP)

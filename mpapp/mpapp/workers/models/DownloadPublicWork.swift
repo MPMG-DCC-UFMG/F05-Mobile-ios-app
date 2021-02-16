@@ -4,8 +4,8 @@ import PromiseKit
 
 class DownloadPublicWork: BaseDownloadInfo,Resolving{
     
-    private lazy var publicWorkRepository: IPublicWorkRepository = resolver.resolve()
-    private lazy var configRepository: IConfigRepository = resolver.resolve()
+    private lazy var publicWorkRepository: PublicWorkRepository = resolver.resolve()
+    private lazy var configRepository: ConfigRepository = resolver.resolve()
     
     func name() -> String{
         return "obras públicas"

@@ -1,7 +1,7 @@
 import Foundation
 import RealmSwift
 
-class LocalTypePhotoDataSource: BaseDataSource<TypePhoto>,ILocalTypePhotoDataSource{
+class LocalTypePhotoDataSource: BaseDataSource<TypePhoto>{
     
     func insertTypePhoto(typePhoto: TypePhoto) throws {
         try self.insert(entity: typePhoto)

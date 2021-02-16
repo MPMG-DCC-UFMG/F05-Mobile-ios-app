@@ -1,8 +1,6 @@
 import SwiftUI
 import Resolver
 import GoogleSignIn
-import FBSDKCoreKit
-import FBSDKLoginKit
 
 struct LoginView: View {
     
@@ -10,8 +8,9 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     
-    private let facebookDelegate = FacebookDelegate()
-    private let twitterDelegate = TwitterDelegate()
+    private var facebookDelegate: FacebookDelegate = Resolver.resolve()
+    private var twitterDelegate: TwitterDelegate = Resolver.resolve()
+    private var googleDelegate: GoogleDelegate = Resolver.resolve()
     
     var body: some View {
         ZStack{
@@ -48,6 +47,7 @@ struct LoginView: View {
         .navigationBarHidden(true)
         .onAppear{
             self.loginViewModel.checkLoggedUser()
+            GIDSignIn.sharedInstance().delegate = self.googleDelegate
         }
     }
     
@@ -55,7 +55,16 @@ struct LoginView: View {
         self.loginViewModel.loginMP(email: email,password: password)
     }
     
+    private func registerClicked(){
+        self.loginViewModel.navigateRegistering()
+    }
+    
+    private func formValid() -> Bool{
+        return loginViewModel.isValidEmail(email) && !password.isEmpty
+    }
+    
     private func handleGoogleLogin(){
+        GIDSignIn.sharedInstance().presentingViewController = UIApplication.shared.windows.first?.rootViewController
         GIDSignIn.sharedInstance().signIn()
     }
     
@@ -65,14 +74,6 @@ struct LoginView: View {
     
     private func handleTwitterLogin(){
         twitterDelegate.tryLogin()
-    }
-    
-    private func registerClicked(){
-        self.loginViewModel.navigateRegistering()
-    }
-    
-    private func formValid() -> Bool{
-        return loginViewModel.isValidEmail(email) && !password.isEmpty
     }
 }
 

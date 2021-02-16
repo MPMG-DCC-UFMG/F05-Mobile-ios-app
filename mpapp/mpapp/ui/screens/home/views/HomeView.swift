@@ -3,10 +3,7 @@ import Resolver
 
 struct HomeView: View {
     
-    @ObservedObject private var loginViewModel: LoginViewModel = Resolver.resolve()
-    @ObservedObject private var configurationViewModel: ConfigurationViewModel = Resolver.resolve()
-    @ObservedObject private var syncViewModel: SyncViewModel = Resolver.resolve()
-    @Binding var navigate:HomeNavigation
+    private var homeViewModel: HomeViewModel = Resolver.resolve()
     
     var body: some View {
         ZStack{
@@ -18,17 +15,11 @@ struct HomeView: View {
                 }.padding(.leading,10)
                 Text("Bem-vindo(a) ao TRENA, o aplicativo de fiscalização do Ministério Público de Minas Gerais").h2().padding(.top,40)
                     .padding(.leading,14)
-                HomeButton(action: {
-                    self.navigateTo(.publicWorkList)
-                }, label: "Lista de obras", image: "list")
+                HomeButton(action: toPublicWorkList, label: "Lista de obras", image: "list")
                     .padding(.top,50)
-                HomeButton(action: {
-                    self.navigateTo(.addPublicWork)
-                }, label: "Adicionar nova obra", image: "plus")
+                HomeButton(action: toAddPublicWork, label: "Adicionar nova obra", image: "plus")
                     .padding(.top,10)
-                HomeButton(action: {
-                    self.navigateTo(.sync)
-                }, label: "Enviar dados", image: "sync", badgeCount: syncViewModel.countObjectsToSync())
+                HomeButton(action: toSyncView, label: "Enviar dados", image: "sync", badgeCount: homeViewModel.countObjectsToSync())
                     .padding(.top,10)
                 HomeButton(action: logout, label: "Sair", image: "logout")
                     .padding(.top,10)
@@ -38,18 +29,24 @@ struct HomeView: View {
     }
     
     private func logout(){
-        loginViewModel.logout()
-        configurationViewModel.resetWorkerStatus()
+        homeViewModel.logout()
     }
     
-    private func navigateTo(_ navigation: HomeNavigation){
-        navigate = navigation
+    private func toPublicWorkList(){
+        homeViewModel.navigateToPublicWorkList()
+    }
+    
+    private func toSyncView(){
+        homeViewModel.navigateToSyncView()
+    }
+    
+    private func toAddPublicWork(){
+        homeViewModel.navigateAddPublicWork()
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
-    @State static var navigate = HomeNavigation.home
     static var previews: some View {
-        HomeView(navigate: HomeView_Previews.$navigate)
+        HomeView()
     }
 }

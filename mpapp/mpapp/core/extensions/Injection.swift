@@ -3,47 +3,55 @@ import Resolver
 
 extension Resolver:ResolverRegistering{
     public static func registerAllServices() {
+        
         // ViewModels
-        register{TypeWorkViewModel(typeWorkRepository: resolve())}.scope(cached)
-        register{LoginViewModel(userRepository: resolve())}.scope(cached)
-        register{ConfigurationViewModel()}.scope(cached)
-        register{PublicWorkViewModel(publicWorkRepository: resolve())}.scope(cached)
-        register{LocationViewModel()}.scope(cached)
-        register{CollectViewModel(collectRepository: resolve(), publicWorkRepository: resolve())}.scope(cached)
-        register{WorkStatusViewModel(typeWorkRepository: resolve(),workStatusRepository: resolve())}.scope(cached)
-        register{TypePhotoViewModel(typePhotoRepository: resolve())}.scope(cached)
-        register{PhotoViewModel()}.scope(cached)
-        register{SyncViewModel(publicWorkRepository: resolve())}.scope(cached)
+        register{SplashViewModel()}
+        register{LoginViewModel(userRepository: resolve())}
+        register{CreateUserViewModel(userRepository: resolve())}
+        register{ConfigurationViewModel()}
+        register{SyncViewModel(publicWorkRepository: resolve())}
+        register{HomeViewModel(publicWorkRepository: resolve())}
+        register{LocationViewModel()}
+        register{PublicWorkAddViewModel(publicWorkRepository: resolve(), typeWorkRespository: resolve())}
+        register{PublicWorkViewModel(publicWorkRepository: resolve(), typeWorkRepository: resolve(), workStatusRepository: resolve())}
+        register{CollectViewModel(collectRepository: resolve(), publicWorkRepository: resolve(),typeWorkRepository: resolve(),workStatusRepository: resolve())}
+        register{PhotoViewModel(collectRepository: resolve(), typePhotoRepository: resolve())}
+        
+        // Delegates
+        register{FacebookDelegate(resolve())}.scope(cached)
+        register{TwitterDelegate(resolve())}.scope(cached)
+        register{GoogleDelegate(resolve())}.scope(cached)
         
         // Repositories
-        register{TypeWorkRepository(localTypeWorkDataSource: resolve()) as ITypeWorkRepository}.scope(application)
-        register{ConfigRepository(localConfigDataSource: resolve(), remoteConfigDataSource: resolve()) as IConfigRepository}.scope(application)
-        register{TypePhotoRepository(localTypePhotoDataSource: resolve()) as ITypePhotoRepository}.scope(application)
-        register{CityRepository(localCityDataSource: resolve()) as ICityRepository}.scope(application)
-        register{WorkStatusRepository(localWorkStatusDataSource: resolve()) as IWorkStatusRepository}.scope(application)
-        register{AssociationRepository(localAssociationDataSource: resolve()) as IAssociationRepository}.scope(application)
-        register{PublicWorkRepository(localPublicWorkDataSource: resolve(), remotePublicWorkDataSource: resolve()) as IPublicWorkRepository}.scope(application)
-        register{CollectRepository(localCollectDataSource:resolve(),remoteCollectDataSource: resolve(),remotePhotoDataSource: resolve()) as ICollectRepository}.scope(application)
-        register{UserRepository(remoteUserDataSource:resolve()) as IUserRepository}.scope(application)
+        register{TypeWorkRepository(localTypeWorkDataSource: resolve())}.scope(application)
+        register{ConfigRepository(localConfigDataSource: resolve(), remoteConfigDataSource: resolve())}.scope(application)
+        register{TypePhotoRepository(localTypePhotoDataSource: resolve()) }.scope(application)
+        register{CityRepository(localCityDataSource: resolve())}.scope(application)
+        register{WorkStatusRepository(localWorkStatusDataSource: resolve())}.scope(application)
+        register{AssociationRepository(localAssociationDataSource: resolve())}.scope(application)
+        register{PublicWorkRepository(localPublicWorkDataSource: resolve(), remotePublicWorkDataSource: resolve())}.scope(application)
+        register{CollectRepository(localCollectDataSource:resolve(),remoteCollectDataSource: resolve(),remotePhotoDataSource: resolve())}.scope(application)
+        register{UserRepository(remoteUserDataSource:resolve())}.scope(application)
         
         // LocalDataSources
-        register{LocalTypeWorkDataSource() as ILocalTypeWorkDataSource}.scope(application)
-        register{LocalConfigDataSource() as ILocalConfigDataSource}.scope(application)
-        register{LocalTypePhotoDataSource() as ILocalTypePhotoDataSource}.scope(application)
-        register{LocalCityDataSource() as ILocalCityDataSource}.scope(application)
-        register{LocalWorkStatusDataSource() as ILocalWorkStatusDataSource}.scope(application)
-        register{LocalAssociationDataSource() as ILocalAssociationDataSource}.scope(application)
-        register{LocalPublicWorkDataSource() as ILocalPublicWorkDataSource}.scope(application)
-        register{LocalCollectDataSource() as ILocalCollectDataSource}.scope(application)
+        register{LocalTypeWorkDataSource()}.scope(application)
+        register{LocalConfigDataSource() }.scope(application)
+        register{LocalTypePhotoDataSource()}.scope(application)
+        register{LocalCityDataSource()}.scope(application)
+        register{LocalWorkStatusDataSource()}.scope(application)
+        register{LocalAssociationDataSource()}.scope(application)
+        register{LocalPublicWorkDataSource()}.scope(application)
+        register{LocalCollectDataSource()}.scope(application)
         
         // RemoteDataSources
-        register{RemoteConfigDataSource() as IRemoteConfigDataSource}.scope(application)
-        register{RemoteUserDataSource() as IRemoteUserDataSource}.scope(application)
-        register{RemotePublicWorkDataSource() as IRemotePublicWorkDataSource}.scope(application)
-        register{RemotePhotoDataSource() as IRemotePhotoDataSource}.scope(application)
-        register{RemoteCollectDataSource() as IRemoteCollectDataSource}.scope(application)
+        register{RemoteConfigDataSource()}.scope(application)
+        register{RemoteUserDataSource()}.scope(application)
+        register{RemotePublicWorkDataSource()}.scope(application)
+        register{RemotePhotoDataSource()}.scope(application)
+        register{RemoteCollectDataSource()}.scope(application)
         
         // Services
         register{LocationManager()}.scope(application)
+        register{NavController()}.scope(application)
     }
 }

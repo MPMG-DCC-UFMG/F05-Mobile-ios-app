@@ -2,7 +2,7 @@ import Foundation
 import Alamofire
 import PromiseKit
 
-class RemoteUserDataSource : IRemoteUserDataSource{
+class RemoteUserDataSource{
         
     func createUser(userRemote: MPUserRemote) -> Promise<ResponseRemote>{
         return firstly{

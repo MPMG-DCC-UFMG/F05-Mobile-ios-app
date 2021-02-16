@@ -11,9 +11,11 @@ import SwiftUI
 class PublicWorkViewModel: BaseViewModel, ObservableObject{
     
     var typeworks = [TypeWork]()
+    var workStatus = [WorkStatus]()
     
     private let publicWorkRepository: PublicWorkRepository
     private let typeWorkRepository: TypeWorkRepository
+    private let workStatusRepository: WorkStatusRepository
     private var sortListAscending: Bool = true
     
     private var locationManager: LocationManager = Resolver.resolve()
@@ -23,11 +25,14 @@ class PublicWorkViewModel: BaseViewModel, ObservableObject{
     @Published var dataToSend: Bool = true
     @Published var searchTerm: String = ""
     @Published var filterTypeWorkFlags: [Int] = []
+    @Published var filterWorkStatusFlags: [Int] = []
     
-    init(publicWorkRepository: PublicWorkRepository, typeWorkRepository: TypeWorkRepository){
+    init(publicWorkRepository: PublicWorkRepository, typeWorkRepository: TypeWorkRepository, workStatusRepository: WorkStatusRepository){
         self.publicWorkRepository = publicWorkRepository
         self.typeWorkRepository = typeWorkRepository
+        self.workStatusRepository = workStatusRepository
         self.typeworks = typeWorkRepository.listAllTypeWorks().toArray()
+        self.workStatus = workStatusRepository.listWorkStatus().toArray()
     }
     
     func publicWorksList() -> [PublicWork]{
@@ -62,12 +67,20 @@ class PublicWorkViewModel: BaseViewModel, ObservableObject{
             predicates.append(NSPredicate(format: "self.typeWorkFlag IN %@", filterTypeWorkFlags))
         }
         
+        if(!filterWorkStatusFlags.isEmpty){
+            predicates.append(NSPredicate(format: "self.userStatusFlag IN %@", filterWorkStatusFlags))
+        }
+        
         
         return NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
     }
     
     func updateFilteredWorkFlags(filterTypeWorkFlags: [Int]){
         self.filterTypeWorkFlags = filterTypeWorkFlags
+    }
+    
+    func updateFilteredStatusFlags(filterWorkStatusFlags: [Int]){
+        self.filterWorkStatusFlags = filterWorkStatusFlags
     }
     
     func navigateBack(){

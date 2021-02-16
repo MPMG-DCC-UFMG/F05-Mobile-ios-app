@@ -13,7 +13,7 @@ extension Resolver:ResolverRegistering{
         register{HomeViewModel(publicWorkRepository: resolve())}
         register{LocationViewModel()}
         register{PublicWorkAddViewModel(publicWorkRepository: resolve(), typeWorkRespository: resolve())}
-        register{PublicWorkViewModel(publicWorkRepository: resolve(), typeWorkRepository: resolve())}
+        register{PublicWorkViewModel(publicWorkRepository: resolve(), typeWorkRepository: resolve(), workStatusRepository: resolve())}
         register{CollectViewModel(collectRepository: resolve(), publicWorkRepository: resolve(),typeWorkRepository: resolve(),workStatusRepository: resolve())}
         register{PhotoViewModel(collectRepository: resolve(), typePhotoRepository: resolve())}
         

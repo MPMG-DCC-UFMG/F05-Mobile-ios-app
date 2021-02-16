@@ -50,6 +50,6 @@ struct PublicWorkListView: View {
 
 struct PublicWorkListView_Previews: PreviewProvider {
     static var previews: some View {
-        PublicWorkListView(publicWorkViewModel: PublicWorkViewModel(publicWorkRepository: PublicWorkRepository(localPublicWorkDataSource: LocalPublicWorkDataSource(), remotePublicWorkDataSource: RemotePublicWorkDataSource()), typeWorkRepository: TypeWorkRepository(localTypeWorkDataSource: LocalTypeWorkDataSource())))
+        PublicWorkListView(publicWorkViewModel: PublicWorkViewModel(publicWorkRepository: PublicWorkRepository(localPublicWorkDataSource: LocalPublicWorkDataSource(), remotePublicWorkDataSource: RemotePublicWorkDataSource()), typeWorkRepository: TypeWorkRepository(localTypeWorkDataSource: LocalTypeWorkDataSource()),workStatusRepository: WorkStatusRepository(localWorkStatusDataSource: LocalWorkStatusDataSource())))
     }
 }

@@ -19,6 +19,6 @@ struct PublicWorkMapListView: View {
 
 struct PublicWorkMapListView_Previews: PreviewProvider {
     static var previews: some View {
-        PublicWorkMapListView(publicWorkViewModel: PublicWorkViewModel(publicWorkRepository: PublicWorkRepository(localPublicWorkDataSource: LocalPublicWorkDataSource(), remotePublicWorkDataSource: RemotePublicWorkDataSource()), typeWorkRepository: TypeWorkRepository(localTypeWorkDataSource: LocalTypeWorkDataSource())))
+        PublicWorkMapListView(publicWorkViewModel: PublicWorkViewModel(publicWorkRepository: PublicWorkRepository(localPublicWorkDataSource: LocalPublicWorkDataSource(), remotePublicWorkDataSource: RemotePublicWorkDataSource()), typeWorkRepository: TypeWorkRepository(localTypeWorkDataSource: LocalTypeWorkDataSource()),workStatusRepository: WorkStatusRepository(localWorkStatusDataSource: LocalWorkStatusDataSource())))
     }
 }
